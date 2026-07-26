@@ -1,73 +1,106 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LEON</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>کلن LEON | وب‌سایت رسمی</title>
+
+<meta name="description"
+content="وب‌سایت رسمی کلن LEON، یکی از شناخته‌شده‌ترین کلن‌های ApexMine">
+
+<meta name="keywords"
+content="LEON, کلن لئون, LEON Clan, Minecraft, ApexMine">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
 
 body{
-background:#05010a;
-color:#fff;
 font-family:tahoma;
+background:#05010a;
+color:white;
 overflow-x:hidden;
 }
 
-#loader{
+/* پس‌زمینه کهکشانی */
+
+body::before{
+content:"";
 position:fixed;
 inset:0;
-background:#000;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:50px;
-z-index:9999;
-text-shadow:0 0 30px #a020f0;
-animation:fade 3s forwards;
+background:
+radial-gradient(circle at 20% 20%,
+rgba(160,32,240,.25),
+transparent 25%),
+
+radial-gradient(circle at 80% 30%,
+rgba(120,0,255,.2),
+transparent 20%),
+
+radial-gradient(circle at 50% 90%,
+rgba(255,255,255,.08),
+transparent 15%);
+z-index:-2;
 }
 
-@keyframes fade{
-80%{opacity:1}
-100%{opacity:0;visibility:hidden}
-}
+/* ستاره‌ها */
 
 .stars{
 position:fixed;
 width:100%;
 height:100%;
+background-image:
+radial-gradient(white 1px, transparent 1px);
+background-size:40px 40px;
+animation:starsMove 40s linear infinite;
 z-index:-1;
-background:
-radial-gradient(white 1px,transparent 1px),
-radial-gradient(#a020f0 1px,transparent 1px);
-background-size:50px 50px,80px 80px;
-animation:move 20s linear infinite;
 }
 
-@keyframes move{
-from{transform:translateY(0)}
-to{transform:translateY(500px)}
+@keyframes starsMove{
+from{
+transform:translateY(0);
 }
+to{
+transform:translateY(500px);
+}
+}
+
+/* نوار بالا */
 
 nav{
 position:fixed;
 top:0;
 width:100%;
-padding:15px;
+padding:18px;
 background:rgba(0,0,0,.6);
 backdrop-filter:blur(10px);
-display:flex;
-justify-content:center;
-gap:20px;
+text-align:center;
 z-index:100;
 }
 
 nav a{
 color:white;
 text-decoration:none;
+margin:10px;
+font-size:18px;
+transition:.3s;
 }
+
+nav a:hover{
+color:#bb86fc;
+}
+
+/* صفحه ورود */
 
 .hero{
 min-height:100vh;
@@ -75,215 +108,565 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-padding:20px;
 text-align:center;
+padding:20px;
 }
 
 .hero h1{
 font-size:110px;
+letter-spacing:10px;
+
 text-shadow:
-0 0 20px #fff,
+0 0 10px #fff,
+0 0 20px #a020f0,
 0 0 40px #a020f0,
 0 0 80px #a020f0;
-animation:pulse 2s infinite alternate;
+
+animation:glow 2s infinite alternate;
 }
 
-@keyframes pulse{
-from{transform:scale(1)}
-to{transform:scale(1.05)}
+@keyframes glow{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.05);
+}
 }
 
 .hero p{
-font-size:24px;
 margin-top:20px;
-color:#ccc;
+font-size:24px;
+color:#ddd;
 }
 
-.section{
-padding:60px 20px;
-}
-
-.title{
-font-size:40px;
-margin-bottom:20px;
-text-align:center;
-}
+/* کارت‌ها */
 
 .card{
-background:rgba(255,255,255,.08);
+max-width:900px;
+margin:30px auto;
 padding:25px;
-margin:20px auto;
-max-width:700px;
+
+background:
+rgba(255,255,255,.08);
+
 border-radius:25px;
-box-shadow:0 0 20px rgba(160,32,240,.5);
-transition:.3s;
+
+box-shadow:
+0 0 25px rgba(160,32,240,.4);
+
+backdrop-filter:blur(10px);
 }
 
-.card:hover{
-transform:translateY(-10px);
+/* عنوان بخش‌ها */
+
+.title{
+font-size:42px;
+text-align:center;
+margin-bottom:20px;
+color:#fff;
 }
 
-button{
-padding:15px 25px;
-border:none;
-border-radius:15px;
-cursor:pointer;
-font-size:18px;
-margin:10px;
+/* افکت امیرعلی */
+
+.amirali{
+animation:snake 2s infinite;
+font-size:35px;
 }
 
-#top{
-position:fixed;
-left:15px;
-bottom:15px;
+@keyframes snake{
+50%{
+text-shadow:
+0 0 10px #fff,
+0 0 30px #00ff99,
+0 0 60px #00ff99;
+}
+}
+
+/* افکت ARZDA */
+
+.arzda{
+animation:enderman 1.5s infinite;
+font-size:35px;
+}
+
+@keyframes enderman{
+50%{
+opacity:.7;
+transform:translateX(5px);
+text-shadow:
+0 0 20px #a020f0;
+}
 }
 
 footer{
-padding:40px;
+padding:50px;
 text-align:center;
-color:#999;
+color:#aaa;
 }
 
-.progress{
-position:fixed;
-top:0;
-left:0;
-height:4px;
-background:#a020f0;
-width:0%;
-z-index:999;
-}
-
-#clock{
-font-size:22px;
-margin-top:15px;
-}
 </style>
 </head>
 
 <body>
 
-<div id="loader">LEON</div>
-
-<div class="progress" id="progress"></div>
 <div class="stars"></div>
 
 <nav>
-<a href="#home">خانه</a>
-<a href="#news">اخبار</a>
-<a href="#team">مدیریت</a>
-<a href="#wiki">ویکی</a>
-<a href="#contact">ارتباط</a>
+
+<a href="#history">تاریخچه</a>
+
+<a href="#server">سرور</a>
+
+<a href="#members">اعضا</a>
+
+<a href="#links">ارتباط</a>
+
 </nav>
 
-<section class="hero" id="home">
+<section class="hero">
+
 <h1>LEON</h1>
-<p>پادشاهی ماینکرفت در حال بیدار شدن است 👑</p>
-<div id="clock"></div>
-</section>
 
-<section class="section" id="news">
-<h2 class="title">اخبار سرور</h2>
+<p>
+وب‌سایت رسمی کلن LEON
+</p>
 
-<div class="card">
-نسخه جدید سایت LEON منتشر شد.
+<p>
+رونمایی رسمی: ۵ مرداد ۱۴۰۵
+</p>
+
+<p>
+«پادشاهی LEON تازه آغاز شده است...»
+</p>
+
+</section><!-- ========================= -->
+<!-- تاریخچه کلن LEON -->
+<!-- ========================= -->
+
+<div class="card" id="history">
+
+<h2 class="title">
+تاریخچه کلن LEON
+</h2>
+
+<p>
+
+کلن LEON در تیرماه سال ۱۴۰۵ توسط
+<b>AMIRALI</b>
+بنیان‌گذاری شد.
+
+در روزهای نخست، این کلن تنها یک ایده کوچک بود؛ اما به لطف مدیریت، خلاقیت و تلاش اعضای خود، خیلی زود به یکی از شناخته‌شده‌ترین نام‌ها در جامعه ApexMine تبدیل شد.
+
+</p>
+
+<br>
+
+<p>
+
+LEON از همان ابتدا با هدف ایجاد محیطی دوستانه، حرفه‌ای و سرشار از احترام متقابل شکل گرفت. هر عضو این کلن بخشی از تاریخ آن را نوشته است و هر قدمی که برداشته شد، این نام را به آینده‌ای روشن‌تر نزدیک‌تر کرد.
+
+</p>
+
+<br>
+
+<p>
+
+امروز، در تاریخ
+<b>۵ مرداد ۱۴۰۵</b>
+از وب‌سایت رسمی LEON رونمایی می‌شود؛ دروازه‌ای دیجیتالی برای ورود به دنیایی که هنوز داستان‌های بسیاری برای روایت کردن دارد.
+
+</p>
+
 </div>
 
-<div class="card">
-گیم مود BedWars به زودی اضافه خواهد شد.
-</div>
-</section>
 
-<section class="section">
-<h2 class="title">گیم مودها</h2>
+<!-- ========================= -->
+<!-- اطلاعات سرور -->
+<!-- ========================= -->
 
-<div class="card">BedWars</div>
-<div class="card">Lifesteal SMP</div>
-<div class="card">Practice PvP</div>
-<div class="card">Survival</div>
+<div class="card" id="server">
 
-</section>
+<h2 class="title">
+اطلاعات سرور
+</h2>
 
-<section class="section" id="team">
-<h2 class="title">تیم مدیریت</h2>
+<p>
+🌐 آدرس سرور:
+<b>Play.ApexGaming.ir</b>
+</p>
 
-<div class="card">
-مالک: @LN___AmIrAli 🎬
-</div>
+<br>
 
-<div class="card">
-سازنده سایت: @Arzda_1 ✨
-</div>
-</section>
+<p>
+🔌 پورت:
+<b>19132</b>
+</p>
 
-<section class="section" id="wiki">
-<h2 class="title">ویکی LEON</h2>
+<br>
 
-<div class="card">
-به زودی قوانین، آموزش‌ها و راهنمای سرور در این بخش قرار می‌گیرد.
-</div>
-</section>
+<p>
+🎮 نسخه‌های پشتیبانی‌شده:
+<b>Minecraft Bedrock 1.21.x</b>
+</p>
 
-<section class="section" id="contact">
-<h2 class="title">ارتباط با ما</h2>
+<br>
 
-<div class="card">
-کانال: @LEONMINECRAFT 👑
+<div id="server-status">
+
+در حال دریافت اطلاعات سرور...
+
 </div>
 
-<div class="card">
-آپارات:<br>
-https://www.aparat.com/LEON_LN
 </div>
 
+
+<!-- ========================= -->
+<!-- گیم مودها -->
+<!-- ========================= -->
+
 <div class="card">
-دونیت:<br>
-https://daramet.com/Arzda
+
+<h2 class="title">
+گیم مودهای آینده
+</h2>
+
+<ul style="line-height:40px;">
+
+<li>⚔ BedWars</li>
+
+<li>💀 Lifesteal SMP</li>
+
+<li>🏹 Practice PvP</li>
+
+<li>🌲 Survival</li>
+
+<li>🏰 SkyBlock</li>
+
+<li>✨ Coming Soon...</li>
+
+</ul>
+
 </div>
-</section>
 
-<section class="section">
-<h2 class="title">موسیقی</h2>
 
-<button onclick="music.play()">🎵 پخش موسیقی</button>
-<button onclick="music.pause()">⏸ توقف موسیقی</button>
+<!-- ========================= -->
+<!-- اخبار LEON -->
+<!-- ========================= -->
 
-<audio id="music">
-<source src="music.mp3" type="audio/mpeg">
-</audio>
+<div class="card">
 
-<p>برای فعال شدن، فایل music.mp3 را داخل مخزن آپلود کن.</p>
-</section>
+<h2 class="title">
+اخبار LEON
+</h2>
 
-<button id="top" onclick="window.scrollTo(0,0)">
-⬆
-</button>
+<p>
+📢 وب‌سایت رسمی LEON افتتاح شد.
+</p>
 
-<footer>
-تمامی حقوق متعلق به LEON است.
-<br><br>
-© 2026 LEON
-</footer>
+<br>
+
+<p>
+📢 گیم‌مود BedWars در دست توسعه قرار دارد.
+</p>
+
+<br>
+
+<p>
+📢 اعضای جدید به‌زودی به تیم مدیریت اضافه خواهند شد.
+</p>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- آمار زنده سرور -->
+<!-- ========================= -->
 
 <script>
-setInterval(()=>{
-let d=new Date();
-document.getElementById("clock").innerHTML=
-d.toLocaleTimeString('fa-IR');
-},1000);
 
-window.onscroll=function(){
-let win=document.body.scrollTop||
-document.documentElement.scrollTop;
+fetch(
+"https://api.mcsrvstat.us/3/Play.ApexGaming.ir"
+)
 
-let height=
-document.documentElement.scrollHeight-
-document.documentElement.clientHeight;
+.then(response=>response.json())
 
-document.getElementById("progress").style.width=
-(win/height)*100+"%";
+.then(data=>{
+
+document.getElementById(
+"server-status"
+).innerHTML=`
+
+<hr>
+
+<b>
+${
+data.online
+?
+"🟢 سرور آنلاین است"
+:
+"🔴 سرور آفلاین است"
 }
-</script>
+</b>
+
+<br><br>
+
+👥 بازیکنان آنلاین:
+${
+data.players
+?
+data.players.online
+:
+0
+}
+
+/
+
+${
+data.players
+?
+data.players.max
+:
+0
+}
+
+<br><br>
+
+📦 نسخه سرور:
+${
+data.version
+?
+data.version
+:
+"نامشخص"
+}
+
+`;
+
+})
+
+.catch(()=>{
+
+document.getElementById(
+"server-status"
+).innerHTML=
+
+"عدم دریافت اطلاعات سرور.";
+
+});
+
+</script><!-- ========================= -->
+<!-- افراد افسانه‌ای LEON -->
+<!-- ========================= -->
+
+<div class="card" id="members">
+
+<h2 class="title">
+افراد افسانه‌ای LEON
+</h2>
+
+<h2 class="amirali">
+👑 #1 AMIRALI
+</h2>
+
+<p>
+The Serpent King
+</p>
+
+<br>
+
+<p>
+
+بنیان‌گذار و مالک اصلی کلن LEON.
+
+AMIRALI از نخستین روزهای شکل‌گیری LEON، نقش رهبر و ستون اصلی این قلمرو را بر عهده داشت. او با توانایی کم‌نظیر در مدیریت، کنترل تنش‌ها و ایجاد ارتباطی صمیمی با بازیکنان، توانست نام LEON را به یکی از شناخته‌شده‌ترین نام‌ها در ApexMine تبدیل کند.
+
+</p>
+
+<p>
+Rubika: @LN___AmIrAli
+</p>
+
+<hr>
+
+<h2>
+⚪ #2 WHITEX
+</h2>
+
+<p>
+The Silent Guardian
+</p>
+
+<br>
+
+<p>
+نگهبان خاموش LEON. حضوری آرام اما تأثیرگذار که همواره در کنار اعضای کلن ایستاده است.
+</p>
+
+<hr>
+
+<h2 class="arzda">
+🟣 #3 ARZDA
+</h2>
+
+<p>
+The Enderman Architect
+</p>
+
+<br>
+
+<p>
+
+ARZDA از همان ابتدا ثابت کرد که خلاقیت برای او تنها یک ویژگی نیست، بلکه بخشی از هویتش است.
+
+او با توانایی بالای جذب اعضا، سبک مدیریتی متفاوت و ذهنی سرشار از ایده‌های تازه، به یکی از مهم‌ترین چهره‌های LEON تبدیل شد.
+
+بسیاری از ایده‌های بصری، طراحی‌های دیجیتالی و حتی ساخت این وب‌سایت، از دیدگاه و خلاقیت او سرچشمه گرفته‌اند.
+
+نام ARZDA در میان ذرات بنفش و نورهای کهکشانی، همچون یک Enderman افسانه‌ای در تاریخ LEON ماندگار خواهد ماند.
+
+</p>
+
+<p>
+Rubika: @Arzda_1
+</p>
+
+<hr>
+
+<h2>
+#4 امیرحسین
+</h2>
+
+<p>
+از قدیمی‌ترین اعضای LEON و شخصی با توانایی بالا در مدیریت و ارتباط با بازیکنان.
+</p>
+
+<p>
+@AmirHossin_gamer_94
+</p>
+
+<hr>
+
+<h2>
+#5 ابوالفضل
+</h2>
+
+<p>
+عضوی وفادار که همواره در مسیر پیشرفت LEON نقش مهمی ایفا کرده است.
+</p>
+
+<hr>
+
+<h2>
+#6 طاها
+</h2>
+
+<p>
+شخصیتی فعال، خوش‌برخورد و از اعضای قدیمی کلن که حضور او بخشی از هویت LEON محسوب می‌شود.
+</p>
+
+<p>
+@taha13434
+</p>
+
+<hr>
+
+<h2>
+#7 امیرمحمد
+</h2>
+
+<p>
+از اعضای تأثیرگذار LEON که همواره با حضور و حمایت خود به رشد این کلن کمک کرده است.
+</p>
+
+<p>
+@AMFP313
+</p>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- لینک‌ها -->
+<!-- ========================= -->
+
+<div class="card" id="links">
+
+<h2 class="title">
+ارتباط با LEON
+</h2>
+
+<p>
+📢 کانال:
+@LEONMINECRAFT
+</p>
+
+<br>
+
+<p>
+👥 گروه کلن:
+<br>
+https://rubika.ir/joing/BBBHACJIC0ENWTZEUWAZOWXURIZDRORW
+</p>
+
+<br>
+
+<p>
+🎬 آپارات:
+<br>
+https://www.aparat.com/LEON_LN
+</p>
+
+<br>
+
+<p>
+💎 دونیت:
+<br>
+https://daramet.com/Arzda
+</p>
+
+<br>
+
+<p>
+اعضای مهم:
+</p>
+
+<ul style="line-height:35px;">
+
+<li>@sadeghlang</li>
+
+<li>@KHRRBAAR</li>
+
+<li>@Hesbolah</li>
+
+</ul>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- پایان سایت -->
+<!-- ========================= -->
+
+<footer>
+
+<h2>
+LEON
+</h2>
+
+<br>
+
+<p>
+«پادشاهی LEON تازه آغاز شده است...»
+</p>
+
+<br>
+
+<p>
+© 2026 LEON Clan
+</p>
+
+</footer>
 
 </body>
 </html>
