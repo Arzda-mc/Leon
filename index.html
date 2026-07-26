@@ -5,668 +5,1586 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>کلن LEON | وب‌سایت رسمی</title>
-
-<meta name="description"
-content="وب‌سایت رسمی کلن LEON، یکی از شناخته‌شده‌ترین کلن‌های ApexMine">
-
-<meta name="keywords"
-content="LEON, کلن لئون, LEON Clan, Minecraft, ApexMine">
+<title>LEON | کلن لئون</title>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap');
+
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:"Vazirmatn",Tahoma;
 }
+
 
 html{
 scroll-behavior:smooth;
 }
 
+
 body{
-font-family:tahoma;
-background:#05010a;
+
+background:
+radial-gradient(circle at top,#3b006b,#05000b 45%,#000);
+
 color:white;
 overflow-x:hidden;
+
 }
 
-/* پس‌زمینه کهکشانی */
 
-body::before{
-content:"";
+/* پس زمینه کهکشانی */
+
+.space{
+
 position:fixed;
 inset:0;
-background:
-radial-gradient(circle at 20% 20%,
-rgba(160,32,240,.25),
-transparent 25%),
-
-radial-gradient(circle at 80% 30%,
-rgba(120,0,255,.2),
-transparent 20%),
-
-radial-gradient(circle at 50% 90%,
-rgba(255,255,255,.08),
-transparent 15%);
 z-index:-2;
+
+background:
+
+radial-gradient(circle,#fff 1px,transparent 1px),
+radial-gradient(circle,#9b4dff 1px,transparent 1px);
+
+background-size:
+70px 70px,
+120px 120px;
+
+animation:stars 25s linear infinite;
+
 }
 
-/* ستاره‌ها */
 
-.stars{
-position:fixed;
-width:100%;
-height:100%;
-background-image:
-radial-gradient(white 1px, transparent 1px);
-background-size:40px 40px;
-animation:starsMove 40s linear infinite;
-z-index:-1;
-}
+@keyframes stars{
 
-@keyframes starsMove{
 from{
 transform:translateY(0);
 }
+
 to{
 transform:translateY(500px);
 }
+
 }
 
-/* نوار بالا */
 
-nav{
+
+/* ذرات */
+
+.particles span{
+
 position:fixed;
-top:0;
-width:100%;
-padding:18px;
-background:rgba(0,0,0,.6);
-backdrop-filter:blur(10px);
-text-align:center;
-z-index:100;
-}
+width:5px;
+height:5px;
 
-nav a{
-color:white;
-text-decoration:none;
-margin:10px;
-font-size:18px;
-transition:.3s;
-}
+background:#a855ff;
 
-nav a:hover{
-color:#bb86fc;
-}
-
-/* صفحه ورود */
-
-.hero{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
-
-.hero h1{
-font-size:110px;
-letter-spacing:10px;
-
-text-shadow:
-0 0 10px #fff,
-0 0 20px #a020f0,
-0 0 40px #a020f0,
-0 0 80px #a020f0;
-
-animation:glow 2s infinite alternate;
-}
-
-@keyframes glow{
-from{
-transform:scale(1);
-}
-to{
-transform:scale(1.05);
-}
-}
-
-.hero p{
-margin-top:20px;
-font-size:24px;
-color:#ddd;
-}
-
-/* کارت‌ها */
-
-.card{
-max-width:900px;
-margin:30px auto;
-padding:25px;
-
-background:
-rgba(255,255,255,.08);
-
-border-radius:25px;
+border-radius:50%;
 
 box-shadow:
-0 0 25px rgba(160,32,240,.4);
+0 0 15px #a855ff;
 
-backdrop-filter:blur(10px);
+animation:float 10s infinite;
+
 }
 
-/* عنوان بخش‌ها */
+
+@keyframes float{
+
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+
+50%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-10vh);
+opacity:0;
+}
+
+}
+
+
+
+/* لودر */
+
+.loader{
+
+position:fixed;
+inset:0;
+
+background:#000;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:70px;
+font-weight:900;
+
+color:white;
+
+z-index:9999;
+
+animation:loading 3s forwards;
+
+text-shadow:
+
+0 0 20px white,
+0 0 50px #a855ff,
+0 0 100px #a855ff;
+
+}
+
+
+
+@keyframes loading{
+
+0%{
+opacity:1;
+}
+
+80%{
+opacity:1;
+}
+
+100%{
+opacity:0;
+visibility:hidden;
+}
+
+}
+
+
+
+
+/* منو */
+
+nav{
+
+position:fixed;
+
+top:20px;
+right:50%;
+transform:translateX(50%);
+
+width:90%;
+
+padding:15px;
+
+background:
+
+rgba(255,255,255,.08);
+
+border:
+
+1px solid rgba(255,255,255,.15);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+display:flex;
+
+justify-content:center;
+
+gap:30px;
+
+z-index:100;
+
+box-shadow:
+
+0 0 30px #7c00ff;
+
+}
+
+
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+
+nav a:hover{
+
+color:#c084fc;
+
+text-shadow:
+
+0 0 20px #c084fc;
+
+}
+
+
+
+/* صفحه اول */
+
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:30px;
+
+}
+
+
+
+.logo{
+
+font-size:140px;
+
+font-weight:900;
+
+letter-spacing:15px;
+
+animation:logo 3s infinite alternate;
+
+
+}
+
+
+
+@keyframes logo{
+
+from{
+
+text-shadow:
+
+0 0 20px white,
+0 0 50px #8b5cf6;
+
+}
+
+
+to{
+
+text-shadow:
+
+0 0 40px white,
+0 0 100px #d946ef,
+0 0 150px #8b5cf6;
+
+}
+
+}
+
+
+
+
+.hero h2{
+
+font-size:35px;
+
+margin-top:20px;
+
+}
+
+
+.hero p{
+
+max-width:700px;
+
+margin-top:20px;
+
+font-size:20px;
+
+color:#ddd;
+
+line-height:2;
+
+}
+
+
+
+
+/* دکمه ها */
+
+
+.buttons{
+
+margin-top:40px;
+
+}
+
+
+
+.btn{
+
+display:inline-block;
+
+padding:15px 35px;
+
+margin:10px;
+
+border-radius:30px;
+
+background:
+
+linear-gradient(45deg,#7c00ff,#d946ef);
+
+color:white;
+
+text-decoration:none;
+
+font-weight:bold;
+
+box-shadow:
+
+0 0 30px #a855ff;
+
+transition:.4s;
+
+}
+
+
+
+.btn:hover{
+
+transform:scale(1.1);
+
+box-shadow:
+
+0 0 60px #d946ef;
+
+}
+
+
+
+/* بخش ها */
+
+
+.section{
+
+padding:100px 30px;
+
+}
+
+
 
 .title{
-font-size:42px;
+
 text-align:center;
-margin-bottom:20px;
-color:#fff;
-}
 
-/* افکت امیرعلی */
+font-size:50px;
 
-.amirali{
-animation:snake 2s infinite;
-font-size:35px;
-}
+margin-bottom:50px;
 
-@keyframes snake{
-50%{
 text-shadow:
-0 0 10px #fff,
-0 0 30px #00ff99,
-0 0 60px #00ff99;
-}
+
+0 0 30px #a855ff;
+
 }
 
-/* افکت ARZDA */
 
-.arzda{
-animation:enderman 1.5s infinite;
-font-size:35px;
+
+/* کارت شیشه ای */
+
+
+.glass{
+
+max-width:900px;
+
+margin:30px auto;
+
+padding:40px;
+
+background:
+
+rgba(255,255,255,.08);
+
+border-radius:35px;
+
+border:
+
+1px solid rgba(255,255,255,.15);
+
+backdrop-filter:blur(15px);
+
+
+box-shadow:
+
+0 0 40px rgba(168,85,247,.3);
+
+transition:.5s;
+
 }
 
-@keyframes enderman{
-50%{
-opacity:.7;
-transform:translateX(5px);
-text-shadow:
-0 0 20px #a020f0;
+
+
+.glass:hover{
+
+transform:translateY(-15px);
+
+box-shadow:
+
+0 0 70px #a855ff;
+
 }
+
+
+
+
+/* معرفی */
+
+
+.about{
+
+font-size:22px;
+
+line-height:2.2;
+
+text-align:center;
+
+color:#eee;
+
 }
+
+
+
 
 footer{
+
 padding:50px;
+
 text-align:center;
+
 color:#aaa;
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
-<div class="stars"></div>
+
+<div class="loader">
+LEON
+</div>
+
+
+<div class="space"></div>
+
+
+<div class="particles">
+
+<span style="right:10%;animation-delay:1s"></span>
+<span style="right:30%;animation-delay:3s"></span>
+<span style="right:60%;animation-delay:5s"></span>
+<span style="right:80%;animation-delay:2s"></span>
+
+</div>
+
+
 
 <nav>
 
-<a href="#history">تاریخچه</a>
+<a href="#home">خانه</a>
 
-<a href="#server">سرور</a>
+<a href="#about">درباره کلن</a>
 
-<a href="#members">اعضا</a>
+<a href="#team">اعضا</a>
 
-<a href="#links">ارتباط</a>
+<a href="#contact">ارتباط</a>
 
 </nav>
 
-<section class="hero">
 
-<h1>LEON</h1>
 
-<p>
-وب‌سایت رسمی کلن LEON
-</p>
 
-<p>
-رونمایی رسمی: ۵ مرداد ۱۴۰۵
-</p>
+<section class="hero" id="home">
 
-<p>
-«پادشاهی LEON تازه آغاز شده است...»
-</p>
 
-</section><!-- ========================= -->
-<!-- تاریخچه کلن LEON -->
-<!-- ========================= -->
+<div class="logo">
+LEON
+</div>
 
-<div class="card" id="history">
 
-<h2 class="title">
-تاریخچه کلن LEON
+<h2>
+کلن لئون
 </h2>
 
-<p>
-
-کلن LEON در تیرماه سال ۱۴۰۵ توسط
-<b>AMIRALI</b>
-بنیان‌گذاری شد.
-
-در روزهای نخست، این کلن تنها یک ایده کوچک بود؛ اما به لطف مدیریت، خلاقیت و تلاش اعضای خود، خیلی زود به یکی از شناخته‌شده‌ترین نام‌ها در جامعه ApexMine تبدیل شد.
-
-</p>
-
-<br>
 
 <p>
 
-LEON از همان ابتدا با هدف ایجاد محیطی دوستانه، حرفه‌ای و سرشار از احترام متقابل شکل گرفت. هر عضو این کلن بخشی از تاریخ آن را نوشته است و هر قدمی که برداشته شد، این نام را به آینده‌ای روشن‌تر نزدیک‌تر کرد.
+یک مجموعه خلاق، دوستانه و حرفه‌ای که در تیر ۱۴۰۵ توسط امیرعلی افتتاح شد.
 
 </p>
 
-<br>
 
-<p>
+<div class="buttons">
 
-امروز، در تاریخ
-<b>۵ مرداد ۱۴۰۵</b>
-از وب‌سایت رسمی LEON رونمایی می‌شود؛ دروازه‌ای دیجیتالی برای ورود به دنیایی که هنوز داستان‌های بسیاری برای روایت کردن دارد.
+<a class="btn" href="#about">
+معرفی کلن
+</a>
 
-</p>
+
+<a class="btn" href="#team">
+مشاهده اعضا
+</a>
 
 </div>
 
 
-<!-- ========================= -->
-<!-- اطلاعات سرور -->
-<!-- ========================= -->
+</section>
 
-<div class="card" id="server">
 
-<h2 class="title">
-اطلاعات سرور
+
+
+
+<section class="section" id="about">
+
+
+<h1 class="title">
+درباره LEON
+</h1>
+
+
+<div class="glass about">
+
+کلن لئون در تیر ۱۴۰۵ توسط امیرعلی تأسیس شد.
+<br>
+
+این کلن از ابتدا با هدف ساخت یک محیط صمیمی، خلاق و حرفه‌ای شروع به فعالیت کرد.
+
+<br>
+
+امروز LEON به عنوان یک نام شناخته شده میان اعضای خود، مسیر پیشرفت و خلاقیت را ادامه می‌دهد.
+
+</div>
+
+
+</section><!-- شروع پنل اعضای LEON -->
+
+<section class="section" id="team">
+
+<h1 class="title">
+اعضای اصلی LEON
+</h1>
+
+
+<div class="members">
+
+
+<!-- رتبه اول -->
+
+<div class="member amirali">
+
+<div class="rank">
+🥇 مالک کلن
+</div>
+
+
+<h2>
+🐍 AmirAli
 </h2>
 
-<p>
-🌐 آدرس سرور:
-<b>Play.ApexGaming.ir</b>
-</p>
 
-<br>
+<span>
+@LN___AmIrAli
+</span>
 
-<p>
-🔌 پورت:
-<b>19132</b>
-</p>
-
-<br>
 
 <p>
-🎮 نسخه‌های پشتیبانی‌شده:
-<b>Minecraft Bedrock 1.21.x</b>
+
+بنیان‌گذار و مالک اصلی کلن LEON
+
+<br><br>
+
+امیرعلی با خلاقیت خارق‌العاده در مدیریت،
+برقراری ارتباط با اعضا و ایجاد فضایی دوستانه،
+نقش اصلی و کلیدی را در شکل‌گیری مسیر کلن ایفا کرد.
+
+<br><br>
+
+توانایی او در کنترل شرایط مختلف،
+ایجاد هماهنگی میان اعضا و ساخت یک محیط حرفه‌ای،
+باعث شد LEON از همان ابتدا مسیر پیشرفت خود را آغاز کند.
+
 </p>
 
-<br>
-
-<div id="server-status">
-
-در حال دریافت اطلاعات سرور...
 
 </div>
 
+
+
+
+
+<!-- رتبه دوم -->
+
+<div class="member whitex">
+
+
+<div class="rank">
+🥈 رتبه دوم کلن
 </div>
 
 
-<!-- ========================= -->
-<!-- گیم مودها -->
-<!-- ========================= -->
-
-<div class="card">
-
-<h2 class="title">
-گیم مودهای آینده
+<h2>
+WhiteX
 </h2>
 
-<ul style="line-height:40px;">
 
-<li>⚔ BedWars</li>
+<p>
 
-<li>💀 Lifesteal SMP</li>
+یکی از اعضای مهم و تأثیرگذار کلن LEON
 
-<li>🏹 Practice PvP</li>
+</p>
 
-<li>🌲 Survival</li>
-
-<li>🏰 SkyBlock</li>
-
-<li>✨ Coming Soon...</li>
-
-</ul>
 
 </div>
 
 
-<!-- ========================= -->
-<!-- اخبار LEON -->
-<!-- ========================= -->
 
-<div class="card">
 
-<h2 class="title">
-اخبار LEON
+
+
+
+<!-- رتبه سوم -->
+
+<div class="member arzda">
+
+
+<div class="rank">
+🥉 طراح و سازنده سایت
+</div>
+
+
+
+<h2>
+👾 Arzda
 </h2>
 
-<p>
-📢 وب‌سایت رسمی LEON افتتاح شد.
-</p>
 
-<br>
 
-<p>
-📢 گیم‌مود BedWars در دست توسعه قرار دارد.
-</p>
+<span>
+@Arzda_1
+</span>
 
-<br>
+
 
 <p>
-📢 اعضای جدید به‌زودی به تیم مدیریت اضافه خواهند شد.
+
+
+ارزدا با توانایی بالای جذب ممبر،
+سبک مدیریت خاص و خلاقیت منحصر به فرد،
+از همان ابتدا نشان داد که ایده‌های متفاوتی برای رشد LEON دارد.
+
+<br><br>
+
+او با طراحی، ایده‌پردازی و ساخت بخش‌های مختلف،
+یکی از مهره‌های مهم پیشرفت کلن محسوب می‌شود.
+
+<br><br>
+
+ترکیب خلاقیت، مدیریت و نگاه متفاوت او،
+باعث شد پروژه‌های LEON شکل حرفه‌ای‌تری پیدا کنند.
+
+<br><br>
+
+Arzda نمادی از خلاقیت و انرژی تازه در خانواده LEON است.
+
 </p>
+
 
 </div>
 
 
-<!-- ========================= -->
-<!-- آمار زنده سرور -->
-<!-- ========================= -->
 
-<script>
 
-fetch(
-"https://api.mcsrvstat.us/3/Play.ApexGaming.ir"
-)
 
-.then(response=>response.json())
 
-.then(data=>{
 
-document.getElementById(
-"server-status"
-).innerHTML=`
 
-<hr>
+<!-- رتبه چهارم -->
+
+
+<div class="member hesbolah">
+
+
+<div class="rank">
+🏅 عضو مهم کلن
+</div>
+
+
+
+<h2>
+⭐ Hesbolah
+</h2>
+
+
+
+<span>
+@Hesbolah
+</span>
+
+
+
+<p>
+
+یکی از اعضای مهم و قدیمی کلن LEON
+که در مسیر پیشرفت و هماهنگی اعضا حضور داشته است.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+</section>
+
+
+
+
+
+<style>
+
+
+.members{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:35px;
+
+}
+
+
+
+.member{
+
+
+width:350px;
+
+min-height:400px;
+
+padding:35px;
+
+
+background:
+
+rgba(255,255,255,.08);
+
+
+border-radius:40px;
+
+
+border:
+
+1px solid rgba(255,255,255,.2);
+
+
+backdrop-filter:blur(20px);
+
+
+text-align:center;
+
+
+transition:.5s;
+
+
+position:relative;
+
+
+overflow:hidden;
+
+
+}
+
+
+
+.member::before{
+
+
+content:"";
+
+
+position:absolute;
+
+width:200px;
+
+height:200px;
+
+background:#a855ff;
+
+filter:blur(80px);
+
+top:-50px;
+
+right:-50px;
+
+
+}
+
+
+
+.member:hover{
+
+
+transform:
+
+translateY(-20px)
+scale(1.03);
+
+
+}
+
+
+
+
+.member h2{
+
+
+font-size:40px;
+
+margin:25px 0;
+
+
+position:relative;
+
+
+}
+
+
+
+.member span{
+
+
+color:#d8b4fe;
+
+font-size:18px;
+
+
+}
+
+
+
+.member p{
+
+
+margin-top:25px;
+
+line-height:2;
+
+font-size:17px;
+
+color:#eee;
+
+
+}
+
+
+
+
+.rank{
+
+
+background:
+
+linear-gradient(45deg,#9333ea,#ec4899);
+
+
+padding:10px 20px;
+
+
+border-radius:30px;
+
+
+display:inline-block;
+
+
+box-shadow:
+
+0 0 30px #a855ff;
+
+
+}
+
+
+
+/* افکت مار امیرعلی */
+
+
+.amirali h2{
+
+
+animation:snake 2s infinite alternate;
+
+
+color:#fff;
+
+
+text-shadow:
+
+0 0 20px #22c55e,
+0 0 50px #a855ff;
+
+
+}
+
+
+
+@keyframes snake{
+
+
+from{
+
+transform:translateX(-5px);
+
+}
+
+
+to{
+
+transform:translateX(5px);
+
+}
+
+}
+
+
+
+
+/* افکت اندرمن ارزدا */
+
+
+.arzda h2{
+
+
+color:#c084fc;
+
+
+text-shadow:
+
+0 0 20px #9333ea,
+0 0 60px #7c3aed;
+
+
+animation:enderman 3s infinite;
+
+
+}
+
+
+
+@keyframes enderman{
+
+
+0%{
+
+opacity:1;
+
+}
+
+
+50%{
+
+opacity:.7;
+
+}
+
+
+100%{
+
+opacity:1;
+
+}
+
+}
+
+
+
+
+
+/* افکت Hesbolah */
+
+
+.hesbolah h2{
+
+
+text-shadow:
+
+0 0 30px gold;
+
+
+}
+
+
+
+
+
+</style>
+
+<!-- پایان پنل اعضا --><!-- شروع بخش ارتباط و اطلاعات -->
+
+<section class="section" id="contact">
+
+
+<h1 class="title">
+ارتباط با LEON
+</h1>
+
+
+<div class="glass">
+
+
+<h2>
+👑 شبکه‌های رسمی کلن
+</h2>
+
+
+<p>
+
+کــانــال:
+<br>
+
+<a class="link"
+href="https://rubika.ir/LEONMINECRAFT">
+
+@LEONMINECRAFT
+
+</a>
+
+
+<br><br>
+
+
+مالک کلن:
+
+<br>
+
+<a class="link">
+
+@LN___AmIrAli
+
+</a>
+
+
+<br><br>
+
+
+سازنده سایت:
+
+<br>
+
+<a class="link">
+
+@Arzda_1
+
+</a>
+
+
+<br><br>
+
+
+آپارات:
+
+<br>
+
+<a class="link"
+href="https://www.aparat.com/LEON_LN">
+
+LEON_LN
+
+</a>
+
+
+<br><br>
+
+
+دونیت:
+
+<br>
+
+<a class="link"
+href="https://daramet.com/Arzda">
+
+Arzda
+
+</a>
+
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="section">
+
+
+<h1 class="title">
+
+اعضای مهم دیگر
+
+</h1>
+
+
+<div class="glass">
+
+
+<p>
+
+
+⭐ @AmirHossin_gamer_94
+
+<br><br>
+
+⭐ @sadeghlang
+
+<br><br>
+
+⭐ @taha13434
+
+<br><br>
+
+⭐ @KHRRBAAR
+
+<br><br>
+
+⭐ @AMFP313
+
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<section class="section">
+
+
+<h1 class="title">
+
+تاریخچه LEON
+
+</h1>
+
+
+
+<div class="glass history">
+
+
+کلن LEON در تیر ۱۴۰۵ توسط
 
 <b>
-${
-data.online
-?
-"🟢 سرور آنلاین است"
-:
-"🔴 سرور آفلاین است"
-}
+AmirAli
 </b>
 
-<br><br>
+تأسیس شد.
 
-👥 بازیکنان آنلاین:
-${
-data.players
-?
-data.players.online
-:
-0
-}
-
-/
-
-${
-data.players
-?
-data.players.max
-:
-0
-}
 
 <br><br>
 
-📦 نسخه سرور:
-${
-data.version
-?
-data.version
-:
-"نامشخص"
-}
 
-`;
+این مجموعه از همان ابتدا با هدف ساخت یک فضای دوستانه،
+صمیمی و حرفه‌ای شروع به فعالیت کرد.
 
-})
 
-.catch(()=>{
+<br><br>
 
-document.getElementById(
-"server-status"
-).innerHTML=
 
-"عدم دریافت اطلاعات سرور.";
+با گذشت زمان، اعضای خلاق و پرتلاش به این خانواده اضافه شدند
+و LEON تبدیل به محیطی برای همکاری، ایده‌پردازی و پیشرفت شد.
 
-});
 
-</script><!-- ========================= -->
-<!-- افراد افسانه‌ای LEON -->
-<!-- ========================= -->
+<br><br>
 
-<div class="card" id="members">
 
-<h2 class="title">
-افراد افسانه‌ای LEON
-</h2>
+در تاریخ ۵ مرداد ۱۴۰۵،
+نسخه رسمی سایت LEON برای معرفی این مجموعه رونمایی شد.
 
-<h2 class="amirali">
-👑 #1 AMIRALI
-</h2>
-
-<p>
-The Serpent King
-</p>
-
-<br>
-
-<p>
-
-بنیان‌گذار و مالک اصلی کلن LEON.
-
-AMIRALI از نخستین روزهای شکل‌گیری LEON، نقش رهبر و ستون اصلی این قلمرو را بر عهده داشت. او با توانایی کم‌نظیر در مدیریت، کنترل تنش‌ها و ایجاد ارتباطی صمیمی با بازیکنان، توانست نام LEON را به یکی از شناخته‌شده‌ترین نام‌ها در ApexMine تبدیل کند.
-
-</p>
-
-<p>
-Rubika: @LN___AmIrAli
-</p>
-
-<hr>
-
-<h2>
-⚪ #2 WHITEX
-</h2>
-
-<p>
-The Silent Guardian
-</p>
-
-<br>
-
-<p>
-نگهبان خاموش LEON. حضوری آرام اما تأثیرگذار که همواره در کنار اعضای کلن ایستاده است.
-</p>
-
-<hr>
-
-<h2 class="arzda">
-🟣 #3 ARZDA
-</h2>
-
-<p>
-The Enderman Architect
-</p>
-
-<br>
-
-<p>
-
-ARZDA از همان ابتدا ثابت کرد که خلاقیت برای او تنها یک ویژگی نیست، بلکه بخشی از هویتش است.
-
-او با توانایی بالای جذب اعضا، سبک مدیریتی متفاوت و ذهنی سرشار از ایده‌های تازه، به یکی از مهم‌ترین چهره‌های LEON تبدیل شد.
-
-بسیاری از ایده‌های بصری، طراحی‌های دیجیتالی و حتی ساخت این وب‌سایت، از دیدگاه و خلاقیت او سرچشمه گرفته‌اند.
-
-نام ARZDA در میان ذرات بنفش و نورهای کهکشانی، همچون یک Enderman افسانه‌ای در تاریخ LEON ماندگار خواهد ماند.
-
-</p>
-
-<p>
-Rubika: @Arzda_1
-</p>
-
-<hr>
-
-<h2>
-#4 امیرحسین
-</h2>
-
-<p>
-از قدیمی‌ترین اعضای LEON و شخصی با توانایی بالا در مدیریت و ارتباط با بازیکنان.
-</p>
-
-<p>
-@AmirHossin_gamer_94
-</p>
-
-<hr>
-
-<h2>
-#5 ابوالفضل
-</h2>
-
-<p>
-عضوی وفادار که همواره در مسیر پیشرفت LEON نقش مهمی ایفا کرده است.
-</p>
-
-<hr>
-
-<h2>
-#6 طاها
-</h2>
-
-<p>
-شخصیتی فعال، خوش‌برخورد و از اعضای قدیمی کلن که حضور او بخشی از هویت LEON محسوب می‌شود.
-</p>
-
-<p>
-@taha13434
-</p>
-
-<hr>
-
-<h2>
-#7 امیرمحمد
-</h2>
-
-<p>
-از اعضای تأثیرگذار LEON که همواره با حضور و حمایت خود به رشد این کلن کمک کرده است.
-</p>
-
-<p>
-@AMFP313
-</p>
 
 </div>
 
 
-<!-- ========================= -->
-<!-- لینک‌ها -->
-<!-- ========================= -->
-
-<div class="card" id="links">
-
-<h2 class="title">
-ارتباط با LEON
-</h2>
-
-<p>
-📢 کانال:
-@LEONMINECRAFT
-</p>
-
-<br>
-
-<p>
-👥 گروه کلن:
-<br>
-https://rubika.ir/joing/BBBHACJIC0ENWTZEUWAZOWXURIZDRORW
-</p>
-
-<br>
-
-<p>
-🎬 آپارات:
-<br>
-https://www.aparat.com/LEON_LN
-</p>
-
-<br>
-
-<p>
-💎 دونیت:
-<br>
-https://daramet.com/Arzda
-</p>
-
-<br>
-
-<p>
-اعضای مهم:
-</p>
-
-<ul style="line-height:35px;">
-
-<li>@sadeghlang</li>
-
-<li>@KHRRBAAR</li>
-
-<li>@Hesbolah</li>
-
-</ul>
-
-</div>
+</section>
 
 
-<!-- ========================= -->
-<!-- پایان سایت -->
-<!-- ========================= -->
+
+
+
 
 <footer>
 
-<h2>
+
+<div class="footer-logo">
+
 LEON
-</h2>
+
+</div>
+
 
 <br>
 
-<p>
-«پادشاهی LEON تازه آغاز شده است...»
-</p>
 
-<br>
+تمامی حقوق متعلق به کلن LEON است 👑
 
-<p>
-© 2026 LEON Clan
-</p>
+
+<br><br>
+
+
+ساخته شده توسط:
+
+<span>
+
+@Arzda_1
+
+</span>
+
+
+<br><br>
+
+
+© 2026 LEON
+
 
 </footer>
 
-</body>
-</html>
+
+
+
+
+
+
+
+
+<style>
+
+
+.link{
+
+
+color:#d8b4fe;
+
+text-decoration:none;
+
+font-weight:bold;
+
+transition:.3s;
+
+
+}
+
+
+
+.link:hover{
+
+
+color:white;
+
+
+text-shadow:
+
+0 0 20px #c084fc;
+
+
+}
+
+
+
+
+.history{
+
+
+font-size:20px;
+
+line-height:2.4;
+
+text-align:center;
+
+
+}
+
+
+
+
+.footer-logo{
+
+
+font-size:70px;
+
+font-weight:900;
+
+
+text-shadow:
+
+0 0 30px #a855ff,
+0 0 80px #7c3aed;
+
+
+animation:footerGlow 3s infinite alternate;
+
+
+}
+
+
+
+
+footer span{
+
+
+color:#c084fc;
+
+
+}
+
+
+
+@keyframes footerGlow{
+
+
+from{
+
+opacity:.7;
+
+}
+
+
+to{
+
+opacity:1;
+
+}
+
+
+}
+
+
+
+
+
+/* ظاهر شدن هنگام اسکرول */
+
+
+.section{
+
+
+animation:
+
+showSection linear;
+
+
+animation-timeline:view();
+
+
+animation-range:entry 0% cover 30%;
+
+
+}
+
+
+
+@keyframes showSection{
+
+
+from{
+
+
+opacity:0;
+
+transform:translateY(80px);
+
+
+}
+
+
+to{
+
+
+opacity:1;
+
+transform:translateY(0);
+
+
+}
+
+
+}
+
+
+
+
+
+/* اسکرول بار */
+
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+
+
+::-webkit-scrollbar-track{
+
+background:#05000b;
+
+}
+
+
+
+::-webkit-scrollbar-thumb{
+
+
+background:
+
+linear-gradient(#9333ea,#ec4899);
+
+
+border-radius:20px;
+
+
+}
+
+
+
+
+
+</style>
+
+
+
+
+
+
+<script>
+
+
+// ساخت ستاره های بیشتر
+
+
+for(let i=0;i<40;i++){
+
+
+let star=document.createElement("span");
+
+
+star.style.position="fixed";
+
+star.style.width="3px";
+
+star.style.height="3px";
+
+star.style.background="white";
+
+star.style.borderRadius="50%";
+
+
+star.style.right=Math.random()*100+"%";
+
+star.style.top=Math.random()*100+"%";
+
+
+star.style.opacity=Math.random();
+
+
+star.style.boxShadow="0 0 10px white";
+
+
+document.body.appendChild(star);
+
+
+
+}
+
+
+
+
+
+
+// حرکت نرم کارت ها
+
+
+const cards=document.querySelectorAll(".member");
+
+
+cards.forEach(card=>{
+
+
+card.addEventListener("mousemove",e=>{
+
+
+let x=e.offsetX;
+
+let y=e.offsetY;
+
+
+card.style.transform=
+`rotateY(${x/20-10}deg) rotateX(${y/20-10}deg) scale(1.03)`;
+
+
+
+});
+
+
+
+card.addEventListener("mouseleave",()=>{
+
+
+card.style.transform="";
+
+
+});
+
+
+
+});
+
+
+
+</script>
