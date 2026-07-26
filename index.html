@@ -1,12 +1,170 @@
 <!DOCTYPE html>
-<html>
+<html lang="fa" dir="rtl">
 <head>
-    <title>LEON</title>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEON</title>
+
+<style>
+body{
+margin:0;
+font-family:tahoma;
+background:linear-gradient(180deg,#05010a,#12001f,#000);
+color:white;
+overflow-x:hidden;
+text-align:center;
+}
+
+.hero{
+padding:80px 20px;
+}
+
+h1{
+font-size:90px;
+margin:0;
+color:#fff;
+text-shadow:
+0 0 10px #fff,
+0 0 20px #a020f0,
+0 0 40px #a020f0,
+0 0 80px #a020f0;
+animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{transform:scale(1);}
+to{transform:scale(1.05);}
+}
+
+.subtitle{
+font-size:22px;
+margin-top:10px;
+color:#ddd;
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+margin:20px;
+padding:20px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+box-shadow:0 0 20px rgba(160,32,240,.4);
+}
+
+a{
+color:#bb86fc;
+text-decoration:none;
+font-weight:bold;
+}
+
+a:hover{
+color:white;
+}
+
+footer{
+margin-top:50px;
+padding:20px;
+font-size:18px;
+color:#aaa;
+}
+
+.menu{
+position:fixed;
+top:15px;
+right:15px;
+font-size:35px;
+cursor:pointer;
+}
+
+.sidebar{
+height:100%;
+width:0;
+position:fixed;
+top:0;
+right:0;
+background:#140021;
+overflow-x:hidden;
+transition:0.5s;
+padding-top:60px;
+}
+
+.sidebar a{
+display:block;
+padding:15px;
+font-size:22px;
+}
+
+.closebtn{
+position:absolute;
+top:10px;
+left:20px;
+font-size:40px;
+}
+</style>
 </head>
+
 <body>
-    <h1>LEON</h1>
-    <p>Welcome to LEON</p>
-    <p>سایت رسمی LEON</p>
+
+<div class="menu" onclick="openNav()">☰</div>
+
+<div id="mySidebar" class="sidebar">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+<a href="#">خانه</a>
+<a href="#">درباره ما</a>
+<a href="#">ارتباط با ما</a>
+</div>
+
+<div class="hero">
+<h1>LEON</h1>
+<p class="subtitle">پادشاهی ماینکرفت در حال بیدار شدن است 👑</p>
+</div>
+
+<div class="card">
+<h2>کــانـــال</h2>
+<p>@LEONMINECRAFT 👑</p>
+</div>
+
+<div class="card">
+<h2>مــالــک</h2>
+<p>@LN___AmIrAli 🎬</p>
+</div>
+
+<div class="card">
+<h2>آپــارات</h2>
+<p>
+<a href="https://www.aparat.com/LEON_LN">
+https://www.aparat.com/LEON_LN
+</a>
+</p>
+</div>
+
+<div class="card">
+<h2>دونــیــت</h2>
+<p>
+<a href="https://daramet.com/Arzda">
+https://daramet.com/Arzda
+</a>
+</p>
+</div>
+
+<div class="card">
+<h2>ســازنــده ســایــت</h2>
+<p>@Arzda_1 ✨</p>
+</div>
+
+<footer>
+تمامی حقوق این قلمرو دیجیتالی متعلق به LEON است.
+</footer>
+
+<script>
+function openNav() {
+document.getElementById("mySidebar").style.width = "250px";
+}
+
+function closeNav() {
+document.getElementById("mySidebar").style.width = "0";
+}
+</script>
+
 </body>
 </html>
