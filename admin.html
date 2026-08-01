@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>LEON Admin</title>
+
+<style>
+body{
+margin:0;
+background:radial-gradient(circle,#3b006b,#000);
+color:white;
+font-family:tahoma;
+text-align:center;
+}
+
+.box{
+margin:50px auto;
+width:80%;
+padding:30px;
+background:#ffffff15;
+border-radius:30px;
+backdrop-filter:blur(15px);
+}
+
+button{
+padding:15px 30px;
+margin:10px;
+border:0;
+border-radius:20px;
+background:#9333ea;
+color:white;
+cursor:pointer;
+}
+
+textarea,input{
+width:90%;
+padding:15px;
+margin:10px;
+border-radius:15px;
+border:0;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>👑 پنل مدیریت LEON</h1>
+
+<h2>ویرایش متن سایت</h2>
+
+<textarea id="text" rows="8" placeholder="متن جدید"></textarea>
+
+<br>
+
+<button onclick="save()">ذخیره</button>
+
+<button onclick="location.href='index.html'">
+بازگشت به سایت
+</button>
+
+<p id="msg"></p>
+
+</div>
+
+
+<script>
+
+if(localStorage.getItem("LEON_ADMIN")!="true"){
+location.href="login.html";
+}
+
+
+function save(){
+
+let text=document.getElementById("text").value;
+
+localStorage.setItem("LEON_TEXT",text);
+
+document.getElementById("msg").innerHTML="ذخیره شد ✅";
+
+}
+
+</script>
+
+
+</body>
+</html>
