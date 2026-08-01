@@ -1,12 +1,100 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>LEON Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LEON Admin Login</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:radial-gradient(circle,#3b006b,#000);
+    color:white;
+    font-family:Tahoma;
+}
+
+.box{
+    width:350px;
+    padding:40px;
+    background:rgba(255,255,255,.1);
+    border-radius:25px;
+    backdrop-filter:blur(15px);
+    text-align:center;
+}
+
+input{
+    width:90%;
+    padding:12px;
+    margin:10px;
+    border-radius:20px;
+    border:none;
+}
+
+button{
+    padding:12px 40px;
+    border:none;
+    border-radius:20px;
+    background:#9333ea;
+    color:white;
+    cursor:pointer;
+}
+</style>
+
 </head>
+
 <body>
 
-<h1>پنل مدیریت LEON</h1>
+<div class="box">
+
+<h1>LEON</h1>
+
+<h3>ورود مدیریت</h3>
+
+<input id="username" placeholder="نام کاربری">
+
+<input id="password" type="password" placeholder="رمز عبور">
+
+<br>
+
+<button onclick="login()">ورود</button>
+
+<p id="result"></p>
+
+</div>
+
+
+<script>
+
+function login(){
+
+let user=document.getElementById("username").value;
+let pass=document.getElementById("password").value;
+
+
+if(
+(user==="Arzda" || user==="AmirAli")
+&& pass==="LEON"
+){
+
+localStorage.setItem("LEON_ADMIN","true");
+
+window.location.href="admin.html";
+
+}else{
+
+document.getElementById("result").innerHTML="ورود ناموفق";
+
+}
+
+}
+
+</script>
+
 
 </body>
 </html>
