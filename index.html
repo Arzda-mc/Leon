@@ -1581,7 +1581,20 @@ card.style.transform="";
 
 });
 
-</script>
+</script><script>
 
+let savedText = localStorage.getItem("LEON_TEXT");
+
+if(savedText){
+
+let about = document.querySelector(".about");
+
+if(about){
+about.innerHTML = savedText;
+}
+
+}
+
+</script>
 </body>
 </html>
