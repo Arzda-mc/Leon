@@ -1582,19 +1582,19 @@ card.style.transform="";
 });
 
 </script><script>
+async function loadSettings() {
+    const res = await fetch("https://leon-api.zxczghf1452hcz.workers.dev/settings");
+    const data = await res.json();
 
-let savedText = localStorage.getItem("LEON_TEXT");
+    const about = document.querySelector(".about");
 
-if(savedText){
-
-let about = document.querySelector(".about");
-
-if(about){
-about.innerHTML = savedText;
+    if (about && data.description) {
+        about.innerHTML = data.description;
+    }
 }
 
-}
-
+loadSettings();
 </script>
+
 </body>
 </html>
