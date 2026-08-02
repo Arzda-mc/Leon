@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>LEON Admin</title>
 
 <style>
+
 body{
 margin:0;
 background:radial-gradient(circle,#3b006b,#000);
@@ -34,18 +36,21 @@ color:white;
 cursor:pointer;
 }
 
-textarea,input{
+textarea{
 width:90%;
 padding:15px;
 margin:10px;
 border-radius:15px;
 border:0;
 }
+
 </style>
 
 </head>
 
+
 <body>
+
 
 <div class="box">
 
@@ -53,37 +58,115 @@ border:0;
 
 <h2>ویرایش متن سایت</h2>
 
-<textarea id="text" rows="8" placeholder="متن جدید"></textarea>
+
+<textarea id="text" rows="8"></textarea>
+
 
 <br>
 
-<button onclick="save()">ذخیره</button>
 
-<button onclick="location.href='index.html'">
-بازگشت به سایت
+<button onclick="save()">
+ذخیره در سایت
 </button>
 
+
+<button onclick="location.href='index.html'">
+بازگشت
+</button>
+
+
 <p id="msg"></p>
+
 
 </div>
 
 
+
 <script>
+
 
 if(localStorage.getItem("LEON_ADMIN")!="true"){
 location.href="login.html";
 }
 
 
-function save(){
 
-let text=document.getElementById("text").value;
+const API =
+"https://leon-api.zxczghf1452hcz.workers.dev";
 
-localStorage.setItem("LEON_TEXT",text);
 
-document.getElementById("msg").innerHTML="ذخیره شد ✅";
+
+
+// گرفتن متن فعلی
+
+async function load(){
+
+let res = await fetch(API+"/settings");
+
+let data = await res.json();
+
+
+document.getElementById("text").value =
+data.description || "";
 
 }
+
+
+
+load();
+
+
+
+
+
+// ذخیره
+
+async function save(){
+
+
+let value =
+document.getElementById("text").value;
+
+
+
+let res = await fetch(API+"/save-settings",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+siteName:"LEON",
+
+description:value
+
+})
+
+
+});
+
+
+
+if(res.ok){
+
+document.getElementById("msg").innerHTML=
+"ذخیره شد ✅";
+
+}else{
+
+document.getElementById("msg").innerHTML=
+"خطا در ذخیره ❌";
+
+}
+
+
+
+}
+
+
 
 </script>
 
