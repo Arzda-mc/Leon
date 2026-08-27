@@ -16,7 +16,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:"Vazirmatn",Tahoma;
+font-family:"Vazirmatn",Tahoma,sans-serif;
 }
 
 
@@ -28,7 +28,13 @@ scroll-behavior:smooth;
 body{
 
 background:
-radial-gradient(circle at top,#3b006b,#05000b 45%,#000);
+radial-gradient(
+circle at 50% -10%,
+#006b73 0%,
+#003b42 25%,
+#00171b 55%,
+#000 100%
+);
 
 color:white;
 overflow-x:hidden;
@@ -36,29 +42,49 @@ overflow-x:hidden;
 }
 
 
-/* پس زمینه کهکشانی */
+/* =====================================================
+   پس زمینه آکوا
+===================================================== */
 
 .space{
 
 position:fixed;
 inset:0;
-z-index:-2;
+
+z-index:-5;
 
 background:
 
-radial-gradient(circle,#fff 1px,transparent 1px),
-radial-gradient(circle,#9b4dff 1px,transparent 1px);
+radial-gradient(
+circle,
+rgba(255,255,255,.9) 1px,
+transparent 1px
+),
+
+radial-gradient(
+circle,
+rgba(0,255,255,.9) 1px,
+transparent 1px
+),
+
+radial-gradient(
+circle,
+rgba(0,200,220,.4) 1px,
+transparent 1px
+);
 
 background-size:
 70px 70px,
-120px 120px;
+120px 120px,
+200px 200px;
 
-animation:stars 25s linear infinite;
+animation:
+starsMove 30s linear infinite;
 
 }
 
 
-@keyframes stars{
+@keyframes starsMove{
 
 from{
 transform:translateY(0);
@@ -71,77 +97,152 @@ transform:translateY(500px);
 }
 
 
+/* هاله آکوا */
 
-/* ذرات */
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:700px;
+height:700px;
+
+top:-350px;
+left:50%;
+
+transform:translateX(-50%);
+
+background:
+radial-gradient(
+circle,
+rgba(0,255,255,.22),
+transparent 70%
+);
+
+filter:blur(30px);
+
+pointer-events:none;
+
+z-index:-4;
+
+}
+
+
+/* =====================================================
+   ذرات
+===================================================== */
+
+.particles{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
 
 .particles span{
 
 position:fixed;
+
 width:5px;
 height:5px;
 
-background:#a855ff;
+background:#00ffff;
 
 border-radius:50%;
 
 box-shadow:
-0 0 15px #a855ff;
+0 0 10px #00ffff,
+0 0 25px #00ffff,
+0 0 45px #00ffff;
 
-animation:float 10s infinite;
+animation:
+floatParticle 10s infinite;
 
 }
 
 
-@keyframes float{
+@keyframes floatParticle{
 
 0%{
-transform:translateY(100vh);
+
+transform:
+translateY(110vh)
+scale(.3);
+
 opacity:0;
+
 }
 
-50%{
+20%{
 opacity:1;
 }
 
+50%{
+
+transform:
+translateY(50vh)
+translateX(30px)
+scale(1);
+
+}
+
 100%{
-transform:translateY(-10vh);
+
+transform:
+translateY(-10vh)
+translateX(-30px)
+scale(.3);
+
 opacity:0;
-}
 
 }
 
+}
 
 
-/* لودر */
+/* =====================================================
+   لودر
+===================================================== */
 
 .loader{
 
 position:fixed;
+
 inset:0;
 
 background:#000;
 
 display:flex;
+
 align-items:center;
 justify-content:center;
 
-font-size:70px;
+font-size:75px;
+
 font-weight:900;
 
 color:white;
 
-z-index:9999;
+z-index:99999;
 
-animation:loading 3s forwards;
+animation:
+loading 3s forwards;
 
 text-shadow:
 
-0 0 20px white,
-0 0 50px #a855ff,
-0 0 100px #a855ff;
+0 0 15px white,
+0 0 40px #00ffff,
+0 0 80px #00ffff,
+0 0 140px #00ffff;
 
 }
-
 
 
 @keyframes loading{
@@ -150,7 +251,7 @@ text-shadow:
 opacity:1;
 }
 
-80%{
+75%{
 opacity:1;
 }
 
@@ -162,9 +263,9 @@ visibility:hidden;
 }
 
 
-
-
-/* منو */
+/* =====================================================
+   منو
+===================================================== */
 
 nav{
 
@@ -172,38 +273,37 @@ position:fixed;
 
 top:20px;
 right:50%;
+
 transform:translateX(50%);
 
 width:90%;
 
-padding:15px;
+padding:15px 25px;
 
 background:
-
-rgba(255,255,255,.08);
+rgba(0,255,255,.07);
 
 border:
+1px solid rgba(0,255,255,.3);
 
-1px solid rgba(255,255,255,.15);
+backdrop-filter:blur(25px);
 
-backdrop-filter:blur(20px);
-
-border-radius:30px;
+border-radius:35px;
 
 display:flex;
 
 justify-content:center;
 
-gap:30px;
+gap:35px;
 
-z-index:100;
+z-index:1000;
 
 box-shadow:
 
-0 0 30px #7c00ff;
+0 0 20px rgba(0,255,255,.25),
+inset 0 0 20px rgba(0,255,255,.05);
 
 }
-
 
 
 nav a{
@@ -214,25 +314,58 @@ text-decoration:none;
 
 font-weight:bold;
 
-transition:.3s;
+transition:.4s;
+
+position:relative;
+
+}
+
+
+nav a::after{
+
+content:"";
+
+position:absolute;
+
+width:0;
+
+height:2px;
+
+bottom:-7px;
+
+right:0;
+
+background:#00ffff;
+
+box-shadow:
+0 0 10px #00ffff;
+
+transition:.4s;
 
 }
 
 
 nav a:hover{
 
-color:#c084fc;
+color:#00ffff;
 
 text-shadow:
-
-0 0 20px #c084fc;
+0 0 15px #00ffff,
+0 0 30px #00ffff;
 
 }
 
 
+nav a:hover::after{
 
-/* صفحه اول */
+width:100%;
 
+}
+
+
+/* =====================================================
+   صفحه اصلی
+===================================================== */
 
 .hero{
 
@@ -250,50 +383,100 @@ text-align:center;
 
 padding:30px;
 
+position:relative;
+
 }
 
 
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+height:500px;
+
+background:
+radial-gradient(
+circle,
+rgba(0,255,255,.13),
+transparent 70%
+);
+
+filter:blur(30px);
+
+z-index:-1;
+
+animation:
+heroAura 5s infinite alternate;
+
+}
+
+
+@keyframes heroAura{
+
+from{
+transform:scale(.8);
+opacity:.5;
+}
+
+to{
+transform:scale(1.2);
+opacity:1;
+}
+
+}
+
+
+/* =====================================================
+   لوگو
+===================================================== */
 
 .logo{
 
-font-size:140px;
+font-size:clamp(80px,15vw,150px);
 
 font-weight:900;
 
 letter-spacing:15px;
 
-animation:logo 3s infinite alternate;
+color:white;
 
+animation:
+logoPulse 3s infinite alternate;
 
 }
 
 
+@keyframes logoPulse{
 
-@keyframes logo{
+0%{
 
-from{
+text-shadow:
+
+0 0 10px white,
+0 0 30px #00ffff,
+0 0 60px #00ffff;
+
+transform:scale(1);
+
+}
+
+100%{
 
 text-shadow:
 
 0 0 20px white,
-0 0 50px #8b5cf6;
+0 0 50px #00ffff,
+0 0 100px #00ffff,
+0 0 160px #00ffff;
 
-}
-
-
-to{
-
-text-shadow:
-
-0 0 40px white,
-0 0 100px #d946ef,
-0 0 150px #8b5cf6;
+transform:scale(1.025);
 
 }
 
 }
-
-
 
 
 .hero h2{
@@ -301,6 +484,9 @@ text-shadow:
 font-size:35px;
 
 margin-top:20px;
+
+text-shadow:
+0 0 20px #00ffff;
 
 }
 
@@ -320,17 +506,15 @@ line-height:2;
 }
 
 
-
-
-/* دکمه ها */
-
+/* =====================================================
+   دکمه ها
+===================================================== */
 
 .buttons{
 
 margin-top:40px;
 
 }
-
 
 
 .btn{
@@ -345,9 +529,14 @@ border-radius:30px;
 
 background:
 
-linear-gradient(45deg,#7c00ff,#d946ef);
+linear-gradient(
+45deg,
+#008c99,
+#00ffff,
+#8fffff
+);
 
-color:white;
+color:#001317;
 
 text-decoration:none;
 
@@ -355,35 +544,38 @@ font-weight:bold;
 
 box-shadow:
 
-0 0 30px #a855ff;
+0 0 20px #00ffff,
+0 0 50px rgba(0,255,255,.4);
 
 transition:.4s;
 
 }
 
 
-
 .btn:hover{
 
-transform:scale(1.1);
+transform:
+translateY(-5px)
+scale(1.08);
 
 box-shadow:
 
-0 0 60px #d946ef;
+0 0 30px #00ffff,
+0 0 70px #00ffff,
+0 0 120px rgba(0,255,255,.5);
 
 }
 
 
-
-/* بخش ها */
-
+/* =====================================================
+   بخش ها
+===================================================== */
 
 .section{
 
-padding:100px 30px;
+padding:110px 30px;
 
 }
-
 
 
 .title{
@@ -394,16 +586,19 @@ font-size:50px;
 
 margin-bottom:50px;
 
+color:white;
+
 text-shadow:
 
-0 0 30px #a855ff;
+0 0 15px #00ffff,
+0 0 40px #00ffff;
 
 }
 
 
-
-/* کارت شیشه ای */
-
+/* =====================================================
+   کارت شیشه ای
+===================================================== */
 
 .glass{
 
@@ -415,48 +610,47 @@ padding:40px;
 
 background:
 
-rgba(255,255,255,.08);
+rgba(0,255,255,.06);
 
 border-radius:35px;
 
 border:
 
-1px solid rgba(255,255,255,.15);
+1px solid rgba(0,255,255,.25);
 
-backdrop-filter:blur(15px);
-
+backdrop-filter:blur(20px);
 
 box-shadow:
 
-0 0 40px rgba(168,85,247,.3);
+0 0 30px rgba(0,255,255,.18),
+inset 0 0 30px rgba(0,255,255,.04);
 
 transition:.5s;
 
 }
 
 
-
 .glass:hover{
 
-transform:translateY(-15px);
+transform:translateY(-12px);
 
 box-shadow:
 
-0 0 70px #a855ff;
+0 0 50px rgba(0,255,255,.4),
+0 0 100px rgba(0,255,255,.15);
 
 }
 
 
-
-
-/* معرفی */
-
+/* =====================================================
+   درباره
+===================================================== */
 
 .about{
 
 font-size:22px;
 
-line-height:2.2;
+line-height:2.3;
 
 text-align:center;
 
@@ -465,17 +659,1032 @@ color:#eee;
 }
 
 
+/* =====================================================
+   اعضا
+===================================================== */
 
+.members{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:40px;
+
+perspective:1200px;
+
+}
+
+
+.member{
+
+width:350px;
+
+min-height:400px;
+
+padding:35px;
+
+background:
+
+rgba(0,255,255,.055);
+
+border-radius:40px;
+
+border:
+
+1px solid rgba(0,255,255,.25);
+
+backdrop-filter:blur(20px);
+
+text-align:center;
+
+transition:.5s;
+
+position:relative;
+
+overflow:hidden;
+
+transform-style:preserve-3d;
+
+}
+
+
+.member::before{
+
+content:"";
+
+position:absolute;
+
+width:250px;
+height:250px;
+
+top:-100px;
+right:-100px;
+
+background:
+
+radial-gradient(
+circle,
+rgba(0,255,255,.5),
+transparent 70%
+);
+
+filter:blur(50px);
+
+pointer-events:none;
+
+}
+
+
+.member:hover{
+
+transform:
+translateY(-18px)
+scale(1.03);
+
+box-shadow:
+
+0 0 40px rgba(0,255,255,.4);
+
+}
+
+
+.member h2{
+
+font-size:40px;
+
+margin:25px 0;
+
+position:relative;
+
+z-index:5;
+
+}
+
+
+.member span{
+
+color:#8fffff;
+
+font-size:18px;
+
+position:relative;
+
+z-index:5;
+
+}
+
+
+.member p{
+
+margin-top:25px;
+
+line-height:2;
+
+font-size:17px;
+
+color:#eee;
+
+position:relative;
+
+z-index:5;
+
+}
+
+
+.rank{
+
+background:
+
+linear-gradient(
+45deg,
+#008c99,
+#00ffff
+);
+
+color:#001317;
+
+padding:10px 20px;
+
+border-radius:30px;
+
+display:inline-block;
+
+box-shadow:
+
+0 0 20px #00ffff;
+
+font-weight:bold;
+
+position:relative;
+
+z-index:5;
+
+}
+
+
+/* =====================================================
+   AMIRALI
+===================================================== */
+
+.amirali h2{
+
+animation:
+snake 2s infinite alternate;
+
+color:white;
+
+text-shadow:
+
+0 0 20px #00ffff,
+0 0 50px #00ffff;
+
+}
+
+
+@keyframes snake{
+
+from{
+
+transform:
+translateX(-5px)
+rotate(-1deg);
+
+}
+
+to{
+
+transform:
+translateX(5px)
+rotate(1deg);
+
+}
+
+}
+
+
+/* =====================================================
+   ARZDA
+   سیستم اختصاصی بنفش / ENDERMAN
+===================================================== */
+
+.arzda{
+
+border:
+
+1px solid rgba(168,85,247,.8);
+
+background:
+
+radial-gradient(
+circle at 50% 0%,
+rgba(147,51,234,.3),
+rgba(0,255,255,.025) 45%,
+rgba(0,0,0,.35) 100%
+);
+
+box-shadow:
+
+0 0 25px rgba(147,51,234,.45),
+0 0 70px rgba(124,58,237,.18),
+inset 0 0 50px rgba(147,51,234,.12);
+
+}
+
+
+/* هاله اصلی */
+
+.arzda::before{
+
+content:"";
+
+position:absolute;
+
+width:350px;
+height:350px;
+
+top:-160px;
+right:50%;
+
+transform:translateX(50%);
+
+background:
+
+radial-gradient(
+circle,
+#d946ef 0%,
+#9333ea 25%,
+#7c3aed 45%,
+transparent 72%
+);
+
+filter:blur(65px);
+
+opacity:.65;
+
+animation:
+
+arzdaAura 4s infinite alternate;
+
+}
+
+
+@keyframes arzdaAura{
+
+0%{
+
+transform:
+translateX(50%)
+scale(.75)
+rotate(0deg);
+
+opacity:.35;
+
+}
+
+50%{
+
+opacity:.7;
+
+}
+
+100%{
+
+transform:
+translateX(50%)
+scale(1.25)
+rotate(15deg);
+
+opacity:.9;
+
+}
+
+}
+
+
+/* هاله دوم */
+
+.arzda .rank{
+
+background:
+
+linear-gradient(
+90deg,
+#4c1d95,
+#7c3aed,
+#a855f7,
+#d946ef,
+#a855f7,
+#7c3aed
+);
+
+background-size:300% 100%;
+
+color:white;
+
+box-shadow:
+
+0 0 20px #9333ea,
+0 0 50px #7c3aed,
+0 0 90px rgba(168,85,247,.4);
+
+animation:
+
+purpleRank 3s linear infinite;
+
+}
+
+
+@keyframes purpleRank{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+
+/* نام Arzda */
+
+.arzda h2{
+
+font-size:46px;
+
+font-weight:900;
+
+color:#e9d5ff;
+
+letter-spacing:3px;
+
+position:relative;
+
+animation:
+
+endermanGlow 2.5s infinite alternate;
+
+}
+
+
+/* لایه نور پشت نام */
+
+.arzda h2::before{
+
+content:"Arzda";
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:
+translate(-50%,-50%);
+
+font-size:65px;
+
+color:#9333ea;
+
+filter:blur(18px);
+
+opacity:.8;
+
+z-index:-1;
+
+animation:
+
+nameAura 2s infinite alternate;
+
+}
+
+
+@keyframes nameAura{
+
+from{
+
+opacity:.3;
+
+transform:
+translate(-50%,-50%)
+scale(.8);
+
+}
+
+to{
+
+opacity:.9;
+
+transform:
+translate(-50%,-50%)
+scale(1.25);
+
+}
+
+}
+
+
+/* افکت اصلی اندرمن */
+
+@keyframes endermanGlow{
+
+0%{
+
+transform:
+translateX(-3px)
+scale(1);
+
+text-shadow:
+
+0 0 8px #c084fc,
+0 0 20px #9333ea,
+0 0 40px #7c3aed;
+
+}
+
+25%{
+
+transform:
+translateX(3px)
+scale(1.025);
+
+text-shadow:
+
+0 0 15px #e9d5ff,
+0 0 35px #c084fc,
+0 0 70px #9333ea;
+
+}
+
+50%{
+
+transform:
+translateX(-2px)
+scale(1.05);
+
+text-shadow:
+
+0 0 20px white,
+0 0 40px #d946ef,
+0 0 90px #9333ea;
+
+}
+
+75%{
+
+transform:
+translateX(2px)
+scale(1.025);
+
+}
+
+100%{
+
+transform:
+translateX(-3px)
+scale(1);
+
+text-shadow:
+
+0 0 15px #d8b4fe,
+0 0 40px #a855f7,
+0 0 100px #7c3aed,
+0 0 150px #581c87;
+
+}
+
+}
+
+
+/* آیدی Arzda */
+
+.arzda span{
+
+color:#d8b4fe;
+
+text-shadow:
+
+0 0 10px #a855f7,
+0 0 25px #9333ea,
+0 0 50px #7c3aed;
+
+animation:
+purpleText 2s infinite alternate;
+
+}
+
+
+@keyframes purpleText{
+
+from{
+opacity:.7;
+}
+
+to{
+opacity:1;
+text-shadow:
+0 0 15px #d8b4fe,
+0 0 35px #a855f7,
+0 0 70px #7c3aed;
+}
+
+}
+
+
+/* متن Arzda */
+
+.arzda p{
+
+color:#f3e8ff;
+
+text-shadow:
+
+0 0 8px rgba(168,85,247,.3);
+
+}
+
+
+/* ستاره های داخل کارت */
+
+.arzda .purple-stars{
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+}
+
+
+.arzda .purple-stars i{
+
+position:absolute;
+
+width:4px;
+height:4px;
+
+background:#d8b4fe;
+
+border-radius:50%;
+
+box-shadow:
+
+0 0 10px #c084fc,
+0 0 25px #9333ea;
+
+animation:
+purpleStar 3s infinite;
+
+}
+
+
+.arzda .purple-stars i:nth-child(1){
+
+top:15%;
+left:15%;
+
+animation-delay:.2s;
+
+}
+
+
+.arzda .purple-stars i:nth-child(2){
+
+top:30%;
+left:85%;
+
+animation-delay:1s;
+
+}
+
+
+.arzda .purple-stars i:nth-child(3){
+
+top:65%;
+left:10%;
+
+animation-delay:1.7s;
+
+}
+
+
+.arzda .purple-stars i:nth-child(4){
+
+top:75%;
+left:90%;
+
+animation-delay:.5s;
+
+}
+
+
+.arzda .purple-stars i:nth-child(5){
+
+top:45%;
+left:50%;
+
+animation-delay:2s;
+
+}
+
+
+@keyframes purpleStar{
+
+0%,100%{
+
+opacity:.15;
+
+transform:
+scale(.5)
+translateY(0);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:
+scale(1.8)
+translateY(-12px);
+
+}
+
+}
+
+
+/* حلقه انرژی */
+
+.arzda .energy-ring{
+
+position:absolute;
+
+width:260px;
+height:260px;
+
+border:
+
+1px solid rgba(168,85,247,.25);
+
+border-radius:50%;
+
+top:-120px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+box-shadow:
+
+0 0 30px rgba(147,51,234,.2),
+inset 0 0 30px rgba(147,51,234,.15);
+
+animation:
+ringSpin 8s linear infinite;
+
+pointer-events:none;
+
+}
+
+
+@keyframes ringSpin{
+
+from{
+
+transform:
+translateX(-50%)
+rotate(0deg)
+scale(.9);
+
+}
+
+to{
+
+transform:
+translateX(-50%)
+rotate(360deg)
+scale(1.1);
+
+}
+
+}
+
+
+/* Hover اختصاصی */
+
+.arzda:hover{
+
+border-color:#d8b4fe;
+
+box-shadow:
+
+0 0 30px #7c3aed,
+0 0 70px #9333ea,
+0 0 120px rgba(168,85,247,.65),
+0 0 180px rgba(124,58,237,.25);
+
+}
+
+
+.arzda:hover::before{
+
+opacity:1;
+
+filter:blur(45px);
+
+}
+
+
+.arzda:hover h2{
+
+animation:
+endermanHover .6s infinite alternate;
+
+}
+
+
+@keyframes endermanHover{
+
+from{
+
+transform:
+translateX(-5px)
+skewX(-2deg)
+scale(1.02);
+
+}
+
+to{
+
+transform:
+translateX(5px)
+skewX(2deg)
+scale(1.08);
+
+}
+
+}
+
+
+/* =====================================================
+   لینک ها
+===================================================== */
+
+.link{
+
+color:#8fffff;
+
+text-decoration:none;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+
+.link:hover{
+
+color:white;
+
+text-shadow:
+
+0 0 10px #00ffff,
+0 0 30px #00ffff;
+
+}
+
+
+/* =====================================================
+   تاریخچه
+===================================================== */
+
+.history{
+
+font-size:20px;
+
+line-height:2.4;
+
+text-align:center;
+
+}
+
+
+/* =====================================================
+   فوتر
+===================================================== */
 
 footer{
 
-padding:50px;
+padding:60px 30px;
 
 text-align:center;
 
 color:#aaa;
 
+background:
+
+rgba(0,255,255,.025);
+
 }
+
+
+.footer-logo{
+
+font-size:70px;
+
+font-weight:900;
+
+color:white;
+
+text-shadow:
+
+0 0 20px #00ffff,
+0 0 50px #00ffff,
+0 0 100px #00ffff;
+
+animation:
+
+footerGlow 3s infinite alternate;
+
+}
+
+
+footer span{
+
+color:#00ffff;
+
+text-shadow:
+
+0 0 15px #00ffff;
+
+}
+
+
+@keyframes footerGlow{
+
+from{
+
+opacity:.65;
+
+transform:scale(1);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1.04);
+
+}
+
+}
+
+
+/* =====================================================
+   انیمیشن اسکرول
+===================================================== */
+
+.section{
+
+animation:
+showSection linear;
+
+animation-timeline:view();
+
+animation-range:
+entry 0%
+cover 30%;
+
+}
+
+
+@keyframes showSection{
+
+from{
+
+opacity:0;
+
+transform:
+translateY(80px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+}
+
+
+/* =====================================================
+   اسکرول بار آکوا
+===================================================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+
+::-webkit-scrollbar-track{
+
+background:#001317;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+background:
+
+linear-gradient(
+#00ffff,
+#00a9b5
+);
+
+border-radius:20px;
+
+box-shadow:
+
+0 0 20px #00ffff;
+
+}
+
+
+/* =====================================================
+   موبایل
+===================================================== */
+
+@media(max-width:600px){
+
+nav{
+
+width:94%;
+
+gap:12px;
+
+padding:12px;
+
+}
+
+nav a{
+
+font-size:13px;
+
+}
+
+.logo{
+
+letter-spacing:8px;
+
+}
+
+.hero h2{
+
+font-size:28px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+.title{
+
+font-size:35px;
+
+}
+
+.member{
+
+width:100%;
+
+}
+
+}
+
+
+/* =====================================================
+   لینکدین؟ نه! لئون! 😄
+===================================================== */
 
 </style>
 
@@ -485,39 +1694,66 @@ color:#aaa;
 <body>
 
 
+<!-- =====================================================
+     LOADER
+===================================================== -->
+
 <div class="loader">
 LEON
 </div>
 
 
+<!-- =====================================================
+     پس زمینه
+===================================================== -->
+
 <div class="space"></div>
 
+
+<!-- =====================================================
+     ذرات آکوا
+===================================================== -->
 
 <div class="particles">
 
 <span style="right:10%;animation-delay:1s"></span>
-<span style="right:30%;animation-delay:3s"></span>
-<span style="right:60%;animation-delay:5s"></span>
-<span style="right:80%;animation-delay:2s"></span>
+<span style="right:25%;animation-delay:3s"></span>
+<span style="right:40%;animation-delay:5s"></span>
+<span style="right:60%;animation-delay:2s"></span>
+<span style="right:75%;animation-delay:6s"></span>
+<span style="right:90%;animation-delay:4s"></span>
 
 </div>
 
 
+<!-- =====================================================
+     منو
+===================================================== -->
 
 <nav>
 
-<a href="#home">خانه</a>
+<a href="#home">
+خانه
+</a>
 
-<a href="#about">درباره کلن</a>
+<a href="#about">
+درباره کلن
+</a>
 
-<a href="#team">اعضا</a>
+<a href="#team">
+اعضا
+</a>
 
-<a href="#contact">ارتباط</a>
+<a href="#contact">
+ارتباط
+</a>
 
 </nav>
 
 
-
+<!-- =====================================================
+     صفحه اصلی
+===================================================== -->
 
 <section class="hero" id="home">
 
@@ -556,8 +1792,9 @@ LEON
 </section>
 
 
-
-
+<!-- =====================================================
+     درباره
+===================================================== -->
 
 <section class="section" id="about">
 
@@ -570,6 +1807,7 @@ LEON
 <div class="glass about">
 
 کلن لئون در تیر ۱۴۰۵ توسط امیرعلی تأسیس شد.
+
 <br>
 
 این کلن از ابتدا با هدف ساخت یک محیط صمیمی، خلاق و حرفه‌ای شروع به فعالیت کرد.
@@ -581,9 +1819,15 @@ LEON
 </div>
 
 
-</section><!-- شروع پنل اعضای LEON -->
+</section>
+
+
+<!-- =====================================================
+     اعضای اصلی
+===================================================== -->
 
 <section class="section" id="team">
+
 
 <h1 class="title">
 اعضای اصلی LEON
@@ -593,9 +1837,12 @@ LEON
 <div class="members">
 
 
-<!-- رتبه اول -->
+<!-- =====================================================
+     AMIRALI
+===================================================== -->
 
 <div class="member amirali">
+
 
 <div class="rank">
 🥇 مالک کلن
@@ -634,10 +1881,9 @@ LEON
 </div>
 
 
-
-
-
-<!-- رتبه دوم -->
+<!-- =====================================================
+     WHITEX
+===================================================== -->
 
 <div class="member whitex">
 
@@ -662,14 +1908,25 @@ WhiteX
 </div>
 
 
-
-
-
-
-
-<!-- رتبه سوم -->
+<!-- =====================================================
+     ARZDA
+===================================================== -->
 
 <div class="member arzda">
+
+
+<div class="energy-ring"></div>
+
+
+<div class="purple-stars">
+
+<i></i>
+<i></i>
+<i></i>
+<i></i>
+<i></i>
+
+</div>
 
 
 <div class="rank">
@@ -677,11 +1934,9 @@ WhiteX
 </div>
 
 
-
 <h2>
 👾 Arzda
 </h2>
-
 
 
 <span>
@@ -689,9 +1944,7 @@ WhiteX
 </span>
 
 
-
 <p>
-
 
 ارزدا با توانایی بالای جذب ممبر،
 سبک مدیریت خاص و خلاقیت منحصر به فرد،
@@ -717,341 +1970,15 @@ Arzda نمادی از خلاقیت و انرژی تازه در خانواده LE
 </div>
 
 
-
-
-
-
-
-
-<!-- رتبه چهارم -->
-
-
-<div class="member hesbolah">
-
-
-<div class="rank">
-🏅 عضو مهم کلن
 </div>
 
-
-
-<h2>
-⭐ Hesbolah
-</h2>
-
-
-
-<span>
-@Hesbolah
-</span>
-
-
-
-<p>
-
-یکی از اعضای مهم و قدیمی کلن LEON
-که در مسیر پیشرفت و هماهنگی اعضا حضور داشته است.
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-</div>
 
 </section>
 
 
-
-
-
-<style>
-
-
-.members{
-
-display:flex;
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-gap:35px;
-
-}
-
-
-
-.member{
-
-
-width:350px;
-
-min-height:400px;
-
-padding:35px;
-
-
-background:
-
-rgba(255,255,255,.08);
-
-
-border-radius:40px;
-
-
-border:
-
-1px solid rgba(255,255,255,.2);
-
-
-backdrop-filter:blur(20px);
-
-
-text-align:center;
-
-
-transition:.5s;
-
-
-position:relative;
-
-
-overflow:hidden;
-
-
-}
-
-
-
-.member::before{
-
-
-content:"";
-
-
-position:absolute;
-
-width:200px;
-
-height:200px;
-
-background:#a855ff;
-
-filter:blur(80px);
-
-top:-50px;
-
-right:-50px;
-
-
-}
-
-
-
-.member:hover{
-
-
-transform:
-
-translateY(-20px)
-scale(1.03);
-
-
-}
-
-
-
-
-.member h2{
-
-
-font-size:40px;
-
-margin:25px 0;
-
-
-position:relative;
-
-
-}
-
-
-
-.member span{
-
-
-color:#d8b4fe;
-
-font-size:18px;
-
-
-}
-
-
-
-.member p{
-
-
-margin-top:25px;
-
-line-height:2;
-
-font-size:17px;
-
-color:#eee;
-
-
-}
-
-
-
-
-.rank{
-
-
-background:
-
-linear-gradient(45deg,#9333ea,#ec4899);
-
-
-padding:10px 20px;
-
-
-border-radius:30px;
-
-
-display:inline-block;
-
-
-box-shadow:
-
-0 0 30px #a855ff;
-
-
-}
-
-
-
-/* افکت مار امیرعلی */
-
-
-.amirali h2{
-
-
-animation:snake 2s infinite alternate;
-
-
-color:#fff;
-
-
-text-shadow:
-
-0 0 20px #22c55e,
-0 0 50px #a855ff;
-
-
-}
-
-
-
-@keyframes snake{
-
-
-from{
-
-transform:translateX(-5px);
-
-}
-
-
-to{
-
-transform:translateX(5px);
-
-}
-
-}
-
-
-
-
-/* افکت اندرمن ارزدا */
-
-
-.arzda h2{
-
-
-color:#c084fc;
-
-
-text-shadow:
-
-0 0 20px #9333ea,
-0 0 60px #7c3aed;
-
-
-animation:enderman 3s infinite;
-
-
-}
-
-
-
-@keyframes enderman{
-
-
-0%{
-
-opacity:1;
-
-}
-
-
-50%{
-
-opacity:.7;
-
-}
-
-
-100%{
-
-opacity:1;
-
-}
-
-}
-
-
-
-
-
-/* افکت Hesbolah */
-
-
-.hesbolah h2{
-
-
-text-shadow:
-
-0 0 30px gold;
-
-
-}
-
-
-
-
-
-</style>
-
-<!-- پایان پنل اعضا --><!-- شروع بخش ارتباط و اطلاعات -->
+<!-- =====================================================
+     ارتباط
+===================================================== -->
 
 <section class="section" id="contact">
 
@@ -1072,7 +1999,9 @@ text-shadow:
 <p>
 
 کــانــال:
+
 <br>
+
 
 <a class="link"
 href="https://rubika.ir/LEONMINECRAFT">
@@ -1089,6 +2018,7 @@ href="https://rubika.ir/LEONMINECRAFT">
 
 <br>
 
+
 <a class="link">
 
 @LN___AmIrAli
@@ -1102,6 +2032,7 @@ href="https://rubika.ir/LEONMINECRAFT">
 سازنده سایت:
 
 <br>
+
 
 <a class="link">
 
@@ -1117,6 +2048,7 @@ href="https://rubika.ir/LEONMINECRAFT">
 
 <br>
 
+
 <a class="link"
 href="https://www.aparat.com/LEON_LN">
 
@@ -1131,6 +2063,7 @@ LEON_LN
 دونیت:
 
 <br>
+
 
 <a class="link"
 href="https://daramet.com/Arzda">
@@ -1149,60 +2082,9 @@ Arzda
 </section>
 
 
-
-
-
-
-
-<section class="section">
-
-
-<h1 class="title">
-
-اعضای مهم دیگر
-
-</h1>
-
-
-<div class="glass">
-
-
-<p>
-
-
-⭐ @AmirHossin_gamer_94
-
-<br><br>
-
-⭐ @sadeghlang
-
-<br><br>
-
-⭐ @taha13434
-
-<br><br>
-
-⭐ @KHRRBAAR
-
-<br><br>
-
-⭐ @AMFP313
-
-
-</p>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
+<!-- =====================================================
+     تاریخچه
+===================================================== -->
 
 <section class="section">
 
@@ -1212,7 +2094,6 @@ Arzda
 تاریخچه LEON
 
 </h1>
-
 
 
 <div class="glass history">
@@ -1254,17 +2135,15 @@ AmirAli
 </section>
 
 
-
-
-
+<!-- =====================================================
+     فوتر
+===================================================== -->
 
 <footer>
 
 
 <div class="footer-logo">
-
 LEON
-
 </div>
 
 
@@ -1279,10 +2158,9 @@ LEON
 
 ساخته شده توسط:
 
+
 <span>
-
 @Arzda_1
-
 </span>
 
 
@@ -1295,262 +2173,58 @@ LEON
 </footer>
 
 
-
-
-
-
-
-
-
-<style>
-
-
-.link{
-
-
-color:#d8b4fe;
-
-text-decoration:none;
-
-font-weight:bold;
-
-transition:.3s;
-
-
-}
-
-
-
-.link:hover{
-
-
-color:white;
-
-
-text-shadow:
-
-0 0 20px #c084fc;
-
-
-}
-
-
-
-
-.history{
-
-
-font-size:20px;
-
-line-height:2.4;
-
-text-align:center;
-
-
-}
-
-
-
-
-.footer-logo{
-
-
-font-size:70px;
-
-font-weight:900;
-
-
-text-shadow:
-
-0 0 30px #a855ff,
-0 0 80px #7c3aed;
-
-
-animation:footerGlow 3s infinite alternate;
-
-
-}
-
-
-
-
-footer span{
-
-
-color:#c084fc;
-
-
-}
-
-
-
-@keyframes footerGlow{
-
-
-from{
-
-opacity:.7;
-
-}
-
-
-to{
-
-opacity:1;
-
-}
-
-
-}
-
-
-
-
-
-/* ظاهر شدن هنگام اسکرول */
-
-
-.section{
-
-
-animation:
-
-showSection linear;
-
-
-animation-timeline:view();
-
-
-animation-range:entry 0% cover 30%;
-
-
-}
-
-
-
-@keyframes showSection{
-
-
-from{
-
-
-opacity:0;
-
-transform:translateY(80px);
-
-
-}
-
-
-to{
-
-
-opacity:1;
-
-transform:translateY(0);
-
-
-}
-
-
-}
-
-
-
-
-
-/* اسکرول بار */
-
-
-::-webkit-scrollbar{
-
-width:10px;
-
-}
-
-
-
-::-webkit-scrollbar-track{
-
-background:#05000b;
-
-}
-
-
-
-::-webkit-scrollbar-thumb{
-
-
-background:
-
-linear-gradient(#9333ea,#ec4899);
-
-
-border-radius:20px;
-
-
-}
-
-
-
-
-
-</style>
-
-
-
-
-
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
 
-// ساخت ستاره های بیشتر
+/* =====================================================
+   ستاره های بیشتر
+===================================================== */
 
-
-for(let i=0;i<40;i++){
-
+for(let i=0;i<50;i++){
 
 let star=document.createElement("span");
 
-
 star.style.position="fixed";
 
-star.style.width="3px";
+star.style.width=(Math.random()*3+1)+"px";
 
-star.style.height="3px";
+star.style.height=(Math.random()*3+1)+"px";
 
 star.style.background="white";
 
 star.style.borderRadius="50%";
 
+star.style.right=
+Math.random()*100+"%";
 
-star.style.right=Math.random()*100+"%";
+star.style.top=
+Math.random()*100+"%";
 
-star.style.top=Math.random()*100+"%";
+star.style.opacity=
+Math.random();
 
+star.style.boxShadow=
+"0 0 10px #00ffff";
 
-star.style.opacity=Math.random();
+star.style.pointerEvents="none";
 
-
-star.style.boxShadow="0 0 10px white";
-
+star.style.zIndex="-1";
 
 document.body.appendChild(star);
-
-
 
 }
 
 
+/* =====================================================
+   حرکت سه بعدی کارت ها
+===================================================== */
 
-
-
-
-// حرکت نرم کارت ها
-
-
-const cards=document.querySelectorAll(".member");
+const cards=
+document.querySelectorAll(".member");
 
 
 cards.forEach(card=>{
@@ -1559,45 +2233,97 @@ cards.forEach(card=>{
 card.addEventListener("mousemove",e=>{
 
 
-let x=e.offsetX;
+let rect=
+card.getBoundingClientRect();
 
-let y=e.offsetY;
 
+let x=
+e.clientX-rect.left;
+
+
+let y=
+e.clientY-rect.top;
+
+
+let rotateY=
+(x/rect.width-.5)*18;
+
+
+let rotateX=
+-(y/rect.height-.5)*18;
+
+
+if(card.classList.contains("arzda")){
 
 card.style.transform=
-`rotateY(${x/20-10}deg) rotateX(${y/20-10}deg) scale(1.03)`;
+`rotateY(${rotateY}deg) rotateX(${rotateX}deg) translateY(-18px) scale(1.04)`;
 
+}else{
+
+card.style.transform=
+`rotateY(${rotateY}deg) rotateX(${rotateX}deg) translateY(-18px) scale(1.03)`;
+
+}
 
 
 });
-
 
 
 card.addEventListener("mouseleave",()=>{
 
-
 card.style.transform="";
 
-
 });
 
 });
-</script>
 
-<script>
-async function loadSettings() {
-    const res = await fetch("https://leon-api.zxczghf1452hcz.workers.dev/settings");
-    const data = await res.json();
 
-    const about = document.querySelector(".about");
+/* =====================================================
+   API
+===================================================== */
 
-    if (about && data.description) {
-        about.innerHTML = data.description;
-    }
+async function loadSettings(){
+
+try{
+
+const res=await fetch(
+"https://leon-api.zxczghf1452hcz.workers.dev/settings"
+);
+
+
+const data=
+await res.json();
+
+
+const about=
+document.querySelector(".about");
+
+
+if(about && data.description){
+
+about.innerHTML=
+data.description;
+
 }
 
+
+}catch(error){
+
+console.log(
+"خطا در دریافت تنظیمات:",
+error
+);
+
+}
+
+}
+
+
 loadSettings();
+
+
 </script>
+
 
 </body>
 </html>
