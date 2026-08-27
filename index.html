@@ -204,7 +204,7 @@ nav a:hover{
 }
 
 /* =========================
-   صفحه اصلی
+   HERO
 ========================= */
 
 .hero{
@@ -275,6 +275,46 @@ nav a:hover{
     color:#ddd;
 
     line-height:2;
+}
+
+/* =========================
+   لوگوی کلن
+========================= */
+
+.clan-logo{
+    width:150px;
+    height:150px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    margin-bottom:25px;
+
+    border:3px solid #00ffff;
+
+    box-shadow:
+        0 0 20px rgba(0,255,255,.6),
+        0 0 50px rgba(0,255,255,.25);
+
+    animation:
+        clanLogoGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes clanLogoGlow{
+
+    from{
+        box-shadow:
+            0 0 15px rgba(0,255,255,.4),
+            0 0 30px rgba(0,255,255,.15);
+    }
+
+    to{
+        box-shadow:
+            0 0 25px rgba(0,255,255,.8),
+            0 0 60px rgba(0,255,255,.3);
+    }
+
 }
 
 /* =========================
@@ -402,7 +442,7 @@ nav a:hover{
 
     width:350px;
 
-    min-height:400px;
+    min-height:500px;
 
     padding:32px;
 
@@ -458,10 +498,49 @@ nav a:hover{
         0 0 35px rgba(0,255,255,.25);
 }
 
+/* =========================
+   تصویر پروفایل اعضا
+========================= */
+
+.member-avatar{
+    position:relative;
+
+    width:135px;
+    height:135px;
+
+    object-fit:cover;
+
+    display:block;
+
+    margin:22px auto 18px;
+
+    border-radius:50%;
+
+    border:3px solid #00ffff;
+
+    box-shadow:
+        0 0 15px rgba(0,255,255,.55),
+        0 0 35px rgba(0,255,255,.2);
+
+    z-index:3;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.member:hover .member-avatar{
+    transform:scale(1.06);
+
+    box-shadow:
+        0 0 25px rgba(0,255,255,.8),
+        0 0 50px rgba(0,255,255,.3);
+}
+
 .member h2{
     position:relative;
 
-    margin:22px 0;
+    margin:18px 0;
 
     font-size:38px;
 
@@ -515,12 +594,17 @@ nav a:hover{
     box-shadow:
         0 0 15px rgba(0,255,255,.4);
 
-    z-index:2;
+    z-index:4;
 }
 
 /* =========================
    AmirAli
 ========================= */
+
+.amirali{
+    border-color:
+        rgba(0,255,255,.3);
+}
 
 .amirali h2{
     color:#fff;
@@ -543,6 +627,34 @@ nav a:hover{
         transform:translateX(3px);
     }
 
+}
+
+/* =========================
+   WhiteX
+========================= */
+
+.whitex{
+    border-color:
+        rgba(255,255,255,.25);
+}
+
+.whitex .member-avatar{
+    border-color:#fff;
+
+    box-shadow:
+        0 0 18px rgba(255,255,255,.45),
+        0 0 35px rgba(255,255,255,.15);
+}
+
+.whitex .rank{
+    background:
+        linear-gradient(
+            45deg,
+            #777,
+            #fff
+        );
+
+    color:#111;
 }
 
 /* =========================
@@ -610,6 +722,32 @@ nav a:hover{
             translateX(50%)
             scale(1.1);
     }
+
+}
+
+/* =========================
+   تصویر Arzda
+========================= */
+
+.arzda .member-avatar{
+
+    border-color:#a855f7;
+
+    box-shadow:
+        0 0 20px rgba(168,85,247,.75),
+        0 0 50px rgba(124,58,237,.35);
+
+}
+
+.arzda:hover .member-avatar{
+
+    transform:
+        scale(1.07)
+        rotate(2deg);
+
+    box-shadow:
+        0 0 30px rgba(216,70,239,.9),
+        0 0 65px rgba(124,58,237,.5);
 
 }
 
@@ -698,7 +836,7 @@ nav a:hover{
 }
 
 /* =========================
-   هاله نام
+   هاله نام Arzda
 ========================= */
 
 .arzda h2::after{
@@ -968,9 +1106,14 @@ footer span{
     .member{
         width:100%;
 
-        min-height:350px;
+        min-height:480px;
 
         padding:27px 20px;
+    }
+
+    .member-avatar{
+        width:120px;
+        height:120px;
     }
 
     .member h2{
@@ -979,6 +1122,11 @@ footer span{
 
     .arzda h2{
         font-size:40px;
+    }
+
+    .clan-logo{
+        width:120px;
+        height:120px;
     }
 
     body::before{
@@ -1020,7 +1168,7 @@ footer span{
 <body>
 
 <!-- =========================
-     موزیک سایت
+     موزیک
 ========================= -->
 
 <audio id="bgMusic" loop preload="auto">
@@ -1080,6 +1228,14 @@ footer span{
 ========================= -->
 
 <section class="hero" id="home">
+
+    <img
+        class="clan-logo"
+        src="Leon.png"
+        alt="LEON"
+        width="150"
+        height="150"
+    >
 
     <div class="logo">
         LEON
@@ -1155,6 +1311,15 @@ footer span{
                 🥇 مالک کلن
             </div>
 
+            <img
+                class="member-avatar"
+                src="Amirali.png"
+                alt="AmirAli"
+                width="135"
+                height="135"
+                loading="lazy"
+            >
+
             <h2>
                 🐍 AmirAli
             </h2>
@@ -1191,9 +1356,22 @@ footer span{
                 🥈 رتبه دوم کلن
             </div>
 
+            <img
+                class="member-avatar"
+                src="WhiteX.png"
+                alt="WhiteX"
+                width="135"
+                height="135"
+                loading="lazy"
+            >
+
             <h2>
                 WhiteX
             </h2>
+
+            <span>
+                عضو LEON
+            </span>
 
             <p>
                 یکی از اعضای مهم و تأثیرگذار کلن LEON
@@ -1217,6 +1395,15 @@ footer span{
             <div class="rank">
                 🥉 طراح و سازنده سایت
             </div>
+
+            <img
+                class="member-avatar"
+                src="Arzda.png"
+                alt="Arzda"
+                width="135"
+                height="135"
+                loading="lazy"
+            >
 
             <h2>
                 👾 Arzda
@@ -1418,7 +1605,9 @@ footer span{
 
     "use strict";
 
-    /* لودر */
+    /* =========================
+       لودر
+    ========================= */
 
     const loader =
         document.getElementById("loader");
@@ -1447,7 +1636,9 @@ footer span{
     );
 
 
-    /* موزیک */
+    /* =========================
+       موزیک
+    ========================= */
 
     const music =
         document.getElementById("bgMusic");
@@ -1495,7 +1686,9 @@ footer span{
     }
 
 
-    /* API */
+    /* =========================
+       API
+    ========================= */
 
     async function loadSettings(){
 
