@@ -11,7 +11,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap');
 
-
 *{
 margin:0;
 padding:0;
@@ -19,11 +18,9 @@ box-sizing:border-box;
 font-family:"Vazirmatn",Tahoma,sans-serif;
 }
 
-
 html{
 scroll-behavior:smooth;
 }
-
 
 body{
 
@@ -41,63 +38,43 @@ overflow-x:hidden;
 
 }
 
-
 /* =====================================================
-   پس زمینه آکوا
+   پس زمینه
 ===================================================== */
 
 .space{
 
 position:fixed;
 inset:0;
-
 z-index:-5;
 
 background:
-
-radial-gradient(
-circle,
-rgba(255,255,255,.9) 1px,
-transparent 1px
-),
-
-radial-gradient(
-circle,
-rgba(0,255,255,.9) 1px,
-transparent 1px
-),
-
-radial-gradient(
-circle,
-rgba(0,200,220,.4) 1px,
-transparent 1px
-);
+radial-gradient(circle,rgba(255,255,255,.9) 1px,transparent 1px),
+radial-gradient(circle,rgba(0,255,255,.9) 1px,transparent 1px),
+radial-gradient(circle,rgba(0,200,220,.4) 1px,transparent 1px);
 
 background-size:
 70px 70px,
 120px 120px,
 200px 200px;
 
-animation:
-starsMove 30s linear infinite;
+animation:starsMove 30s linear infinite;
+
+will-change:transform;
 
 }
-
 
 @keyframes starsMove{
 
 from{
-transform:translateY(0);
+transform:translate3d(0,0,0);
 }
 
 to{
-transform:translateY(500px);
+transform:translate3d(0,500px,0);
 }
 
 }
-
-
-/* هاله آکوا */
 
 body::before{
 
@@ -111,7 +88,7 @@ height:700px;
 top:-350px;
 left:50%;
 
-transform:translateX(-50%);
+transform:translate3d(-50%,0,0);
 
 background:
 radial-gradient(
@@ -128,7 +105,6 @@ z-index:-4;
 
 }
 
-
 /* =====================================================
    ذرات
 ===================================================== */
@@ -136,15 +112,12 @@ z-index:-4;
 .particles{
 
 position:fixed;
-
 inset:0;
 
 pointer-events:none;
-
 z-index:-1;
 
 }
-
 
 .particles span{
 
@@ -159,25 +132,19 @@ border-radius:50%;
 
 box-shadow:
 0 0 10px #00ffff,
-0 0 25px #00ffff,
-0 0 45px #00ffff;
+0 0 25px #00ffff;
 
-animation:
-floatParticle 10s infinite;
+animation:floatParticle 10s infinite;
+
+will-change:transform,opacity;
 
 }
-
 
 @keyframes floatParticle{
 
 0%{
-
-transform:
-translateY(110vh)
-scale(.3);
-
+transform:translate3d(0,110vh,0) scale(.3);
 opacity:0;
-
 }
 
 20%{
@@ -185,27 +152,15 @@ opacity:1;
 }
 
 50%{
-
-transform:
-translateY(50vh)
-translateX(30px)
-scale(1);
-
+transform:translate3d(30px,50vh,0) scale(1);
 }
 
 100%{
-
-transform:
-translateY(-10vh)
-translateX(-30px)
-scale(.3);
-
+transform:translate3d(-30px,-10vh,0) scale(.3);
 opacity:0;
-
 }
 
 }
-
 
 /* =====================================================
    لودر
@@ -214,36 +169,32 @@ opacity:0;
 .loader{
 
 position:fixed;
-
 inset:0;
 
 background:#000;
 
 display:flex;
-
 align-items:center;
 justify-content:center;
 
 font-size:75px;
-
 font-weight:900;
 
 color:white;
 
 z-index:99999;
 
-animation:
-loading 3s forwards;
+animation:loading 3s forwards;
 
 text-shadow:
-
 0 0 15px white,
 0 0 40px #00ffff,
 0 0 80px #00ffff,
 0 0 140px #00ffff;
 
-}
+will-change:opacity;
 
+}
 
 @keyframes loading{
 
@@ -262,7 +213,6 @@ visibility:hidden;
 
 }
 
-
 /* =====================================================
    منو
 ===================================================== */
@@ -274,19 +224,19 @@ position:fixed;
 top:20px;
 right:50%;
 
-transform:translateX(50%);
+transform:translate3d(50%,0,0);
 
 width:90%;
 
 padding:15px 25px;
 
-background:
-rgba(0,255,255,.07);
+background:rgba(0,255,255,.07);
 
 border:
 1px solid rgba(0,255,255,.3);
 
-backdrop-filter:blur(25px);
+backdrop-filter:blur(15px);
+-webkit-backdrop-filter:blur(15px);
 
 border-radius:35px;
 
@@ -299,12 +249,9 @@ gap:35px;
 z-index:1000;
 
 box-shadow:
-
-0 0 20px rgba(0,255,255,.25),
-inset 0 0 20px rgba(0,255,255,.05);
+0 0 20px rgba(0,255,255,.25);
 
 }
-
 
 nav a{
 
@@ -314,12 +261,13 @@ text-decoration:none;
 
 font-weight:bold;
 
-transition:.4s;
+transition:
+color .3s,
+text-shadow .3s;
 
 position:relative;
 
 }
-
 
 nav a::after{
 
@@ -340,10 +288,9 @@ background:#00ffff;
 box-shadow:
 0 0 10px #00ffff;
 
-transition:.4s;
+transition:width .3s;
 
 }
-
 
 nav a:hover{
 
@@ -355,16 +302,14 @@ text-shadow:
 
 }
 
-
 nav a:hover::after{
 
 width:100%;
 
 }
 
-
 /* =====================================================
-   صفحه اصلی
+   HERO
 ===================================================== */
 
 .hero{
@@ -376,7 +321,6 @@ display:flex;
 flex-direction:column;
 
 justify-content:center;
-
 align-items:center;
 
 text-align:center;
@@ -386,7 +330,6 @@ padding:30px;
 position:relative;
 
 }
-
 
 .hero::before{
 
@@ -404,15 +347,15 @@ rgba(0,255,255,.13),
 transparent 70%
 );
 
-filter:blur(30px);
+filter:blur(25px);
 
 z-index:-1;
 
-animation:
-heroAura 5s infinite alternate;
+animation:heroAura 5s infinite alternate;
+
+will-change:transform,opacity;
 
 }
-
 
 @keyframes heroAura{
 
@@ -422,16 +365,11 @@ opacity:.5;
 }
 
 to{
-transform:scale(1.2);
+transform:scale(1.15);
 opacity:1;
 }
 
 }
-
-
-/* =====================================================
-   لوگو
-===================================================== */
 
 .logo{
 
@@ -443,18 +381,17 @@ letter-spacing:15px;
 
 color:white;
 
-animation:
-logoPulse 3s infinite alternate;
+animation:logoPulse 3s infinite alternate;
+
+will-change:transform;
 
 }
-
 
 @keyframes logoPulse{
 
 0%{
 
 text-shadow:
-
 0 0 10px white,
 0 0 30px #00ffff,
 0 0 60px #00ffff;
@@ -466,11 +403,9 @@ transform:scale(1);
 100%{
 
 text-shadow:
-
 0 0 20px white,
 0 0 50px #00ffff,
-0 0 100px #00ffff,
-0 0 160px #00ffff;
+0 0 100px #00ffff;
 
 transform:scale(1.025);
 
@@ -478,18 +413,15 @@ transform:scale(1.025);
 
 }
 
-
 .hero h2{
 
 font-size:35px;
-
 margin-top:20px;
 
 text-shadow:
 0 0 20px #00ffff;
 
 }
-
 
 .hero p{
 
@@ -505,17 +437,13 @@ line-height:2;
 
 }
 
-
 /* =====================================================
-   دکمه ها
+   دکمه
 ===================================================== */
 
 .buttons{
-
 margin-top:40px;
-
 }
-
 
 .btn{
 
@@ -528,7 +456,6 @@ margin:10px;
 border-radius:30px;
 
 background:
-
 linear-gradient(
 45deg,
 #008c99,
@@ -543,29 +470,25 @@ text-decoration:none;
 font-weight:bold;
 
 box-shadow:
+0 0 20px #00ffff;
 
-0 0 20px #00ffff,
-0 0 50px rgba(0,255,255,.4);
+transition:
+transform .3s,
+box-shadow .3s;
 
-transition:.4s;
+will-change:transform;
 
 }
-
 
 .btn:hover{
 
-transform:
-translateY(-5px)
-scale(1.08);
+transform:translate3d(0,-5px,0) scale(1.08);
 
 box-shadow:
-
 0 0 30px #00ffff,
-0 0 70px #00ffff,
-0 0 120px rgba(0,255,255,.5);
+0 0 60px rgba(0,255,255,.5);
 
 }
-
 
 /* =====================================================
    بخش ها
@@ -576,7 +499,6 @@ box-shadow:
 padding:110px 30px;
 
 }
-
 
 .title{
 
@@ -589,15 +511,13 @@ margin-bottom:50px;
 color:white;
 
 text-shadow:
-
 0 0 15px #00ffff,
 0 0 40px #00ffff;
 
 }
 
-
 /* =====================================================
-   کارت شیشه ای
+   GLASS
 ===================================================== */
 
 .glass{
@@ -609,41 +529,36 @@ margin:30px auto;
 padding:40px;
 
 background:
-
-rgba(0,255,255,.06);
+rgba(0,255,255,.055);
 
 border-radius:35px;
 
 border:
-
 1px solid rgba(0,255,255,.25);
 
-backdrop-filter:blur(20px);
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
 
 box-shadow:
+0 0 30px rgba(0,255,255,.15);
 
-0 0 30px rgba(0,255,255,.18),
-inset 0 0 30px rgba(0,255,255,.04);
-
-transition:.5s;
+transition:
+transform .4s,
+box-shadow .4s;
 
 }
-
 
 .glass:hover{
 
-transform:translateY(-12px);
+transform:translate3d(0,-10px,0);
 
 box-shadow:
-
-0 0 50px rgba(0,255,255,.4),
-0 0 100px rgba(0,255,255,.15);
+0 0 50px rgba(0,255,255,.35);
 
 }
 
-
 /* =====================================================
-   درباره
+   ABOUT
 ===================================================== */
 
 .about{
@@ -658,9 +573,8 @@ color:#eee;
 
 }
 
-
 /* =====================================================
-   اعضا
+   MEMBERS
 ===================================================== */
 
 .members{
@@ -677,7 +591,6 @@ perspective:1200px;
 
 }
 
-
 .member{
 
 width:350px;
@@ -687,20 +600,21 @@ min-height:400px;
 padding:35px;
 
 background:
-
-rgba(0,255,255,.055);
+rgba(0,255,255,.045);
 
 border-radius:40px;
 
 border:
-
 1px solid rgba(0,255,255,.25);
 
-backdrop-filter:blur(20px);
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
 
 text-align:center;
 
-transition:.5s;
+transition:
+transform .25s ease-out,
+box-shadow .35s;
 
 position:relative;
 
@@ -708,8 +622,9 @@ overflow:hidden;
 
 transform-style:preserve-3d;
 
-}
+will-change:transform;
 
+}
 
 .member::before{
 
@@ -724,32 +639,24 @@ top:-100px;
 right:-100px;
 
 background:
-
 radial-gradient(
 circle,
-rgba(0,255,255,.5),
+rgba(0,255,255,.45),
 transparent 70%
 );
 
-filter:blur(50px);
+filter:blur(40px);
 
 pointer-events:none;
 
 }
 
-
 .member:hover{
 
-transform:
-translateY(-18px)
-scale(1.03);
-
 box-shadow:
-
-0 0 40px rgba(0,255,255,.4);
+0 0 40px rgba(0,255,255,.35);
 
 }
-
 
 .member h2{
 
@@ -763,7 +670,6 @@ z-index:5;
 
 }
 
-
 .member span{
 
 color:#8fffff;
@@ -775,7 +681,6 @@ position:relative;
 z-index:5;
 
 }
-
 
 .member p{
 
@@ -793,11 +698,9 @@ z-index:5;
 
 }
 
-
 .rank{
 
 background:
-
 linear-gradient(
 45deg,
 #008c99,
@@ -813,7 +716,6 @@ border-radius:30px;
 display:inline-block;
 
 box-shadow:
-
 0 0 20px #00ffff;
 
 font-weight:bold;
@@ -824,77 +726,63 @@ z-index:5;
 
 }
 
-
 /* =====================================================
    AMIRALI
 ===================================================== */
 
 .amirali h2{
 
-animation:
-snake 2s infinite alternate;
+animation:snake 2s infinite alternate;
 
 color:white;
 
 text-shadow:
-
 0 0 20px #00ffff,
 0 0 50px #00ffff;
 
-}
+will-change:transform;
 
+}
 
 @keyframes snake{
 
 from{
-
-transform:
-translateX(-5px)
-rotate(-1deg);
-
+transform:translate3d(-5px,0,0);
 }
 
 to{
-
-transform:
-translateX(5px)
-rotate(1deg);
-
+transform:translate3d(5px,0,0);
 }
 
 }
-
 
 /* =====================================================
    ARZDA
-   سیستم اختصاصی بنفش / ENDERMAN
 ===================================================== */
 
 .arzda{
 
 border:
-
 1px solid rgba(168,85,247,.8);
 
 background:
 
 radial-gradient(
 circle at 50% 0%,
-rgba(147,51,234,.3),
-rgba(0,255,255,.025) 45%,
-rgba(0,0,0,.35) 100%
+rgba(147,51,234,.28),
+rgba(0,255,255,.02) 45%,
+rgba(0,0,0,.3)
 );
 
 box-shadow:
 
-0 0 25px rgba(147,51,234,.45),
-0 0 70px rgba(124,58,237,.18),
-inset 0 0 50px rgba(147,51,234,.12);
+0 0 25px rgba(147,51,234,.4),
+0 0 60px rgba(124,58,237,.15),
+inset 0 0 40px rgba(147,51,234,.1);
 
 }
 
-
-/* هاله اصلی */
+/* هاله */
 
 .arzda::before{
 
@@ -902,69 +790,59 @@ content:"";
 
 position:absolute;
 
-width:350px;
-height:350px;
+width:330px;
+height:330px;
 
-top:-160px;
+top:-150px;
 right:50%;
 
-transform:translateX(50%);
+transform:translate3d(50%,0,0);
 
 background:
 
 radial-gradient(
 circle,
-#d946ef 0%,
-#9333ea 25%,
-#7c3aed 45%,
+#d946ef,
+#9333ea 30%,
+#7c3aed 50%,
 transparent 72%
 );
 
-filter:blur(65px);
+filter:blur(50px);
 
 opacity:.65;
 
-animation:
+animation:arzdaAura 4s infinite alternate;
 
-arzdaAura 4s infinite alternate;
+will-change:transform,opacity;
 
 }
-
 
 @keyframes arzdaAura{
 
 0%{
 
 transform:
-translateX(50%)
-scale(.75)
-rotate(0deg);
+translate3d(50%,0,0)
+scale(.75);
 
 opacity:.35;
-
-}
-
-50%{
-
-opacity:.7;
 
 }
 
 100%{
 
 transform:
-translateX(50%)
-scale(1.25)
-rotate(15deg);
+translate3d(50%,0,0)
+scale(1.2);
 
-opacity:.9;
-
-}
+opacity:.85;
 
 }
 
+}
 
-/* هاله دوم */
+/* رتبه */
 
 .arzda .rank{
 
@@ -987,15 +865,11 @@ color:white;
 box-shadow:
 
 0 0 20px #9333ea,
-0 0 50px #7c3aed,
-0 0 90px rgba(168,85,247,.4);
+0 0 45px #7c3aed;
 
-animation:
-
-purpleRank 3s linear infinite;
+animation:purpleRank 3s linear infinite;
 
 }
-
 
 @keyframes purpleRank{
 
@@ -1013,8 +887,7 @@ background-position:0% 50%;
 
 }
 
-
-/* نام Arzda */
+/* نام */
 
 .arzda h2{
 
@@ -1028,14 +901,11 @@ letter-spacing:3px;
 
 position:relative;
 
-animation:
+animation:endermanGlow 2.5s infinite alternate;
 
-endermanGlow 2.5s infinite alternate;
+will-change:transform;
 
 }
-
-
-/* لایه نور پشت نام */
 
 .arzda h2::before{
 
@@ -1047,24 +917,23 @@ top:50%;
 left:50%;
 
 transform:
-translate(-50%,-50%);
+translate3d(-50%,-50%,0);
 
 font-size:65px;
 
 color:#9333ea;
 
-filter:blur(18px);
+filter:blur(14px);
 
-opacity:.8;
+opacity:.75;
 
 z-index:-1;
 
-animation:
+animation:nameAura 2s infinite alternate;
 
-nameAura 2s infinite alternate;
+will-change:transform,opacity;
 
 }
-
 
 @keyframes nameAura{
 
@@ -1073,145 +942,140 @@ from{
 opacity:.3;
 
 transform:
-translate(-50%,-50%)
+translate3d(-50%,-50%,0)
 scale(.8);
 
 }
 
 to{
 
-opacity:.9;
+opacity:.8;
 
 transform:
-translate(-50%,-50%)
-scale(1.25);
+translate3d(-50%,-50%,0)
+scale(1.2);
 
 }
 
 }
-
-
-/* افکت اصلی اندرمن */
 
 @keyframes endermanGlow{
 
 0%{
 
 transform:
-translateX(-3px)
+translate3d(-3px,0,0)
 scale(1);
 
 text-shadow:
-
 0 0 8px #c084fc,
 0 0 20px #9333ea,
 0 0 40px #7c3aed;
 
 }
 
-25%{
+50%{
 
 transform:
-translateX(3px)
-scale(1.025);
+translate3d(3px,0,0)
+scale(1.04);
 
 text-shadow:
-
 0 0 15px #e9d5ff,
 0 0 35px #c084fc,
 0 0 70px #9333ea;
 
 }
 
-50%{
-
-transform:
-translateX(-2px)
-scale(1.05);
-
-text-shadow:
-
-0 0 20px white,
-0 0 40px #d946ef,
-0 0 90px #9333ea;
-
-}
-
-75%{
-
-transform:
-translateX(2px)
-scale(1.025);
-
-}
-
 100%{
 
 transform:
-translateX(-3px)
-scale(1);
+translate3d(-2px,0,0)
+scale(1.05);
 
 text-shadow:
-
-0 0 15px #d8b4fe,
-0 0 40px #a855f7,
-0 0 100px #7c3aed,
-0 0 150px #581c87;
+0 0 20px white,
+0 0 40px #d946ef,
+0 0 80px #9333ea;
 
 }
 
 }
 
-
-/* آیدی Arzda */
+/* آیدی */
 
 .arzda span{
 
 color:#d8b4fe;
 
 text-shadow:
-
 0 0 10px #a855f7,
-0 0 25px #9333ea,
-0 0 50px #7c3aed;
-
-animation:
-purpleText 2s infinite alternate;
+0 0 25px #9333ea;
 
 }
 
-
-@keyframes purpleText{
-
-from{
-opacity:.7;
-}
-
-to{
-opacity:1;
-text-shadow:
-0 0 15px #d8b4fe,
-0 0 35px #a855f7,
-0 0 70px #7c3aed;
-}
-
-}
-
-
-/* متن Arzda */
+/* متن */
 
 .arzda p{
 
 color:#f3e8ff;
 
 text-shadow:
-
-0 0 8px rgba(168,85,247,.3);
+0 0 6px rgba(168,85,247,.25);
 
 }
 
+/* حلقه */
 
-/* ستاره های داخل کارت */
+.arzda .energy-ring{
+
+position:absolute;
+
+width:250px;
+height:250px;
+
+border:
+1px solid rgba(168,85,247,.25);
+
+border-radius:50%;
+
+top:-115px;
+left:50%;
+
+transform:translate3d(-50%,0,0);
+
+box-shadow:
+0 0 25px rgba(147,51,234,.18);
+
+animation:ringSpin 10s linear infinite;
+
+pointer-events:none;
+
+will-change:transform;
+
+}
+
+@keyframes ringSpin{
+
+from{
+
+transform:
+translate3d(-50%,0,0)
+rotate(0deg);
+
+}
+
+to{
+
+transform:
+translate3d(-50%,0,0)
+rotate(360deg);
+
+}
+
+}
+
+/* ستاره های بنفش */
 
 .arzda .purple-stars{
 
@@ -1222,7 +1086,6 @@ inset:0;
 pointer-events:none;
 
 }
-
 
 .arzda .purple-stars i{
 
@@ -1236,65 +1099,44 @@ background:#d8b4fe;
 border-radius:50%;
 
 box-shadow:
+0 0 8px #c084fc,
+0 0 18px #9333ea;
 
-0 0 10px #c084fc,
-0 0 25px #9333ea;
+animation:purpleStar 3s infinite;
 
-animation:
-purpleStar 3s infinite;
+will-change:transform,opacity;
 
 }
-
 
 .arzda .purple-stars i:nth-child(1){
-
 top:15%;
 left:15%;
-
 animation-delay:.2s;
-
 }
-
 
 .arzda .purple-stars i:nth-child(2){
-
 top:30%;
 left:85%;
-
 animation-delay:1s;
-
 }
-
 
 .arzda .purple-stars i:nth-child(3){
-
 top:65%;
 left:10%;
-
 animation-delay:1.7s;
-
 }
-
 
 .arzda .purple-stars i:nth-child(4){
-
 top:75%;
 left:90%;
-
 animation-delay:.5s;
-
 }
-
 
 .arzda .purple-stars i:nth-child(5){
-
 top:45%;
 left:50%;
-
 animation-delay:2s;
-
 }
-
 
 @keyframes purpleStar{
 
@@ -1302,9 +1144,7 @@ animation-delay:2s;
 
 opacity:.15;
 
-transform:
-scale(.5)
-translateY(0);
+transform:scale(.5);
 
 }
 
@@ -1312,73 +1152,13 @@ translateY(0);
 
 opacity:1;
 
-transform:
-scale(1.8)
-translateY(-12px);
+transform:scale(1.6);
 
 }
 
 }
 
-
-/* حلقه انرژی */
-
-.arzda .energy-ring{
-
-position:absolute;
-
-width:260px;
-height:260px;
-
-border:
-
-1px solid rgba(168,85,247,.25);
-
-border-radius:50%;
-
-top:-120px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-box-shadow:
-
-0 0 30px rgba(147,51,234,.2),
-inset 0 0 30px rgba(147,51,234,.15);
-
-animation:
-ringSpin 8s linear infinite;
-
-pointer-events:none;
-
-}
-
-
-@keyframes ringSpin{
-
-from{
-
-transform:
-translateX(-50%)
-rotate(0deg)
-scale(.9);
-
-}
-
-to{
-
-transform:
-translateX(-50%)
-rotate(360deg)
-scale(1.1);
-
-}
-
-}
-
-
-/* Hover اختصاصی */
+/* Hover */
 
 .arzda:hover{
 
@@ -1387,37 +1167,24 @@ border-color:#d8b4fe;
 box-shadow:
 
 0 0 30px #7c3aed,
-0 0 70px #9333ea,
-0 0 120px rgba(168,85,247,.65),
-0 0 180px rgba(124,58,237,.25);
+0 0 60px #9333ea,
+0 0 100px rgba(168,85,247,.45);
 
 }
-
-
-.arzda:hover::before{
-
-opacity:1;
-
-filter:blur(45px);
-
-}
-
 
 .arzda:hover h2{
 
-animation:
-endermanHover .6s infinite alternate;
+animation:endermanHover .6s infinite alternate;
 
 }
-
 
 @keyframes endermanHover{
 
 from{
 
 transform:
-translateX(-5px)
-skewX(-2deg)
+translate3d(-4px,0,0)
+skewX(-1deg)
 scale(1.02);
 
 }
@@ -1425,17 +1192,16 @@ scale(1.02);
 to{
 
 transform:
-translateX(5px)
-skewX(2deg)
-scale(1.08);
+translate3d(4px,0,0)
+skewX(1deg)
+scale(1.07);
 
 }
 
 }
-
 
 /* =====================================================
-   لینک ها
+   LINK
 ===================================================== */
 
 .link{
@@ -1446,25 +1212,24 @@ text-decoration:none;
 
 font-weight:bold;
 
-transition:.3s;
+transition:
+color .3s,
+text-shadow .3s;
 
 }
-
 
 .link:hover{
 
 color:white;
 
 text-shadow:
-
 0 0 10px #00ffff,
 0 0 30px #00ffff;
 
 }
 
-
 /* =====================================================
-   تاریخچه
+   HISTORY
 ===================================================== */
 
 .history{
@@ -1477,9 +1242,8 @@ text-align:center;
 
 }
 
-
 /* =====================================================
-   فوتر
+   FOOTER
 ===================================================== */
 
 footer{
@@ -1491,11 +1255,9 @@ text-align:center;
 color:#aaa;
 
 background:
-
 rgba(0,255,255,.025);
 
 }
-
 
 .footer-logo{
 
@@ -1506,52 +1268,41 @@ font-weight:900;
 color:white;
 
 text-shadow:
-
 0 0 20px #00ffff,
 0 0 50px #00ffff,
-0 0 100px #00ffff;
+0 0 90px #00ffff;
 
-animation:
+animation:footerGlow 3s infinite alternate;
 
-footerGlow 3s infinite alternate;
+will-change:transform,opacity;
 
 }
-
 
 footer span{
 
 color:#00ffff;
 
 text-shadow:
-
 0 0 15px #00ffff;
 
 }
 
-
 @keyframes footerGlow{
 
 from{
-
 opacity:.65;
-
 transform:scale(1);
-
 }
 
 to{
-
 opacity:1;
-
-transform:scale(1.04);
-
+transform:scale(1.03);
 }
 
 }
-
 
 /* =====================================================
-   انیمیشن اسکرول
+   SCROLL ANIMATION
 ===================================================== */
 
 .section{
@@ -1567,7 +1318,6 @@ cover 30%;
 
 }
 
-
 @keyframes showSection{
 
 from{
@@ -1575,7 +1325,7 @@ from{
 opacity:0;
 
 transform:
-translateY(80px);
+translate3d(0,60px,0);
 
 }
 
@@ -1584,51 +1334,41 @@ to{
 opacity:1;
 
 transform:
-translateY(0);
+translate3d(0,0,0);
 
 }
 
 }
-
 
 /* =====================================================
-   اسکرول بار آکوا
+   SCROLLBAR
 ===================================================== */
 
 ::-webkit-scrollbar{
-
 width:10px;
-
 }
-
 
 ::-webkit-scrollbar-track{
-
 background:#001317;
-
 }
-
 
 ::-webkit-scrollbar-thumb{
 
 background:
-
 linear-gradient(
 #00ffff,
-#00a9b5
+#a855ff
 );
 
 border-radius:20px;
 
 box-shadow:
-
-0 0 20px #00ffff;
+0 0 15px #00ffff;
 
 }
 
-
 /* =====================================================
-   موبایل
+   MOBILE
 ===================================================== */
 
 @media(max-width:600px){
@@ -1641,78 +1381,90 @@ gap:12px;
 
 padding:12px;
 
+backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(10px);
+
 }
 
 nav a{
-
 font-size:13px;
-
 }
 
 .logo{
-
 letter-spacing:8px;
-
 }
 
 .hero h2{
-
 font-size:28px;
-
 }
 
 .hero p{
-
 font-size:16px;
-
 }
 
 .title{
-
 font-size:35px;
-
 }
 
 .member{
-
 width:100%;
+}
+
+.glass{
+
+backdrop-filter:blur(8px);
+-webkit-backdrop-filter:blur(8px);
 
 }
 
 }
-
 
 /* =====================================================
-   لینکدین؟ نه! لئون! 😄
+   کاهش مصرف در دستگاه های ضعیف
 ===================================================== */
+
+@media(max-width:600px){
+
+body::before{
+
+filter:blur(20px);
+
+}
+
+.arzda::before{
+
+filter:blur(35px);
+
+}
+
+.arzda h2::before{
+
+filter:blur(10px);
+
+}
+
+.member::before{
+
+filter:blur(30px);
+
+}
+
+}
 
 </style>
 
 </head>
 
-
 <body>
 
-
-<!-- =====================================================
-     LOADER
-===================================================== -->
 
 <div class="loader">
 LEON
 </div>
 
 
-<!-- =====================================================
-     پس زمینه
-===================================================== -->
-
 <div class="space"></div>
 
-
-<!-- =====================================================
-     ذرات آکوا
-===================================================== -->
 
 <div class="particles">
 
@@ -1726,54 +1478,32 @@ LEON
 </div>
 
 
-<!-- =====================================================
-     منو
-===================================================== -->
-
 <nav>
 
-<a href="#home">
-خانه
-</a>
+<a href="#home">خانه</a>
 
-<a href="#about">
-درباره کلن
-</a>
+<a href="#about">درباره کلن</a>
 
-<a href="#team">
-اعضا
-</a>
+<a href="#team">اعضا</a>
 
-<a href="#contact">
-ارتباط
-</a>
+<a href="#contact">ارتباط</a>
 
 </nav>
 
 
-<!-- =====================================================
-     صفحه اصلی
-===================================================== -->
-
 <section class="hero" id="home">
-
 
 <div class="logo">
 LEON
 </div>
 
-
 <h2>
 کلن لئون
 </h2>
 
-
 <p>
-
 یک مجموعه خلاق، دوستانه و حرفه‌ای که در تیر ۱۴۰۵ توسط امیرعلی افتتاح شد.
-
 </p>
-
 
 <div class="buttons">
 
@@ -1781,28 +1511,20 @@ LEON
 معرفی کلن
 </a>
 
-
 <a class="btn" href="#team">
 مشاهده اعضا
 </a>
 
 </div>
 
-
 </section>
 
 
-<!-- =====================================================
-     درباره
-===================================================== -->
-
 <section class="section" id="about">
-
 
 <h1 class="title">
 درباره LEON
 </h1>
-
 
 <div class="glass about">
 
@@ -1818,16 +1540,10 @@ LEON
 
 </div>
 
-
 </section>
 
 
-<!-- =====================================================
-     اعضای اصلی
-===================================================== -->
-
 <section class="section" id="team">
-
 
 <h1 class="title">
 اعضای اصلی LEON
@@ -1837,27 +1553,19 @@ LEON
 <div class="members">
 
 
-<!-- =====================================================
-     AMIRALI
-===================================================== -->
-
 <div class="member amirali">
-
 
 <div class="rank">
 🥇 مالک کلن
 </div>
 
-
 <h2>
 🐍 AmirAli
 </h2>
 
-
 <span>
 @LN___AmIrAli
 </span>
-
 
 <p>
 
@@ -1877,26 +1585,18 @@ LEON
 
 </p>
 
-
 </div>
 
 
-<!-- =====================================================
-     WHITEX
-===================================================== -->
-
 <div class="member whitex">
-
 
 <div class="rank">
 🥈 رتبه دوم کلن
 </div>
 
-
 <h2>
 WhiteX
 </h2>
-
 
 <p>
 
@@ -1904,19 +1604,12 @@ WhiteX
 
 </p>
 
-
 </div>
 
 
-<!-- =====================================================
-     ARZDA
-===================================================== -->
-
 <div class="member arzda">
 
-
 <div class="energy-ring"></div>
-
 
 <div class="purple-stars">
 
@@ -1928,21 +1621,17 @@ WhiteX
 
 </div>
 
-
 <div class="rank">
 🥉 طراح و سازنده سایت
 </div>
-
 
 <h2>
 👾 Arzda
 </h2>
 
-
 <span>
 @Arzda_1
 </span>
-
 
 <p>
 
@@ -1966,42 +1655,30 @@ Arzda نمادی از خلاقیت و انرژی تازه در خانواده LE
 
 </p>
 
-
 </div>
 
 
 </div>
-
 
 </section>
 
 
-<!-- =====================================================
-     ارتباط
-===================================================== -->
-
 <section class="section" id="contact">
-
 
 <h1 class="title">
 ارتباط با LEON
 </h1>
 
-
 <div class="glass">
-
 
 <h2>
 👑 شبکه‌های رسمی کلن
 </h2>
 
-
 <p>
 
 کــانــال:
-
 <br>
-
 
 <a class="link"
 href="https://rubika.ir/LEONMINECRAFT">
@@ -2010,44 +1687,31 @@ href="https://rubika.ir/LEONMINECRAFT">
 
 </a>
 
-
 <br><br>
-
 
 مالک کلن:
 
 <br>
 
-
 <a class="link">
-
 @LN___AmIrAli
-
 </a>
 
-
 <br><br>
-
 
 سازنده سایت:
 
 <br>
 
-
 <a class="link">
-
 @Arzda_1
-
 </a>
 
-
 <br><br>
-
 
 آپارات:
 
 <br>
-
 
 <a class="link"
 href="https://www.aparat.com/LEON_LN">
@@ -2056,14 +1720,11 @@ LEON_LN
 
 </a>
 
-
 <br><br>
-
 
 دونیت:
 
 <br>
-
 
 <a class="link"
 href="https://daramet.com/Arzda">
@@ -2072,32 +1733,20 @@ Arzda
 
 </a>
 
-
 </p>
 
-
 </div>
-
 
 </section>
 
 
-<!-- =====================================================
-     تاریخچه
-===================================================== -->
-
 <section class="section">
 
-
 <h1 class="title">
-
 تاریخچه LEON
-
 </h1>
 
-
 <div class="glass history">
-
 
 کلن LEON در تیر ۱۴۰۵ توسط
 
@@ -2107,92 +1756,65 @@ AmirAli
 
 تأسیس شد.
 
-
 <br><br>
-
 
 این مجموعه از همان ابتدا با هدف ساخت یک فضای دوستانه،
 صمیمی و حرفه‌ای شروع به فعالیت کرد.
 
-
 <br><br>
-
 
 با گذشت زمان، اعضای خلاق و پرتلاش به این خانواده اضافه شدند
 و LEON تبدیل به محیطی برای همکاری، ایده‌پردازی و پیشرفت شد.
 
-
 <br><br>
-
 
 در تاریخ ۵ مرداد ۱۴۰۵،
 نسخه رسمی سایت LEON برای معرفی این مجموعه رونمایی شد.
 
-
 </div>
-
 
 </section>
 
 
-<!-- =====================================================
-     فوتر
-===================================================== -->
-
 <footer>
-
 
 <div class="footer-logo">
 LEON
 </div>
 
-
 <br>
-
 
 تمامی حقوق متعلق به کلن LEON است 👑
 
-
 <br><br>
 
-
 ساخته شده توسط:
-
 
 <span>
 @Arzda_1
 </span>
 
-
 <br><br>
 
-
 © 2026 LEON
-
 
 </footer>
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
 <script>
 
-
 /* =====================================================
-   ستاره های بیشتر
+   ستاره های پس زمینه
 ===================================================== */
 
-for(let i=0;i<50;i++){
+for(let i=0;i<35;i++){
 
-let star=document.createElement("span");
+const star=document.createElement("span");
 
 star.style.position="fixed";
 
-star.style.width=(Math.random()*3+1)+"px";
-
-star.style.height=(Math.random()*3+1)+"px";
+star.style.width="2px";
+star.style.height="2px";
 
 star.style.background="white";
 
@@ -2205,10 +1827,10 @@ star.style.top=
 Math.random()*100+"%";
 
 star.style.opacity=
-Math.random();
+Math.random()*.8+.2;
 
 star.style.boxShadow=
-"0 0 10px #00ffff";
+"0 0 7px #00ffff";
 
 star.style.pointerEvents="none";
 
@@ -2220,60 +1842,95 @@ document.body.appendChild(star);
 
 
 /* =====================================================
-   حرکت سه بعدی کارت ها
+   3D کارت ها با requestAnimationFrame
 ===================================================== */
 
 const cards=
 document.querySelectorAll(".member");
 
-
 cards.forEach(card=>{
+
+let targetX=0;
+let targetY=0;
+
+let currentX=0;
+let currentY=0;
+
+let animationFrame=null;
+
+function animateCard(){
+
+currentX +=
+(targetX-currentX)*.12;
+
+currentY +=
+(targetY-currentY)*.12;
+
+card.style.transform=
+`perspective(900px)
+rotateX(${currentY}deg)
+rotateY(${currentX}deg)
+translateZ(0)
+scale(1.02)`;
+
+if(
+Math.abs(targetX-currentX)>.01 ||
+Math.abs(targetY-currentY)>.01
+){
+
+animationFrame=
+requestAnimationFrame(animateCard);
+
+}else{
+
+animationFrame=null;
+
+}
+
+}
 
 
 card.addEventListener("mousemove",e=>{
 
-
-let rect=
+const rect=
 card.getBoundingClientRect();
 
+const x=
+(e.clientX-rect.left)/rect.width;
 
-let x=
-e.clientX-rect.left;
+const y=
+(e.clientY-rect.top)/rect.height;
 
+targetY=
+-(y-.5)*12;
 
-let y=
-e.clientY-rect.top;
+targetX=
+(x-.5)*12;
 
+if(!animationFrame){
 
-let rotateY=
-(x/rect.width-.5)*18;
-
-
-let rotateX=
--(y/rect.height-.5)*18;
-
-
-if(card.classList.contains("arzda")){
-
-card.style.transform=
-`rotateY(${rotateY}deg) rotateX(${rotateX}deg) translateY(-18px) scale(1.04)`;
-
-}else{
-
-card.style.transform=
-`rotateY(${rotateY}deg) rotateX(${rotateX}deg) translateY(-18px) scale(1.03)`;
+animationFrame=
+requestAnimationFrame(animateCard);
 
 }
-
 
 });
 
 
 card.addEventListener("mouseleave",()=>{
 
-card.style.transform="";
+targetX=0;
+targetY=0;
+
+if(!animationFrame){
+
+animationFrame=
+requestAnimationFrame(animateCard);
+
+}
 
 });
+
 
 });
 
@@ -2286,26 +1943,26 @@ async function loadSettings(){
 
 try{
 
-const res=await fetch(
+const res=
+await fetch(
 "https://leon-api.zxczghf1452hcz.workers.dev/settings"
 );
-
 
 const data=
 await res.json();
 
-
 const about=
 document.querySelector(".about");
 
-
-if(about && data.description){
+if(
+about &&
+data.description
+){
 
 about.innerHTML=
 data.description;
 
 }
-
 
 }catch(error){
 
@@ -2318,9 +1975,7 @@ error
 
 }
 
-
 loadSettings();
-
 
 </script>
 
