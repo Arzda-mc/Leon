@@ -36,7 +36,9 @@ body{
     overflow-x:hidden;
 }
 
-/* پس زمینه */
+/* =========================
+   پس زمینه
+========================= */
 
 .space{
     position:fixed;
@@ -54,8 +56,6 @@ body{
 
     opacity:.45;
 }
-
-/* هاله */
 
 body::before{
     content:"";
@@ -79,7 +79,9 @@ body::before{
     z-index:-4;
 }
 
-/* ذرات */
+/* =========================
+   ذرات
+========================= */
 
 .particles{
     position:fixed;
@@ -103,7 +105,9 @@ body::before{
     opacity:.7;
 }
 
-/* لودر */
+/* =========================
+   لودر
+========================= */
 
 .loader{
     position:fixed;
@@ -131,6 +135,7 @@ body::before{
 
     opacity:1;
     visibility:visible;
+
     transition:
         opacity .5s ease,
         visibility .5s ease;
@@ -141,7 +146,9 @@ body::before{
     visibility:hidden;
 }
 
-/* منو */
+/* =========================
+   منو
+========================= */
 
 nav{
     position:fixed;
@@ -177,8 +184,6 @@ nav{
 }
 
 nav a{
-    position:relative;
-
     color:#fff;
 
     text-decoration:none;
@@ -198,7 +203,9 @@ nav a:hover{
         0 0 12px #00ffff;
 }
 
-/* صفحه اصلی */
+/* =========================
+   صفحه اصلی
+========================= */
 
 .hero{
     min-height:100vh;
@@ -227,7 +234,8 @@ nav a:hover{
         0 0 20px #00ffff,
         0 0 50px #00ffff;
 
-    animation:logoGlow 3s ease-in-out infinite alternate;
+    animation:
+        logoGlow 3s ease-in-out infinite alternate;
 
     will-change:text-shadow;
 }
@@ -269,7 +277,9 @@ nav a:hover{
     line-height:2;
 }
 
-/* دکمه ها */
+/* =========================
+   دکمه ها
+========================= */
 
 .buttons{
     margin-top:35px;
@@ -312,7 +322,9 @@ nav a:hover{
         0 0 30px rgba(0,255,255,.7);
 }
 
-/* بخش ها */
+/* =========================
+   بخش ها
+========================= */
 
 .section{
     padding:100px 25px;
@@ -330,7 +342,9 @@ nav a:hover{
         0 0 35px rgba(0,255,255,.5);
 }
 
-/* کارت */
+/* =========================
+   کارت شیشه ای
+========================= */
 
 .glass{
     width:min(900px,100%);
@@ -369,7 +383,9 @@ nav a:hover{
     color:#eee;
 }
 
-/* اعضا */
+/* =========================
+   اعضا
+========================= */
 
 .members{
     display:flex;
@@ -502,7 +518,9 @@ nav a:hover{
     z-index:2;
 }
 
-/* AmirAli */
+/* =========================
+   AmirAli
+========================= */
 
 .amirali h2{
     color:#fff;
@@ -511,7 +529,8 @@ nav a:hover{
         0 0 15px #00ffff,
         0 0 35px #00ffff;
 
-    animation:amiraliGlow 2s infinite alternate;
+    animation:
+        amiraliGlow 2s infinite alternate;
 }
 
 @keyframes amiraliGlow{
@@ -526,7 +545,9 @@ nav a:hover{
 
 }
 
-/* Arzda */
+/* =========================
+   Arzda
+========================= */
 
 .arzda{
 
@@ -576,6 +597,7 @@ nav a:hover{
 
     from{
         opacity:.3;
+
         transform:
             translateX(50%)
             scale(.8);
@@ -583,6 +605,7 @@ nav a:hover{
 
     to{
         opacity:.7;
+
         transform:
             translateX(50%)
             scale(1.1);
@@ -590,7 +613,9 @@ nav a:hover{
 
 }
 
-/* Arzda Rank */
+/* =========================
+   Arzda Rank
+========================= */
 
 .arzda .rank{
 
@@ -626,7 +651,9 @@ nav a:hover{
 
 }
 
-/* نام Arzda */
+/* =========================
+   نام Arzda
+========================= */
 
 .arzda h2{
 
@@ -648,7 +675,9 @@ nav a:hover{
 @keyframes arzdaName{
 
     from{
-        transform:translateX(-2px) scale(1);
+        transform:
+            translateX(-2px)
+            scale(1);
 
         text-shadow:
             0 0 10px #a855f7,
@@ -656,7 +685,9 @@ nav a:hover{
     }
 
     to{
-        transform:translateX(2px) scale(1.035);
+        transform:
+            translateX(2px)
+            scale(1.035);
 
         text-shadow:
             0 0 15px #e9d5ff,
@@ -666,7 +697,9 @@ nav a:hover{
 
 }
 
-/* هاله Arzda */
+/* =========================
+   هاله نام
+========================= */
 
 .arzda h2::after{
 
@@ -692,7 +725,9 @@ nav a:hover{
 
 }
 
-/* آیدی */
+/* =========================
+   آیدی Arzda
+========================= */
 
 .arzda span{
 
@@ -703,7 +738,9 @@ nav a:hover{
         0 0 18px #7c3aed;
 }
 
-/* متن */
+/* =========================
+   متن Arzda
+========================= */
 
 .arzda p{
 
@@ -713,7 +750,9 @@ nav a:hover{
         0 0 5px rgba(168,85,247,.2);
 }
 
-/* ذرات */
+/* =========================
+   ذرات بنفش
+========================= */
 
 .arzda .purple-dots{
 
@@ -781,7 +820,9 @@ nav a:hover{
 
 }
 
-/* لینک */
+/* =========================
+   لینک ها
+========================= */
 
 .link{
     color:#8fffff;
@@ -802,7 +843,9 @@ nav a:hover{
         0 0 15px #00ffff;
 }
 
-/* تاریخچه */
+/* =========================
+   تاریخچه
+========================= */
 
 .history{
     text-align:center;
@@ -812,7 +855,9 @@ nav a:hover{
     line-height:2.4;
 }
 
-/* فوتر */
+/* =========================
+   فوتر
+========================= */
 
 footer{
 
@@ -837,7 +882,6 @@ footer{
     text-shadow:
         0 0 20px #00ffff,
         0 0 50px #00ffff;
-
 }
 
 footer span{
@@ -848,7 +892,9 @@ footer span{
         0 0 10px #00ffff;
 }
 
-/* اسکرول */
+/* =========================
+   اسکرول بار
+========================= */
 
 ::-webkit-scrollbar{
     width:8px;
@@ -869,13 +915,17 @@ footer span{
     border-radius:20px;
 }
 
-/* موبایل */
+/* =========================
+   موبایل
+========================= */
 
 @media(max-width:600px){
 
     nav{
         width:95%;
+
         gap:10px;
+
         padding:11px 8px;
     }
 
@@ -917,7 +967,9 @@ footer span{
 
     .member{
         width:100%;
+
         min-height:350px;
+
         padding:27px 20px;
     }
 
@@ -946,7 +998,9 @@ footer span{
 
 }
 
-/* کاهش انیمیشن */
+/* =========================
+   کاهش انیمیشن
+========================= */
 
 @media(prefers-reduced-motion:reduce){
 
@@ -965,13 +1019,25 @@ footer span{
 
 <body>
 
-<!-- لودر -->
+<!-- =========================
+     موزیک سایت
+========================= -->
+
+<audio id="bgMusic" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- =========================
+     لودر
+========================= -->
 
 <div class="loader" id="loader">
     LEON
 </div>
 
-<!-- پس زمینه -->
+<!-- =========================
+     پس زمینه
+========================= -->
 
 <div class="space"></div>
 
@@ -985,21 +1051,33 @@ footer span{
 
 </div>
 
-<!-- منو -->
+<!-- =========================
+     منو
+========================= -->
 
 <nav>
 
-    <a href="#home">خانه</a>
+    <a href="#home">
+        خانه
+    </a>
 
-    <a href="#about">درباره کلن</a>
+    <a href="#about">
+        درباره کلن
+    </a>
 
-    <a href="#team">اعضا</a>
+    <a href="#team">
+        اعضا
+    </a>
 
-    <a href="#contact">ارتباط</a>
+    <a href="#contact">
+        ارتباط
+    </a>
 
 </nav>
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero" id="home">
 
@@ -1029,7 +1107,9 @@ footer span{
 
 </section>
 
-<!-- درباره -->
+<!-- =========================
+     درباره
+========================= -->
 
 <section class="section" id="about">
 
@@ -1055,7 +1135,9 @@ footer span{
 
 </section>
 
-<!-- اعضا -->
+<!-- =========================
+     اعضا
+========================= -->
 
 <section class="section" id="team">
 
@@ -1172,7 +1254,9 @@ footer span{
 
 </section>
 
-<!-- ارتباط -->
+<!-- =========================
+     ارتباط
+========================= -->
 
 <section class="section" id="contact">
 
@@ -1257,7 +1341,9 @@ footer span{
 
 </section>
 
-<!-- تاریخچه -->
+<!-- =========================
+     تاریخچه
+========================= -->
 
 <section class="section">
 
@@ -1268,7 +1354,11 @@ footer span{
     <div class="glass history">
 
         کلن LEON در تیر ۱۴۰۵ توسط
-        <b>AmirAli</b>
+
+        <b>
+            AmirAli
+        </b>
+
         تأسیس شد.
 
         <br><br>
@@ -1290,7 +1380,9 @@ footer span{
 
 </section>
 
-<!-- فوتر -->
+<!-- =========================
+     فوتر
+========================= -->
 
 <footer>
 
@@ -1316,7 +1408,9 @@ footer span{
 
 </footer>
 
-<!-- API -->
+<!-- =========================
+     JavaScript
+========================= -->
 
 <script>
 
@@ -1324,13 +1418,10 @@ footer span{
 
     "use strict";
 
-    /*
-     * لودر:
-     * حتی اگر اینترنت یا API مشکل داشته باشد
-     * سایت بیشتر از 1.5 ثانیه پشت لودر نمی ماند.
-     */
+    /* لودر */
 
-    const loader = document.getElementById("loader");
+    const loader =
+        document.getElementById("loader");
 
     function hideLoader(){
 
@@ -1356,9 +1447,55 @@ footer span{
     );
 
 
-    /*
-     * API
-     */
+    /* موزیک */
+
+    const music =
+        document.getElementById("bgMusic");
+
+    if(music){
+
+        music.volume = 0.35;
+
+        function startMusic(){
+
+            music.play()
+                .then(function(){
+
+                    document.removeEventListener(
+                        "click",
+                        startMusic
+                    );
+
+                    document.removeEventListener(
+                        "touchstart",
+                        startMusic
+                    );
+
+                })
+                .catch(function(){
+
+                    /* مرورگر اجازه پخش نداد */
+
+                });
+
+        }
+
+        document.addEventListener(
+            "click",
+            startMusic,
+            {passive:true}
+        );
+
+        document.addEventListener(
+            "touchstart",
+            startMusic,
+            {passive:true}
+        );
+
+    }
+
+
+    /* API */
 
     async function loadSettings(){
 
@@ -1383,11 +1520,16 @@ footer span{
                     url,
                     {
                         method:"GET",
+
                         headers:{
-                            "Accept":"application/json"
+                            "Accept":
+                                "application/json"
                         },
+
                         cache:"no-store",
-                        signal:controller.signal
+
+                        signal:
+                            controller.signal
                     }
                 );
 
@@ -1398,7 +1540,9 @@ footer span{
             }
 
             const contentType =
-                response.headers.get("content-type") || "";
+                response.headers.get(
+                    "content-type"
+                ) || "";
 
             if(
                 !contentType.includes(
@@ -1419,7 +1563,8 @@ footer span{
             }
 
             if(
-                typeof data.description !== "string" ||
+                typeof data.description !==
+                "string" ||
                 !data.description.trim()
             ){
                 return;
@@ -1432,50 +1577,43 @@ footer span{
                 return;
             }
 
-            /*
-             * به جای innerHTML از textContent استفاده نمی‌کنیم،
-             * چون description می‌تواند <br> و HTML داشته باشد.
-             *
-             * اما فقط HTMLهای ساده و مجاز را نگه می‌داریم.
-             */
-
             const temp =
                 document.createElement("div");
 
             temp.innerHTML =
                 data.description;
 
-            const dangerous =
-                temp.querySelectorAll(
-                    "script,iframe,object,embed,style,link,form"
-                );
-
-            dangerous.forEach(
+            temp.querySelectorAll(
+                "script,iframe,object,embed,style,link,form"
+            ).forEach(
                 function(element){
                     element.remove();
                 }
             );
 
-            temp.querySelectorAll(
-                "*"
-            ).forEach(
-                function(element){
+            temp.querySelectorAll("*")
+                .forEach(
+                    function(element){
 
-                    [
-                        "onclick",
-                        "onload",
-                        "onerror",
-                        "onmouseover",
-                        "onfocus",
-                        "onmouseenter"
-                    ].forEach(
-                        function(attribute){
-                            element.removeAttribute(attribute);
-                        }
-                    );
+                        [
+                            "onclick",
+                            "onload",
+                            "onerror",
+                            "onmouseover",
+                            "onfocus",
+                            "onmouseenter"
+                        ].forEach(
+                            function(attribute){
 
-                }
-            );
+                                element.removeAttribute(
+                                    attribute
+                                );
+
+                            }
+                        );
+
+                    }
+                );
 
             about.replaceChildren(
                 ...Array.from(
@@ -1484,11 +1622,6 @@ footer span{
             );
 
         }catch(error){
-
-            /*
-             * اگر API قطع باشد،
-             * سایت با محتوای پیش‌فرض خودش ادامه می‌دهد.
-             */
 
             console.warn(
                 "LEON API unavailable:",
