@@ -12,993 +12,683 @@
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap');
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:"Vazirmatn",Tahoma,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Vazirmatn",Tahoma,sans-serif;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-
-background:
-radial-gradient(
-circle at 50% -10%,
-#006b73 0%,
-#003b42 25%,
-#00171b 55%,
-#000 100%
-);
-
-color:white;
-overflow-x:hidden;
-
+    min-height:100vh;
+    background:
+        radial-gradient(
+            circle at top,
+            #004d55 0%,
+            #00272d 35%,
+            #001114 65%,
+            #000 100%
+        );
+    color:#fff;
+    overflow-x:hidden;
 }
 
-/* =====================================================
-   پس زمینه
-===================================================== */
+/* پس زمینه */
 
 .space{
-
-position:fixed;
-inset:0;
-z-index:-5;
-
-background:
-radial-gradient(circle,rgba(255,255,255,.9) 1px,transparent 1px),
-radial-gradient(circle,rgba(0,255,255,.9) 1px,transparent 1px),
-radial-gradient(circle,rgba(0,200,220,.4) 1px,transparent 1px);
-
-background-size:
-70px 70px,
-120px 120px,
-200px 200px;
-
-animation:starsMove 30s linear infinite;
-
-will-change:transform;
-
-}
-
-@keyframes starsMove{
-
-from{
-transform:translate3d(0,0,0);
-}
-
-to{
-transform:translate3d(0,500px,0);
-}
-
-}
-
-body::before{
-
-content:"";
-
-position:fixed;
-
-width:700px;
-height:700px;
-
-top:-350px;
-left:50%;
-
-transform:translate3d(-50%,0,0);
-
-background:
-radial-gradient(
-circle,
-rgba(0,255,255,.22),
-transparent 70%
-);
-
-filter:blur(30px);
-
-pointer-events:none;
-
-z-index:-4;
-
-}
-
-/* =====================================================
-   ذرات
-===================================================== */
-
-.particles{
-
-position:fixed;
-inset:0;
-
-pointer-events:none;
-z-index:-1;
-
-}
-
-.particles span{
-
-position:fixed;
-
-width:5px;
-height:5px;
-
-background:#00ffff;
-
-border-radius:50%;
-
-box-shadow:
-0 0 10px #00ffff,
-0 0 25px #00ffff;
-
-animation:floatParticle 10s infinite;
-
-will-change:transform,opacity;
-
-}
-
-@keyframes floatParticle{
-
-0%{
-transform:translate3d(0,110vh,0) scale(.3);
-opacity:0;
-}
-
-20%{
-opacity:1;
-}
-
-50%{
-transform:translate3d(30px,50vh,0) scale(1);
-}
-
-100%{
-transform:translate3d(-30px,-10vh,0) scale(.3);
-opacity:0;
-}
-
-}
-
-/* =====================================================
-   لودر
-===================================================== */
-
-.loader{
-
-position:fixed;
-inset:0;
-
-background:#000;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-font-size:75px;
-font-weight:900;
-
-color:white;
-
-z-index:99999;
-
-animation:loading 3s forwards;
-
-text-shadow:
-0 0 15px white,
-0 0 40px #00ffff,
-0 0 80px #00ffff,
-0 0 140px #00ffff;
-
-will-change:opacity;
-
-}
-
-@keyframes loading{
-
-0%{
-opacity:1;
-}
-
-75%{
-opacity:1;
-}
-
-100%{
-opacity:0;
-visibility:hidden;
-}
-
-}
-
-/* =====================================================
-   منو
-===================================================== */
-
-nav{
-
-position:fixed;
-
-top:20px;
-right:50%;
-
-transform:translate3d(50%,0,0);
-
-width:90%;
-
-padding:15px 25px;
-
-background:rgba(0,255,255,.07);
-
-border:
-1px solid rgba(0,255,255,.3);
-
-backdrop-filter:blur(15px);
--webkit-backdrop-filter:blur(15px);
-
-border-radius:35px;
-
-display:flex;
-
-justify-content:center;
-
-gap:35px;
-
-z-index:1000;
-
-box-shadow:
-0 0 20px rgba(0,255,255,.25);
-
-}
-
-nav a{
-
-color:white;
-
-text-decoration:none;
-
-font-weight:bold;
-
-transition:
-color .3s,
-text-shadow .3s;
-
-position:relative;
-
-}
-
-nav a::after{
-
-content:"";
-
-position:absolute;
-
-width:0;
-
-height:2px;
-
-bottom:-7px;
-
-right:0;
-
-background:#00ffff;
-
-box-shadow:
-0 0 10px #00ffff;
-
-transition:width .3s;
-
-}
-
-nav a:hover{
-
-color:#00ffff;
-
-text-shadow:
-0 0 15px #00ffff,
-0 0 30px #00ffff;
-
-}
-
-nav a:hover::after{
-
-width:100%;
-
-}
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero{
-
-min-height:100vh;
-
-display:flex;
-
-flex-direction:column;
-
-justify-content:center;
-align-items:center;
-
-text-align:center;
-
-padding:30px;
-
-position:relative;
-
-}
-
-.hero::before{
-
-content:"";
-
-position:absolute;
-
-width:500px;
-height:500px;
-
-background:
-radial-gradient(
-circle,
-rgba(0,255,255,.13),
-transparent 70%
-);
-
-filter:blur(25px);
-
-z-index:-1;
-
-animation:heroAura 5s infinite alternate;
-
-will-change:transform,opacity;
-
-}
-
-@keyframes heroAura{
-
-from{
-transform:scale(.8);
-opacity:.5;
-}
-
-to{
-transform:scale(1.15);
-opacity:1;
-}
-
-}
-
-.logo{
-
-font-size:clamp(80px,15vw,150px);
-
-font-weight:900;
-
-letter-spacing:15px;
-
-color:white;
-
-animation:logoPulse 3s infinite alternate;
-
-will-change:transform;
-
-}
-
-@keyframes logoPulse{
-
-0%{
-
-text-shadow:
-0 0 10px white,
-0 0 30px #00ffff,
-0 0 60px #00ffff;
-
-transform:scale(1);
-
-}
-
-100%{
-
-text-shadow:
-0 0 20px white,
-0 0 50px #00ffff,
-0 0 100px #00ffff;
-
-transform:scale(1.025);
-
-}
-
-}
-
-.hero h2{
-
-font-size:35px;
-margin-top:20px;
-
-text-shadow:
-0 0 20px #00ffff;
-
-}
-
-.hero p{
-
-max-width:700px;
-
-margin-top:20px;
-
-font-size:20px;
-
-color:#ddd;
-
-line-height:2;
-
-}
-
-/* =====================================================
-   دکمه
-===================================================== */
-
-.buttons{
-margin-top:40px;
-}
-
-.btn{
-
-display:inline-block;
-
-padding:15px 35px;
-
-margin:10px;
-
-border-radius:30px;
-
-background:
-linear-gradient(
-45deg,
-#008c99,
-#00ffff,
-#8fffff
-);
-
-color:#001317;
-
-text-decoration:none;
-
-font-weight:bold;
-
-box-shadow:
-0 0 20px #00ffff;
-
-transition:
-transform .3s,
-box-shadow .3s;
-
-will-change:transform;
-
-}
-
-.btn:hover{
-
-transform:translate3d(0,-5px,0) scale(1.08);
-
-box-shadow:
-0 0 30px #00ffff,
-0 0 60px rgba(0,255,255,.5);
-
-}
-
-/* =====================================================
-   بخش ها
-===================================================== */
-
-.section{
-
-padding:110px 30px;
-
-}
-
-.title{
-
-text-align:center;
-
-font-size:50px;
-
-margin-bottom:50px;
-
-color:white;
-
-text-shadow:
-0 0 15px #00ffff,
-0 0 40px #00ffff;
-
-}
-
-/* =====================================================
-   GLASS
-===================================================== */
-
-.glass{
-
-max-width:900px;
-
-margin:30px auto;
-
-padding:40px;
-
-background:
-rgba(0,255,255,.055);
-
-border-radius:35px;
-
-border:
-1px solid rgba(0,255,255,.25);
-
-backdrop-filter:blur(12px);
--webkit-backdrop-filter:blur(12px);
-
-box-shadow:
-0 0 30px rgba(0,255,255,.15);
-
-transition:
-transform .4s,
-box-shadow .4s;
-
-}
-
-.glass:hover{
-
-transform:translate3d(0,-10px,0);
-
-box-shadow:
-0 0 50px rgba(0,255,255,.35);
-
-}
-
-/* =====================================================
-   ABOUT
-===================================================== */
-
-.about{
-
-font-size:22px;
-
-line-height:2.3;
-
-text-align:center;
-
-color:#eee;
-
-}
-
-/* =====================================================
-   MEMBERS
-===================================================== */
-
-.members{
-
-display:flex;
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-gap:40px;
-
-perspective:1200px;
-
-}
-
-.member{
-
-width:350px;
-
-min-height:400px;
-
-padding:35px;
-
-background:
-rgba(0,255,255,.045);
-
-border-radius:40px;
-
-border:
-1px solid rgba(0,255,255,.25);
-
-backdrop-filter:blur(12px);
--webkit-backdrop-filter:blur(12px);
-
-text-align:center;
-
-transition:
-transform .25s ease-out,
-box-shadow .35s;
-
-position:relative;
-
-overflow:hidden;
-
-transform-style:preserve-3d;
-
-will-change:transform;
-
-}
-
-.member::before{
-
-content:"";
-
-position:absolute;
-
-width:250px;
-height:250px;
-
-top:-100px;
-right:-100px;
-
-background:
-radial-gradient(
-circle,
-rgba(0,255,255,.45),
-transparent 70%
-);
-
-filter:blur(40px);
-
-pointer-events:none;
-
-}
-
-.member:hover{
-
-box-shadow:
-0 0 40px rgba(0,255,255,.35);
-
-}
-
-.member h2{
-
-font-size:40px;
-
-margin:25px 0;
-
-position:relative;
-
-z-index:5;
-
-}
-
-.member span{
-
-color:#8fffff;
-
-font-size:18px;
-
-position:relative;
-
-z-index:5;
-
-}
-
-.member p{
-
-margin-top:25px;
-
-line-height:2;
-
-font-size:17px;
-
-color:#eee;
-
-position:relative;
-
-z-index:5;
-
-}
-
-.rank{
-
-background:
-linear-gradient(
-45deg,
-#008c99,
-#00ffff
-);
-
-color:#001317;
-
-padding:10px 20px;
-
-border-radius:30px;
-
-display:inline-block;
-
-box-shadow:
-0 0 20px #00ffff;
-
-font-weight:bold;
-
-position:relative;
-
-z-index:5;
-
-}
-
-/* =====================================================
-   AMIRALI
-===================================================== */
-
-.amirali h2{
-
-animation:snake 2s infinite alternate;
-
-color:white;
-
-text-shadow:
-0 0 20px #00ffff,
-0 0 50px #00ffff;
-
-will-change:transform;
-
-}
-
-@keyframes snake{
-
-from{
-transform:translate3d(-5px,0,0);
-}
-
-to{
-transform:translate3d(5px,0,0);
-}
-
-}
-
-/* =====================================================
-   ARZDA
-===================================================== */
-
-.arzda{
-
-border:
-1px solid rgba(168,85,247,.8);
-
-background:
-
-radial-gradient(
-circle at 50% 0%,
-rgba(147,51,234,.28),
-rgba(0,255,255,.02) 45%,
-rgba(0,0,0,.3)
-);
-
-box-shadow:
-
-0 0 25px rgba(147,51,234,.4),
-0 0 60px rgba(124,58,237,.15),
-inset 0 0 40px rgba(147,51,234,.1);
-
+    position:fixed;
+    inset:0;
+    z-index:-5;
+    pointer-events:none;
+
+    background-image:
+        radial-gradient(circle,#fff 1px,transparent 1.5px),
+        radial-gradient(circle,#00ffff .8px,transparent 1.4px);
+
+    background-size:
+        85px 85px,
+        140px 140px;
+
+    opacity:.45;
 }
 
 /* هاله */
 
+body::before{
+    content:"";
+    position:fixed;
+
+    width:600px;
+    height:600px;
+
+    top:-400px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:#00ffff;
+
+    opacity:.08;
+
+    filter:blur(50px);
+
+    pointer-events:none;
+    z-index:-4;
+}
+
+/* ذرات */
+
+.particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:-1;
+}
+
+.particles span{
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    border-radius:50%;
+
+    background:#00ffff;
+
+    box-shadow:0 0 8px #00ffff;
+
+    opacity:.7;
+}
+
+/* لودر */
+
+.loader{
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#000;
+
+    color:#fff;
+
+    font-size:70px;
+    font-weight:900;
+
+    z-index:99999;
+
+    pointer-events:none;
+
+    text-shadow:
+        0 0 20px #fff,
+        0 0 45px #00ffff,
+        0 0 80px #00ffff;
+
+    opacity:1;
+    visibility:visible;
+    transition:
+        opacity .5s ease,
+        visibility .5s ease;
+}
+
+.loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+/* منو */
+
+nav{
+    position:fixed;
+
+    top:18px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:min(92%,900px);
+
+    padding:13px 20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:30px;
+
+    background:rgba(0,40,45,.78);
+
+    border:1px solid rgba(0,255,255,.25);
+
+    border-radius:30px;
+
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+
+    box-shadow:
+        0 0 20px rgba(0,255,255,.12);
+
+    z-index:1000;
+}
+
+nav a{
+    position:relative;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:15px;
+    font-weight:700;
+
+    transition:
+        color .2s ease,
+        text-shadow .2s ease;
+}
+
+nav a:hover{
+    color:#00ffff;
+
+    text-shadow:
+        0 0 12px #00ffff;
+}
+
+/* صفحه اصلی */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:100px 25px 50px;
+}
+
+.logo{
+    font-size:clamp(70px,15vw,145px);
+
+    font-weight:900;
+
+    letter-spacing:12px;
+
+    color:#fff;
+
+    text-shadow:
+        0 0 20px #00ffff,
+        0 0 50px #00ffff;
+
+    animation:logoGlow 3s ease-in-out infinite alternate;
+
+    will-change:text-shadow;
+}
+
+@keyframes logoGlow{
+
+    from{
+        text-shadow:
+            0 0 15px #00ffff,
+            0 0 35px #00ffff;
+    }
+
+    to{
+        text-shadow:
+            0 0 25px #fff,
+            0 0 55px #00ffff;
+    }
+
+}
+
+.hero h2{
+    margin-top:15px;
+
+    font-size:34px;
+
+    text-shadow:
+        0 0 15px #00ffff;
+}
+
+.hero p{
+    max-width:700px;
+
+    margin-top:18px;
+
+    font-size:19px;
+
+    color:#ddd;
+
+    line-height:2;
+}
+
+/* دکمه ها */
+
+.buttons{
+    margin-top:35px;
+}
+
+.btn{
+    display:inline-block;
+
+    padding:14px 32px;
+
+    margin:8px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            45deg,
+            #008b96,
+            #00ffff
+        );
+
+    color:#001317;
+
+    text-decoration:none;
+
+    font-weight:900;
+
+    box-shadow:
+        0 0 18px rgba(0,255,255,.45);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 0 30px rgba(0,255,255,.7);
+}
+
+/* بخش ها */
+
+.section{
+    padding:100px 25px;
+}
+
+.title{
+    text-align:center;
+
+    font-size:clamp(32px,6vw,50px);
+
+    margin-bottom:45px;
+
+    text-shadow:
+        0 0 15px #00ffff,
+        0 0 35px rgba(0,255,255,.5);
+}
+
+/* کارت */
+
+.glass{
+    width:min(900px,100%);
+
+    margin:30px auto;
+
+    padding:35px;
+
+    background:
+        rgba(0,255,255,.045);
+
+    border:
+        1px solid rgba(0,255,255,.2);
+
+    border-radius:30px;
+
+    backdrop-filter:blur(7px);
+    -webkit-backdrop-filter:blur(7px);
+
+    box-shadow:
+        0 0 25px rgba(0,255,255,.1);
+}
+
+.glass:hover{
+    box-shadow:
+        0 0 35px rgba(0,255,255,.2);
+}
+
+.about{
+    font-size:21px;
+
+    line-height:2.3;
+
+    text-align:center;
+
+    color:#eee;
+}
+
+/* اعضا */
+
+.members{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:30px;
+}
+
+.member{
+    position:relative;
+
+    width:350px;
+
+    min-height:400px;
+
+    padding:32px;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    background:
+        rgba(0,255,255,.04);
+
+    border:
+        1px solid rgba(0,255,255,.2);
+
+    border-radius:35px;
+
+    backdrop-filter:blur(7px);
+    -webkit-backdrop-filter:blur(7px);
+
+    box-shadow:
+        0 0 20px rgba(0,255,255,.08);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.member::before{
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    top:-80px;
+    right:-80px;
+
+    border-radius:50%;
+
+    background:#00ffff;
+
+    opacity:.12;
+
+    filter:blur(35px);
+
+    pointer-events:none;
+}
+
+.member:hover{
+    transform:translateY(-7px);
+
+    box-shadow:
+        0 0 35px rgba(0,255,255,.25);
+}
+
+.member h2{
+    position:relative;
+
+    margin:22px 0;
+
+    font-size:38px;
+
+    z-index:2;
+}
+
+.member span{
+    position:relative;
+
+    color:#8fffff;
+
+    font-size:17px;
+
+    z-index:2;
+}
+
+.member p{
+    position:relative;
+
+    margin-top:23px;
+
+    color:#eee;
+
+    font-size:16px;
+
+    line-height:2;
+
+    z-index:2;
+}
+
+.rank{
+    position:relative;
+
+    display:inline-block;
+
+    padding:9px 18px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            45deg,
+            #008c99,
+            #00ffff
+        );
+
+    color:#001317;
+
+    font-weight:900;
+
+    box-shadow:
+        0 0 15px rgba(0,255,255,.4);
+
+    z-index:2;
+}
+
+/* AmirAli */
+
+.amirali h2{
+    color:#fff;
+
+    text-shadow:
+        0 0 15px #00ffff,
+        0 0 35px #00ffff;
+
+    animation:amiraliGlow 2s infinite alternate;
+}
+
+@keyframes amiraliGlow{
+
+    from{
+        transform:translateX(-3px);
+    }
+
+    to{
+        transform:translateX(3px);
+    }
+
+}
+
+/* Arzda */
+
+.arzda{
+
+    border-color:
+        rgba(168,85,247,.75);
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(147,51,234,.24),
+            rgba(0,255,255,.02) 45%,
+            rgba(0,0,0,.2)
+        );
+
+    box-shadow:
+        0 0 25px rgba(147,51,234,.3),
+        inset 0 0 30px rgba(147,51,234,.08);
+}
+
 .arzda::before{
 
-content:"";
+    width:260px;
+    height:260px;
 
-position:absolute;
+    top:-120px;
+    right:50%;
 
-width:330px;
-height:330px;
+    transform:translateX(50%);
 
-top:-150px;
-right:50%;
+    background:
+        radial-gradient(
+            circle,
+            #d946ef,
+            #9333ea 40%,
+            transparent 72%
+        );
 
-transform:translate3d(50%,0,0);
+    opacity:.5;
 
-background:
+    filter:blur(40px);
 
-radial-gradient(
-circle,
-#d946ef,
-#9333ea 30%,
-#7c3aed 50%,
-transparent 72%
-);
-
-filter:blur(50px);
-
-opacity:.65;
-
-animation:arzdaAura 4s infinite alternate;
-
-will-change:transform,opacity;
-
+    animation:
+        arzdaAura 4s ease-in-out infinite alternate;
 }
 
 @keyframes arzdaAura{
 
-0%{
+    from{
+        opacity:.3;
+        transform:
+            translateX(50%)
+            scale(.8);
+    }
 
-transform:
-translate3d(50%,0,0)
-scale(.75);
-
-opacity:.35;
-
-}
-
-100%{
-
-transform:
-translate3d(50%,0,0)
-scale(1.2);
-
-opacity:.85;
+    to{
+        opacity:.7;
+        transform:
+            translateX(50%)
+            scale(1.1);
+    }
 
 }
 
-}
-
-/* رتبه */
+/* Arzda Rank */
 
 .arzda .rank{
 
-background:
+    background:
+        linear-gradient(
+            90deg,
+            #4c1d95,
+            #7c3aed,
+            #a855f7,
+            #d946ef
+        );
 
-linear-gradient(
-90deg,
-#4c1d95,
-#7c3aed,
-#a855f7,
-#d946ef,
-#a855f7,
-#7c3aed
-);
+    background-size:200% 100%;
 
-background-size:300% 100%;
+    color:#fff;
 
-color:white;
+    box-shadow:
+        0 0 20px rgba(147,51,234,.7);
 
-box-shadow:
-
-0 0 20px #9333ea,
-0 0 45px #7c3aed;
-
-animation:purpleRank 3s linear infinite;
-
+    animation:
+        purpleRank 4s linear infinite;
 }
 
 @keyframes purpleRank{
 
-0%{
-background-position:0% 50%;
-}
+    from{
+        background-position:0 50%;
+    }
 
-50%{
-background-position:100% 50%;
-}
-
-100%{
-background-position:0% 50%;
-}
+    to{
+        background-position:200% 50%;
+    }
 
 }
 
-/* نام */
+/* نام Arzda */
 
 .arzda h2{
 
-font-size:46px;
+    color:#e9d5ff;
 
-font-weight:900;
+    font-size:44px;
 
-color:#e9d5ff;
+    letter-spacing:2px;
 
-letter-spacing:3px;
+    text-shadow:
+        0 0 10px #a855f7,
+        0 0 30px #9333ea,
+        0 0 60px #7c3aed;
 
-position:relative;
+    animation:
+        arzdaName 2.5s ease-in-out infinite alternate;
+}
 
-animation:endermanGlow 2.5s infinite alternate;
+@keyframes arzdaName{
 
-will-change:transform;
+    from{
+        transform:translateX(-2px) scale(1);
+
+        text-shadow:
+            0 0 10px #a855f7,
+            0 0 25px #9333ea;
+    }
+
+    to{
+        transform:translateX(2px) scale(1.035);
+
+        text-shadow:
+            0 0 15px #e9d5ff,
+            0 0 35px #a855f7,
+            0 0 65px #7c3aed;
+    }
 
 }
 
-.arzda h2::before{
+/* هاله Arzda */
 
-content:"Arzda";
+.arzda h2::after{
 
-position:absolute;
+    content:"ARZDA";
 
-top:50%;
-left:50%;
+    position:absolute;
 
-transform:
-translate3d(-50%,-50%,0);
+    left:50%;
+    top:50%;
 
-font-size:65px;
+    transform:
+        translate(-50%,-50%);
 
-color:#9333ea;
+    color:#9333ea;
 
-filter:blur(14px);
+    opacity:.3;
 
-opacity:.75;
+    filter:blur(10px);
 
-z-index:-1;
+    font-size:55px;
 
-animation:nameAura 2s infinite alternate;
-
-will-change:transform,opacity;
-
-}
-
-@keyframes nameAura{
-
-from{
-
-opacity:.3;
-
-transform:
-translate3d(-50%,-50%,0)
-scale(.8);
-
-}
-
-to{
-
-opacity:.8;
-
-transform:
-translate3d(-50%,-50%,0)
-scale(1.2);
-
-}
-
-}
-
-@keyframes endermanGlow{
-
-0%{
-
-transform:
-translate3d(-3px,0,0)
-scale(1);
-
-text-shadow:
-0 0 8px #c084fc,
-0 0 20px #9333ea,
-0 0 40px #7c3aed;
-
-}
-
-50%{
-
-transform:
-translate3d(3px,0,0)
-scale(1.04);
-
-text-shadow:
-0 0 15px #e9d5ff,
-0 0 35px #c084fc,
-0 0 70px #9333ea;
-
-}
-
-100%{
-
-transform:
-translate3d(-2px,0,0)
-scale(1.05);
-
-text-shadow:
-0 0 20px white,
-0 0 40px #d946ef,
-0 0 80px #9333ea;
-
-}
+    z-index:-1;
 
 }
 
@@ -1006,979 +696,814 @@ text-shadow:
 
 .arzda span{
 
-color:#d8b4fe;
+    color:#d8b4fe;
 
-text-shadow:
-0 0 10px #a855f7,
-0 0 25px #9333ea;
-
+    text-shadow:
+        0 0 8px #9333ea,
+        0 0 18px #7c3aed;
 }
 
 /* متن */
 
 .arzda p{
 
-color:#f3e8ff;
+    color:#f3e8ff;
 
-text-shadow:
-0 0 6px rgba(168,85,247,.25);
+    text-shadow:
+        0 0 5px rgba(168,85,247,.2);
+}
+
+/* ذرات */
+
+.arzda .purple-dots{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:1;
+}
+
+.arzda .purple-dots i{
+
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:#d8b4fe;
+
+    box-shadow:
+        0 0 8px #a855f7;
+
+    animation:
+        purpleDot 2.5s ease-in-out infinite;
+}
+
+.arzda .purple-dots i:nth-child(1){
+    top:18%;
+    left:15%;
+}
+
+.arzda .purple-dots i:nth-child(2){
+    top:28%;
+    right:12%;
+    animation-delay:.5s;
+}
+
+.arzda .purple-dots i:nth-child(3){
+    top:65%;
+    left:10%;
+    animation-delay:1s;
+}
+
+.arzda .purple-dots i:nth-child(4){
+    top:72%;
+    right:15%;
+    animation-delay:1.5s;
+}
+
+@keyframes purpleDot{
+
+    0%,100%{
+        opacity:.2;
+        transform:scale(.5);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.5);
+    }
 
 }
 
-/* حلقه */
-
-.arzda .energy-ring{
-
-position:absolute;
-
-width:250px;
-height:250px;
-
-border:
-1px solid rgba(168,85,247,.25);
-
-border-radius:50%;
-
-top:-115px;
-left:50%;
-
-transform:translate3d(-50%,0,0);
-
-box-shadow:
-0 0 25px rgba(147,51,234,.18);
-
-animation:ringSpin 10s linear infinite;
-
-pointer-events:none;
-
-will-change:transform;
-
-}
-
-@keyframes ringSpin{
-
-from{
-
-transform:
-translate3d(-50%,0,0)
-rotate(0deg);
-
-}
-
-to{
-
-transform:
-translate3d(-50%,0,0)
-rotate(360deg);
-
-}
-
-}
-
-/* ستاره های بنفش */
-
-.arzda .purple-stars{
-
-position:absolute;
-
-inset:0;
-
-pointer-events:none;
-
-}
-
-.arzda .purple-stars i{
-
-position:absolute;
-
-width:4px;
-height:4px;
-
-background:#d8b4fe;
-
-border-radius:50%;
-
-box-shadow:
-0 0 8px #c084fc,
-0 0 18px #9333ea;
-
-animation:purpleStar 3s infinite;
-
-will-change:transform,opacity;
-
-}
-
-.arzda .purple-stars i:nth-child(1){
-top:15%;
-left:15%;
-animation-delay:.2s;
-}
-
-.arzda .purple-stars i:nth-child(2){
-top:30%;
-left:85%;
-animation-delay:1s;
-}
-
-.arzda .purple-stars i:nth-child(3){
-top:65%;
-left:10%;
-animation-delay:1.7s;
-}
-
-.arzda .purple-stars i:nth-child(4){
-top:75%;
-left:90%;
-animation-delay:.5s;
-}
-
-.arzda .purple-stars i:nth-child(5){
-top:45%;
-left:50%;
-animation-delay:2s;
-}
-
-@keyframes purpleStar{
-
-0%,100%{
-
-opacity:.15;
-
-transform:scale(.5);
-
-}
-
-50%{
-
-opacity:1;
-
-transform:scale(1.6);
-
-}
-
-}
-
-/* Hover */
-
-.arzda:hover{
-
-border-color:#d8b4fe;
-
-box-shadow:
-
-0 0 30px #7c3aed,
-0 0 60px #9333ea,
-0 0 100px rgba(168,85,247,.45);
-
-}
-
-.arzda:hover h2{
-
-animation:endermanHover .6s infinite alternate;
-
-}
-
-@keyframes endermanHover{
-
-from{
-
-transform:
-translate3d(-4px,0,0)
-skewX(-1deg)
-scale(1.02);
-
-}
-
-to{
-
-transform:
-translate3d(4px,0,0)
-skewX(1deg)
-scale(1.07);
-
-}
-
-}
-
-/* =====================================================
-   LINK
-===================================================== */
+/* لینک */
 
 .link{
+    color:#8fffff;
 
-color:#8fffff;
+    text-decoration:none;
 
-text-decoration:none;
+    font-weight:bold;
 
-font-weight:bold;
-
-transition:
-color .3s,
-text-shadow .3s;
-
+    transition:
+        color .2s,
+        text-shadow .2s;
 }
 
 .link:hover{
+    color:#fff;
 
-color:white;
-
-text-shadow:
-0 0 10px #00ffff,
-0 0 30px #00ffff;
-
+    text-shadow:
+        0 0 15px #00ffff;
 }
 
-/* =====================================================
-   HISTORY
-===================================================== */
+/* تاریخچه */
 
 .history{
+    text-align:center;
 
-font-size:20px;
+    font-size:19px;
 
-line-height:2.4;
-
-text-align:center;
-
+    line-height:2.4;
 }
 
-/* =====================================================
-   FOOTER
-===================================================== */
+/* فوتر */
 
 footer{
 
-padding:60px 30px;
+    padding:55px 25px;
 
-text-align:center;
+    text-align:center;
 
-color:#aaa;
+    color:#aaa;
 
-background:
-rgba(0,255,255,.025);
-
+    border-top:
+        1px solid rgba(0,255,255,.1);
 }
 
 .footer-logo{
 
-font-size:70px;
+    font-size:65px;
 
-font-weight:900;
+    font-weight:900;
 
-color:white;
+    color:#fff;
 
-text-shadow:
-0 0 20px #00ffff,
-0 0 50px #00ffff,
-0 0 90px #00ffff;
-
-animation:footerGlow 3s infinite alternate;
-
-will-change:transform,opacity;
+    text-shadow:
+        0 0 20px #00ffff,
+        0 0 50px #00ffff;
 
 }
 
 footer span{
 
-color:#00ffff;
+    color:#00ffff;
 
-text-shadow:
-0 0 15px #00ffff;
-
+    text-shadow:
+        0 0 10px #00ffff;
 }
 
-@keyframes footerGlow{
-
-from{
-opacity:.65;
-transform:scale(1);
-}
-
-to{
-opacity:1;
-transform:scale(1.03);
-}
-
-}
-
-/* =====================================================
-   SCROLL ANIMATION
-===================================================== */
-
-.section{
-
-animation:
-showSection linear;
-
-animation-timeline:view();
-
-animation-range:
-entry 0%
-cover 30%;
-
-}
-
-@keyframes showSection{
-
-from{
-
-opacity:0;
-
-transform:
-translate3d(0,60px,0);
-
-}
-
-to{
-
-opacity:1;
-
-transform:
-translate3d(0,0,0);
-
-}
-
-}
-
-/* =====================================================
-   SCROLLBAR
-===================================================== */
+/* اسکرول */
 
 ::-webkit-scrollbar{
-width:10px;
+    width:8px;
 }
 
 ::-webkit-scrollbar-track{
-background:#001317;
+    background:#001317;
 }
 
 ::-webkit-scrollbar-thumb{
 
-background:
-linear-gradient(
-#00ffff,
-#a855ff
-);
+    background:
+        linear-gradient(
+            #00ffff,
+            #008c99
+        );
 
-border-radius:20px;
-
-box-shadow:
-0 0 15px #00ffff;
-
+    border-radius:20px;
 }
 
-/* =====================================================
-   MOBILE
-===================================================== */
+/* موبایل */
 
 @media(max-width:600px){
 
-nav{
+    nav{
+        width:95%;
+        gap:10px;
+        padding:11px 8px;
+    }
 
-width:94%;
+    nav a{
+        font-size:12px;
+    }
 
-gap:12px;
+    .hero{
+        padding-top:110px;
+    }
 
-padding:12px;
+    .logo{
+        letter-spacing:7px;
+    }
 
-backdrop-filter:blur(10px);
--webkit-backdrop-filter:blur(10px);
+    .hero h2{
+        font-size:27px;
+    }
 
-}
+    .hero p{
+        font-size:16px;
+    }
 
-nav a{
-font-size:13px;
-}
+    .section{
+        padding:80px 15px;
+    }
 
-.logo{
-letter-spacing:8px;
-}
+    .title{
+        font-size:34px;
+    }
 
-.hero h2{
-font-size:28px;
-}
+    .glass{
+        padding:25px 20px;
+    }
 
-.hero p{
-font-size:16px;
-}
+    .about{
+        font-size:18px;
+    }
 
-.title{
-font-size:35px;
-}
+    .member{
+        width:100%;
+        min-height:350px;
+        padding:27px 20px;
+    }
 
-.member{
-width:100%;
-}
+    .member h2{
+        font-size:34px;
+    }
 
-.glass{
+    .arzda h2{
+        font-size:40px;
+    }
 
-backdrop-filter:blur(8px);
--webkit-backdrop-filter:blur(8px);
+    body::before{
+        filter:blur(25px);
+    }
 
-}
+    .member,
+    .glass,
+    nav{
+        backdrop-filter:blur(5px);
+        -webkit-backdrop-filter:blur(5px);
+    }
 
-}
-
-/* =====================================================
-   کاهش مصرف در دستگاه های ضعیف
-===================================================== */
-
-@media(max-width:600px){
-
-body::before{
-
-filter:blur(20px);
-
-}
-
-.arzda::before{
-
-filter:blur(35px);
-
-}
-
-.arzda h2::before{
-
-filter:blur(10px);
-
-}
-
-.member::before{
-
-filter:blur(30px);
+    .arzda::before{
+        filter:blur(30px);
+    }
 
 }
+
+/* کاهش انیمیشن */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        scroll-behavior:auto !important;
+    }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
+<!-- لودر -->
 
-<div class="loader">
-LEON
+<div class="loader" id="loader">
+    LEON
 </div>
 
+<!-- پس زمینه -->
 
 <div class="space"></div>
 
-
 <div class="particles">
 
-<span style="right:10%;animation-delay:1s"></span>
-<span style="right:25%;animation-delay:3s"></span>
-<span style="right:40%;animation-delay:5s"></span>
-<span style="right:60%;animation-delay:2s"></span>
-<span style="right:75%;animation-delay:6s"></span>
-<span style="right:90%;animation-delay:4s"></span>
+    <span style="top:15%;right:10%;"></span>
+    <span style="top:30%;right:30%;"></span>
+    <span style="top:50%;right:60%;"></span>
+    <span style="top:70%;right:80%;"></span>
+    <span style="top:85%;right:40%;"></span>
 
 </div>
 
+<!-- منو -->
 
 <nav>
 
-<a href="#home">خانه</a>
+    <a href="#home">خانه</a>
 
-<a href="#about">درباره کلن</a>
+    <a href="#about">درباره کلن</a>
 
-<a href="#team">اعضا</a>
+    <a href="#team">اعضا</a>
 
-<a href="#contact">ارتباط</a>
+    <a href="#contact">ارتباط</a>
 
 </nav>
 
+<!-- HERO -->
 
 <section class="hero" id="home">
 
-<div class="logo">
-LEON
-</div>
+    <div class="logo">
+        LEON
+    </div>
 
-<h2>
-کلن لئون
-</h2>
+    <h2>
+        کلن لئون
+    </h2>
 
-<p>
-یک مجموعه خلاق، دوستانه و حرفه‌ای که در تیر ۱۴۰۵ توسط امیرعلی افتتاح شد.
-</p>
+    <p>
+        یک مجموعه خلاق، دوستانه و حرفه‌ای که در تیر ۱۴۰۵ توسط امیرعلی افتتاح شد.
+    </p>
 
-<div class="buttons">
+    <div class="buttons">
 
-<a class="btn" href="#about">
-معرفی کلن
-</a>
+        <a class="btn" href="#about">
+            معرفی کلن
+        </a>
 
-<a class="btn" href="#team">
-مشاهده اعضا
-</a>
+        <a class="btn" href="#team">
+            مشاهده اعضا
+        </a>
 
-</div>
+    </div>
 
 </section>
 
+<!-- درباره -->
 
 <section class="section" id="about">
 
-<h1 class="title">
-درباره LEON
-</h1>
+    <h1 class="title">
+        درباره LEON
+    </h1>
 
-<div class="glass about">
+    <div class="glass about">
 
-کلن لئون در تیر ۱۴۰۵ توسط امیرعلی تأسیس شد.
+        کلن لئون در تیر ۱۴۰۵ توسط امیرعلی تأسیس شد.
 
-<br>
+        <br>
 
-این کلن از ابتدا با هدف ساخت یک محیط صمیمی، خلاق و حرفه‌ای شروع به فعالیت کرد.
+        این کلن از ابتدا با هدف ساخت یک محیط صمیمی،
+        خلاق و حرفه‌ای شروع به فعالیت کرد.
 
-<br>
+        <br>
 
-امروز LEON به عنوان یک نام شناخته شده میان اعضای خود، مسیر پیشرفت و خلاقیت را ادامه می‌دهد.
+        امروز LEON به عنوان یک نام شناخته شده میان اعضای خود،
+        مسیر پیشرفت و خلاقیت را ادامه می‌دهد.
 
-</div>
+    </div>
 
 </section>
 
+<!-- اعضا -->
 
 <section class="section" id="team">
 
-<h1 class="title">
-اعضای اصلی LEON
-</h1>
+    <h1 class="title">
+        اعضای اصلی LEON
+    </h1>
 
+    <div class="members">
 
-<div class="members">
+        <!-- AmirAli -->
 
+        <div class="member amirali">
 
-<div class="member amirali">
+            <div class="rank">
+                🥇 مالک کلن
+            </div>
 
-<div class="rank">
-🥇 مالک کلن
-</div>
+            <h2>
+                🐍 AmirAli
+            </h2>
 
-<h2>
-🐍 AmirAli
-</h2>
+            <span>
+                @LN___AmIrAli
+            </span>
 
-<span>
-@LN___AmIrAli
-</span>
+            <p>
 
-<p>
+                بنیان‌گذار و مالک اصلی کلن LEON
 
-بنیان‌گذار و مالک اصلی کلن LEON
+                <br><br>
 
-<br><br>
+                امیرعلی با خلاقیت خارق‌العاده در مدیریت،
+                برقراری ارتباط با اعضا و ایجاد فضایی دوستانه،
+                نقش اصلی و کلیدی را در شکل‌گیری مسیر کلن ایفا کرد.
 
-امیرعلی با خلاقیت خارق‌العاده در مدیریت،
-برقراری ارتباط با اعضا و ایجاد فضایی دوستانه،
-نقش اصلی و کلیدی را در شکل‌گیری مسیر کلن ایفا کرد.
+                <br><br>
 
-<br><br>
+                توانایی او در کنترل شرایط مختلف،
+                ایجاد هماهنگی میان اعضا و ساخت یک محیط حرفه‌ای،
+                باعث شد LEON از همان ابتدا مسیر پیشرفت خود را آغاز کند.
 
-توانایی او در کنترل شرایط مختلف،
-ایجاد هماهنگی میان اعضا و ساخت یک محیط حرفه‌ای،
-باعث شد LEON از همان ابتدا مسیر پیشرفت خود را آغاز کند.
+            </p>
 
-</p>
+        </div>
 
-</div>
+        <!-- WhiteX -->
 
+        <div class="member whitex">
 
-<div class="member whitex">
+            <div class="rank">
+                🥈 رتبه دوم کلن
+            </div>
 
-<div class="rank">
-🥈 رتبه دوم کلن
-</div>
+            <h2>
+                WhiteX
+            </h2>
 
-<h2>
-WhiteX
-</h2>
+            <p>
+                یکی از اعضای مهم و تأثیرگذار کلن LEON
+            </p>
 
-<p>
+        </div>
 
-یکی از اعضای مهم و تأثیرگذار کلن LEON
+        <!-- Arzda -->
 
-</p>
+        <div class="member arzda">
 
-</div>
+            <div class="purple-dots">
 
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
 
-<div class="member arzda">
+            </div>
 
-<div class="energy-ring"></div>
+            <div class="rank">
+                🥉 طراح و سازنده سایت
+            </div>
 
-<div class="purple-stars">
+            <h2>
+                👾 Arzda
+            </h2>
 
-<i></i>
-<i></i>
-<i></i>
-<i></i>
-<i></i>
+            <span>
+                @Arzda_1
+            </span>
 
-</div>
+            <p>
 
-<div class="rank">
-🥉 طراح و سازنده سایت
-</div>
+                ارزدا با توانایی بالای جذب ممبر،
+                سبک مدیریت خاص و خلاقیت منحصر به فرد،
+                از همان ابتدا نشان داد که ایده‌های متفاوتی برای رشد LEON دارد.
 
-<h2>
-👾 Arzda
-</h2>
+                <br><br>
 
-<span>
-@Arzda_1
-</span>
+                او با طراحی، ایده‌پردازی و ساخت بخش‌های مختلف،
+                یکی از مهره‌های مهم پیشرفت کلن محسوب می‌شود.
 
-<p>
+                <br><br>
 
-ارزدا با توانایی بالای جذب ممبر،
-سبک مدیریت خاص و خلاقیت منحصر به فرد،
-از همان ابتدا نشان داد که ایده‌های متفاوتی برای رشد LEON دارد.
+                ترکیب خلاقیت، مدیریت و نگاه متفاوت او،
+                باعث شد پروژه‌های LEON شکل حرفه‌ای‌تری پیدا کنند.
 
-<br><br>
+                <br><br>
 
-او با طراحی، ایده‌پردازی و ساخت بخش‌های مختلف،
-یکی از مهره‌های مهم پیشرفت کلن محسوب می‌شود.
+                Arzda نمادی از خلاقیت و انرژی تازه در خانواده LEON است.
 
-<br><br>
+            </p>
 
-ترکیب خلاقیت، مدیریت و نگاه متفاوت او،
-باعث شد پروژه‌های LEON شکل حرفه‌ای‌تری پیدا کنند.
+        </div>
 
-<br><br>
-
-Arzda نمادی از خلاقیت و انرژی تازه در خانواده LEON است.
-
-</p>
-
-</div>
-
-
-</div>
+    </div>
 
 </section>
 
+<!-- ارتباط -->
 
 <section class="section" id="contact">
 
-<h1 class="title">
-ارتباط با LEON
-</h1>
+    <h1 class="title">
+        ارتباط با LEON
+    </h1>
 
-<div class="glass">
+    <div class="glass">
 
-<h2>
-👑 شبکه‌های رسمی کلن
-</h2>
+        <h2>
+            👑 شبکه‌های رسمی کلن
+        </h2>
 
-<p>
+        <p>
 
-کــانــال:
-<br>
+            کــانــال:
 
-<a class="link"
-href="https://rubika.ir/LEONMINECRAFT">
+            <br>
 
-@LEONMINECRAFT
+            <a
+                class="link"
+                href="https://rubika.ir/LEONMINECRAFT"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                @LEONMINECRAFT
+            </a>
 
-</a>
+            <br><br>
 
-<br><br>
+            مالک کلن:
 
-مالک کلن:
+            <br>
 
-<br>
+            <a class="link">
+                @LN___AmIrAli
+            </a>
 
-<a class="link">
-@LN___AmIrAli
-</a>
+            <br><br>
 
-<br><br>
+            سازنده سایت:
 
-سازنده سایت:
+            <br>
 
-<br>
+            <a class="link">
+                @Arzda_1
+            </a>
 
-<a class="link">
-@Arzda_1
-</a>
+            <br><br>
 
-<br><br>
+            آپارات:
 
-آپارات:
+            <br>
 
-<br>
+            <a
+                class="link"
+                href="https://www.aparat.com/LEON_LN"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LEON_LN
+            </a>
 
-<a class="link"
-href="https://www.aparat.com/LEON_LN">
+            <br><br>
 
-LEON_LN
+            دونیت:
 
-</a>
+            <br>
 
-<br><br>
+            <a
+                class="link"
+                href="https://daramet.com/Arzda"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Arzda
+            </a>
 
-دونیت:
+        </p>
 
-<br>
-
-<a class="link"
-href="https://daramet.com/Arzda">
-
-Arzda
-
-</a>
-
-</p>
-
-</div>
+    </div>
 
 </section>
 
+<!-- تاریخچه -->
 
 <section class="section">
 
-<h1 class="title">
-تاریخچه LEON
-</h1>
+    <h1 class="title">
+        تاریخچه LEON
+    </h1>
 
-<div class="glass history">
+    <div class="glass history">
 
-کلن LEON در تیر ۱۴۰۵ توسط
+        کلن LEON در تیر ۱۴۰۵ توسط
+        <b>AmirAli</b>
+        تأسیس شد.
 
-<b>
-AmirAli
-</b>
+        <br><br>
 
-تأسیس شد.
+        این مجموعه از همان ابتدا با هدف ساخت یک فضای دوستانه،
+        صمیمی و حرفه‌ای شروع به فعالیت کرد.
 
-<br><br>
+        <br><br>
 
-این مجموعه از همان ابتدا با هدف ساخت یک فضای دوستانه،
-صمیمی و حرفه‌ای شروع به فعالیت کرد.
+        با گذشت زمان، اعضای خلاق و پرتلاش به این خانواده اضافه شدند
+        و LEON تبدیل به محیطی برای همکاری، ایده‌پردازی و پیشرفت شد.
 
-<br><br>
+        <br><br>
 
-با گذشت زمان، اعضای خلاق و پرتلاش به این خانواده اضافه شدند
-و LEON تبدیل به محیطی برای همکاری، ایده‌پردازی و پیشرفت شد.
+        در تاریخ ۵ مرداد ۱۴۰۵،
+        نسخه رسمی سایت LEON برای معرفی این مجموعه رونمایی شد.
 
-<br><br>
-
-در تاریخ ۵ مرداد ۱۴۰۵،
-نسخه رسمی سایت LEON برای معرفی این مجموعه رونمایی شد.
-
-</div>
+    </div>
 
 </section>
 
+<!-- فوتر -->
 
 <footer>
 
-<div class="footer-logo">
-LEON
-</div>
+    <div class="footer-logo">
+        LEON
+    </div>
 
-<br>
+    <br>
 
-تمامی حقوق متعلق به کلن LEON است 👑
+    تمامی حقوق متعلق به کلن LEON است 👑
 
-<br><br>
+    <br><br>
 
-ساخته شده توسط:
+    ساخته شده توسط:
 
-<span>
-@Arzda_1
-</span>
+    <span>
+        @Arzda_1
+    </span>
 
-<br><br>
+    <br><br>
 
-© 2026 LEON
+    © 2026 LEON
 
 </footer>
 
+<!-- API -->
 
 <script>
 
-/* =====================================================
-   ستاره های پس زمینه
-===================================================== */
-
-for(let i=0;i<35;i++){
-
-const star=document.createElement("span");
-
-star.style.position="fixed";
-
-star.style.width="2px";
-star.style.height="2px";
-
-star.style.background="white";
-
-star.style.borderRadius="50%";
-
-star.style.right=
-Math.random()*100+"%";
-
-star.style.top=
-Math.random()*100+"%";
-
-star.style.opacity=
-Math.random()*.8+.2;
-
-star.style.boxShadow=
-"0 0 7px #00ffff";
-
-star.style.pointerEvents="none";
-
-star.style.zIndex="-1";
-
-document.body.appendChild(star);
-
-}
-
-
-/* =====================================================
-   3D کارت ها با requestAnimationFrame
-===================================================== */
-
-const cards=
-document.querySelectorAll(".member");
-
-cards.forEach(card=>{
-
-let targetX=0;
-let targetY=0;
-
-let currentX=0;
-let currentY=0;
-
-let animationFrame=null;
-
-function animateCard(){
-
-currentX +=
-(targetX-currentX)*.12;
-
-currentY +=
-(targetY-currentY)*.12;
-
-card.style.transform=
-`perspective(900px)
-rotateX(${currentY}deg)
-rotateY(${currentX}deg)
-translateZ(0)
-scale(1.02)`;
-
-if(
-Math.abs(targetX-currentX)>.01 ||
-Math.abs(targetY-currentY)>.01
-){
-
-animationFrame=
-requestAnimationFrame(animateCard);
-
-}else{
-
-animationFrame=null;
-
-}
-
-}
-
-
-card.addEventListener("mousemove",e=>{
-
-const rect=
-card.getBoundingClientRect();
-
-const x=
-(e.clientX-rect.left)/rect.width;
-
-const y=
-(e.clientY-rect.top)/rect.height;
-
-targetY=
--(y-.5)*12;
-
-targetX=
-(x-.5)*12;
-
-if(!animationFrame){
-
-animationFrame=
-requestAnimationFrame(animateCard);
-
-}
-
-});
-
-
-card.addEventListener("mouseleave",()=>{
-
-targetX=0;
-targetY=0;
-
-if(!animationFrame){
-
-animationFrame=
-requestAnimationFrame(animateCard);
-
-}
-
-});
-
-
-});
-
-
-/* =====================================================
-   API
-===================================================== */
-
-async function loadSettings(){
-
-try{
-
-const res=
-await fetch(
-"https://leon-api.zxczghf1452hcz.workers.dev/settings"
-);
-
-const data=
-await res.json();
-
-const about=
-document.querySelector(".about");
-
-if(
-about &&
-data.description
-){
-
-about.innerHTML=
-data.description;
-
-}
-
-}catch(error){
-
-console.log(
-"خطا در دریافت تنظیمات:",
-error
-);
-
-}
-
-}
-
-loadSettings();
+(function(){
+
+    "use strict";
+
+    /*
+     * لودر:
+     * حتی اگر اینترنت یا API مشکل داشته باشد
+     * سایت بیشتر از 1.5 ثانیه پشت لودر نمی ماند.
+     */
+
+    const loader = document.getElementById("loader");
+
+    function hideLoader(){
+
+        if(!loader){
+            return;
+        }
+
+        loader.classList.add("hide");
+
+    }
+
+    window.addEventListener(
+        "load",
+        function(){
+
+            setTimeout(
+                hideLoader,
+                500
+            );
+
+        },
+        {once:true}
+    );
+
+
+    /*
+     * API
+     */
+
+    async function loadSettings(){
+
+        const url =
+            "https://leon-api.zxczghf1452hcz.workers.dev/settings";
+
+        try{
+
+            const controller =
+                new AbortController();
+
+            const timeout =
+                setTimeout(
+                    function(){
+                        controller.abort();
+                    },
+                    5000
+                );
+
+            const response =
+                await fetch(
+                    url,
+                    {
+                        method:"GET",
+                        headers:{
+                            "Accept":"application/json"
+                        },
+                        cache:"no-store",
+                        signal:controller.signal
+                    }
+                );
+
+            clearTimeout(timeout);
+
+            if(!response.ok){
+                return;
+            }
+
+            const contentType =
+                response.headers.get("content-type") || "";
+
+            if(
+                !contentType.includes(
+                    "application/json"
+                )
+            ){
+                return;
+            }
+
+            const data =
+                await response.json();
+
+            if(
+                !data ||
+                typeof data !== "object"
+            ){
+                return;
+            }
+
+            if(
+                typeof data.description !== "string" ||
+                !data.description.trim()
+            ){
+                return;
+            }
+
+            const about =
+                document.querySelector(".about");
+
+            if(!about){
+                return;
+            }
+
+            /*
+             * به جای innerHTML از textContent استفاده نمی‌کنیم،
+             * چون description می‌تواند <br> و HTML داشته باشد.
+             *
+             * اما فقط HTMLهای ساده و مجاز را نگه می‌داریم.
+             */
+
+            const temp =
+                document.createElement("div");
+
+            temp.innerHTML =
+                data.description;
+
+            const dangerous =
+                temp.querySelectorAll(
+                    "script,iframe,object,embed,style,link,form"
+                );
+
+            dangerous.forEach(
+                function(element){
+                    element.remove();
+                }
+            );
+
+            temp.querySelectorAll(
+                "*"
+            ).forEach(
+                function(element){
+
+                    [
+                        "onclick",
+                        "onload",
+                        "onerror",
+                        "onmouseover",
+                        "onfocus",
+                        "onmouseenter"
+                    ].forEach(
+                        function(attribute){
+                            element.removeAttribute(attribute);
+                        }
+                    );
+
+                }
+            );
+
+            about.replaceChildren(
+                ...Array.from(
+                    temp.childNodes
+                )
+            );
+
+        }catch(error){
+
+            /*
+             * اگر API قطع باشد،
+             * سایت با محتوای پیش‌فرض خودش ادامه می‌دهد.
+             */
+
+            console.warn(
+                "LEON API unavailable:",
+                error
+            );
+
+        }
+
+    }
+
+    loadSettings();
+
+})();
 
 </script>
-
 
 </body>
 </html>
