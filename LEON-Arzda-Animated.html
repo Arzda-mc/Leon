@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090014">
+<title>LEON | کلن لئون</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--cyan:#00ffff;--purple:#a855f7;--pink:#e879f9;--bg:#00090c}
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Vazirmatn",Tahoma,sans-serif}
+html{scroll-behavior:smooth;scroll-padding-top:95px}
+body{min-height:100vh;background:radial-gradient(circle at top,#004d55 0%,#00272d 35%,#001114 65%,#000 100%);color:#fff;overflow-x:hidden}
+.space{position:fixed;inset:0;z-index:-5;pointer-events:none;background-image:radial-gradient(circle,#fff 1px,transparent 1.5px),radial-gradient(circle,var(--cyan) .8px,transparent 1.4px);background-size:85px 85px,140px 140px;opacity:.4}
+body::before{content:"";position:fixed;width:600px;height:600px;top:-400px;left:50%;transform:translateX(-50%);background:var(--cyan);opacity:.08;filter:blur(50px);pointer-events:none;z-index:-4}
+.particles{position:fixed;inset:0;pointer-events:none;z-index:-1}
+.particles span{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);opacity:.7}
+.loader{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#000;color:#fff;font-size:clamp(48px,12vw,70px);font-weight:900;z-index:99999;pointer-events:none;text-shadow:0 0 20px #fff,0 0 45px var(--cyan),0 0 80px var(--cyan);opacity:1;visibility:visible;transition:opacity .5s ease,visibility .5s ease}
+.loader.hide{opacity:0;visibility:hidden}
+nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:min(92%,900px);padding:13px 20px;display:flex;justify-content:center;align-items:center;gap:30px;background:rgba(0,30,35,.82);border:1px solid rgba(0,255,255,.25);border-radius:30px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 0 20px rgba(0,255,255,.12);z-index:1000}
+nav a{color:#fff;text-decoration:none;font-size:15px;font-weight:700;transition:color .2s,text-shadow .2s}
+nav a:hover{color:var(--cyan);text-shadow:0 0 12px var(--cyan)}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 25px 50px}
+.logo{font-size:clamp(70px,15vw,145px);font-weight:900;letter-spacing:12px;color:#fff;text-shadow:0 0 20px var(--cyan),0 0 50px var(--cyan);animation:logoGlow 3s ease-in-out infinite alternate}
+@keyframes logoGlow{from{text-shadow:0 0 15px var(--cyan),0 0 35px var(--cyan)}to{text-shadow:0 0 25px #fff,0 0 55px var(--cyan)}}
+.hero h2{margin-top:15px;font-size:34px;text-shadow:0 0 15px var(--cyan)}
+.hero p{max-width:700px;margin-top:18px;font-size:19px;color:#ddd;line-height:2}
+.clan-logo{width:150px;height:150px;object-fit:cover;border-radius:50%;margin-bottom:25px;border:3px solid var(--cyan);box-shadow:0 0 20px rgba(0,255,255,.6),0 0 50px rgba(0,255,255,.25);animation:clanLogoGlow 3s ease-in-out infinite alternate}
+@keyframes clanLogoGlow{from{box-shadow:0 0 15px rgba(0,255,255,.4),0 0 30px rgba(0,255,255,.15)}to{box-shadow:0 0 25px rgba(0,255,255,.8),0 0 60px rgba(0,255,255,.3)}}
+.buttons{margin-top:35px}
+.btn{display:inline-block;padding:14px 32px;margin:8px;border-radius:30px;background:linear-gradient(45deg,#008b96,var(--cyan));color:#001317;text-decoration:none;font-weight:900;box-shadow:0 0 18px rgba(0,255,255,.45);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 0 30px rgba(0,255,255,.7)}
+.section{padding:100px 25px}
+.title{text-align:center;font-size:clamp(32px,6vw,50px);margin-bottom:45px;text-shadow:0 0 15px var(--cyan),0 0 35px rgba(0,255,255,.5)}
+.glass{width:min(900px,100%);margin:30px auto;padding:35px;background:rgba(0,255,255,.045);border:1px solid rgba(0,255,255,.2);border-radius:30px;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);box-shadow:0 0 25px rgba(0,255,255,.1);transition:box-shadow .2s}
+.glass:hover{box-shadow:0 0 35px rgba(0,255,255,.2)}
+.about{font-size:21px;line-height:2.3;text-align:center;color:#eee}
+.members{display:flex;flex-wrap:wrap;justify-content:center;gap:30px}
+.member{position:relative;isolation:isolate;width:350px;min-height:500px;padding:32px;overflow:hidden;text-align:center;background:rgba(0,255,255,.04);border:1px solid rgba(0,255,255,.2);border-radius:35px;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);box-shadow:0 0 20px rgba(0,255,255,.08);transition:transform .25s,box-shadow .25s,border-color .25s}
+.member::before{content:"";position:absolute;width:180px;height:180px;top:-80px;right:-80px;border-radius:50%;background:var(--cyan);opacity:.12;filter:blur(35px);pointer-events:none;z-index:-1}
+.member:hover{transform:translateY(-7px);box-shadow:0 0 35px rgba(0,255,255,.25)}
+.member-avatar{position:relative;width:135px;height:135px;object-fit:cover;display:block;margin:22px auto 18px;border-radius:50%;border:3px solid var(--cyan);box-shadow:0 0 15px rgba(0,255,255,.55),0 0 35px rgba(0,255,255,.2);z-index:3;transition:transform .25s,box-shadow .25s}
+.member:hover .member-avatar{transform:scale(1.06);box-shadow:0 0 25px rgba(0,255,255,.8),0 0 50px rgba(0,255,255,.3)}
+.member h2{position:relative;margin:18px 0;font-size:38px;z-index:2}
+.member span{position:relative;color:#8fffff;font-size:17px;z-index:2}
+.member p{position:relative;margin-top:23px;color:#eee;font-size:16px;line-height:2;z-index:2}
+.rank{position:relative;display:inline-block;padding:9px 18px;border-radius:25px;background:linear-gradient(45deg,#008c99,var(--cyan));color:#001317;font-weight:900;box-shadow:0 0 15px rgba(0,255,255,.4);z-index:4}
+.amirali{border-color:rgba(0,255,255,.3)}
+.amirali h2{color:#fff;text-shadow:0 0 15px var(--cyan),0 0 35px var(--cyan);animation:amiraliGlow 2s ease-in-out infinite alternate}
+@keyframes amiraliGlow{from{transform:translateX(-2px)}to{transform:translateX(2px)}}
+.whitex{border-color:rgba(255,255,255,.25)}
+.whitex .member-avatar{border-color:#fff;box-shadow:0 0 18px rgba(255,255,255,.45),0 0 35px rgba(255,255,255,.15)}
+.whitex .rank{background:linear-gradient(45deg,#777,#fff);color:#111}
+
+/* ARZDA: افکت‌ها محدود به همین کارت هستند و از transform/opacity استفاده می‌کنند. */
+.arzda{--p1:#7c3aed;--p2:#c026d3;--p3:#f0abfc;position:relative;border:1px solid rgba(192,132,252,.7);background:radial-gradient(ellipse at 50% 0%,rgba(147,51,234,.25),transparent 55%),linear-gradient(150deg,rgba(29,8,48,.92),rgba(4,4,17,.94) 60%,rgba(20,4,34,.92));box-shadow:0 0 24px rgba(124,58,237,.22),inset 0 0 28px rgba(147,51,234,.08);isolation:isolate}
+.arzda::before{content:"";position:absolute;z-index:-2;inset:-45%;width:auto;height:auto;top:auto;right:auto;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 25%,rgba(168,85,247,.22) 38%,transparent 52%,rgba(217,70,239,.18) 68%,transparent 82%);filter:blur(20px);opacity:.8;animation:arzdaOrbit 14s linear infinite}
+.arzda::after{content:"";position:absolute;inset:1px;border-radius:34px;padding:1px;background:linear-gradient(130deg,transparent 10%,rgba(240,171,252,.85) 28%,transparent 43%,rgba(124,58,237,.7) 67%,transparent 82%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.65;z-index:0}
+@keyframes arzdaOrbit{to{transform:rotate(360deg)}}
+.arzda .purple-dots{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.arzda .purple-dots i{position:absolute;width:4px;height:4px;border-radius:50%;background:#f5d0fe;box-shadow:0 0 8px #c084fc;opacity:.2;animation:purpleFloat 4s ease-in-out infinite}
+.arzda .purple-dots i:nth-child(1){top:18%;left:13%}
+.arzda .purple-dots i:nth-child(2){top:29%;right:12%;animation-delay:-1s}
+.arzda .purple-dots i:nth-child(3){top:64%;left:9%;animation-delay:-2s}
+.arzda .purple-dots i:nth-child(4){top:74%;right:13%;animation-delay:-3s}
+.arzda .purple-dots i:nth-child(5){top:48%;left:6%;animation-delay:-1.5s}
+@keyframes purpleFloat{0%,100%{opacity:.15;transform:translate3d(0,5px,0) scale(.7)}50%{opacity:1;transform:translate3d(0,-8px,0) scale(1.25)}}
+.arzda .rank{background:linear-gradient(100deg,#4c1d95,#7c3aed,#c026d3,#7c3aed,#4c1d95);background-size:250% 100%;color:#fff;border:1px solid rgba(233,213,255,.28);box-shadow:0 0 18px rgba(147,51,234,.38);animation:rankShine 7s linear infinite}
+@keyframes rankShine{to{background-position:250% 0}}
+.arzda .member-avatar{border:3px solid #c084fc;outline:1px solid rgba(240,171,252,.45);outline-offset:5px;box-shadow:0 0 18px rgba(168,85,247,.65),0 0 42px rgba(124,58,237,.3);animation:avatarFloat 5s ease-in-out infinite}
+@keyframes avatarFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.arzda:hover .member-avatar{transform:translateY(-3px) scale(1.045);box-shadow:0 0 28px rgba(232,121,249,.85),0 0 55px rgba(124,58,237,.45)}
+.arzda h2{color:#f3e8ff;font-size:44px;letter-spacing:2px;text-shadow:0 0 10px #c084fc,0 0 26px #9333ea,0 0 50px rgba(124,58,237,.65);animation:arzdaName 3.2s ease-in-out infinite alternate}
+.arzda h2::after{content:"ARZDA";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#c084fc;opacity:.28;filter:blur(11px);font-size:1em;z-index:-1;pointer-events:none}
+@keyframes arzdaName{from{text-shadow:0 0 8px #a855f7,0 0 20px #7c3aed}to{text-shadow:0 0 14px #f5d0fe,0 0 32px #c026d3,0 0 55px #7c3aed}}
+.arzda span{color:#e9d5ff;text-shadow:0 0 8px rgba(147,51,234,.8)}
+.arzda p{color:#f3e8ff;text-shadow:0 0 5px rgba(168,85,247,.16)}
+.link{color:#8fffff;text-decoration:none;font-weight:bold;transition:color .2s,text-shadow .2s}
+.link:hover{color:#fff;text-shadow:0 0 15px var(--cyan)}
+.history{text-align:center;font-size:19px;line-height:2.4}
+footer{padding:55px 25px;text-align:center;color:#aaa;border-top:1px solid rgba(0,255,255,.1)}
+.footer-logo{font-size:65px;font-weight:900;color:#fff;text-shadow:0 0 20px var(--cyan),0 0 50px var(--cyan)}
+footer span{color:var(--cyan);text-shadow:0 0 10px var(--cyan)}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#001317}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--cyan),#008c99);border-radius:20px}
+@media(max-width:600px){
+ nav{width:95%;gap:10px;padding:11px 8px}nav a{font-size:12px}
+ .hero{padding-top:110px}.logo{letter-spacing:7px}.hero h2{font-size:27px}.hero p{font-size:16px}
+ .section{padding:80px 15px}.title{font-size:34px}.glass{padding:25px 20px}.about{font-size:18px}
+ .member{width:100%;min-height:480px;padding:27px 20px}.member-avatar{width:120px;height:120px}
+ .member h2{font-size:34px}.arzda h2{font-size:40px}.clan-logo{width:120px;height:120px}
+ body::before{filter:blur(25px)}.member,.glass,nav{backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+ .arzda::before{filter:blur(14px)}
+}
+@media(hover:none){.member:hover,.btn:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<audio id="bgMusic" loop preload="none"><source src="music.mp3" type="audio/mpeg"></audio>
+<div class="loader" id="loader">LEON</div>
+<div class="space" aria-hidden="true"></div>
+<div class="particles" aria-hidden="true">
+<span style="top:15%;right:10%"></span><span style="top:30%;right:30%"></span><span style="top:50%;right:60%"></span><span style="top:70%;right:80%"></span><span style="top:85%;right:40%"></span>
+</div>
+<nav aria-label="منوی اصلی">
+<a href="#home">خانه</a><a href="#about">درباره کلن</a><a href="#team">اعضا</a><a href="#contact">ارتباط</a>
+</nav>
+<section class="hero" id="home">
+<img class="clan-logo" src="Leon.png" alt="لوگوی LEON" width="150" height="150" fetchpriority="high">
+<div class="logo">LEON</div><h2>کلن لئون</h2>
+<p>یک مجموعه خلاق، دوستانه و حرفه‌ای که در تیر ۱۴۰۵ توسط امیرعلی افتتاح شد.</p>
+<div class="buttons"><a class="btn" href="#about">معرفی کلن</a><a class="btn" href="#team">مشاهده اعضا</a></div>
+</section>
+<section class="section" id="about">
+<h1 class="title">درباره LEON</h1>
+<div class="glass about">کلن لئون در تیر ۱۴۰۵ توسط امیرعلی تأسیس شد.<br>این کلن از ابتدا با هدف ساخت یک محیط صمیمی، خلاق و حرفه‌ای شروع به فعالیت کرد.<br>امروز LEON به عنوان یک نام شناخته شده میان اعضای خود، مسیر پیشرفت و خلاقیت را ادامه می‌دهد.</div>
+</section>
+<section class="section" id="team">
+<h1 class="title">اعضای اصلی LEON</h1>
+<div class="members">
+<div class="member amirali">
+<div class="rank">🥇 مالک کلن</div>
+<img class="member-avatar" src="Amirali.png" alt="AmirAli" width="135" height="135" loading="lazy">
+<h2>🐍 AmirAli</h2><span>@LN___AmIrAli</span>
+<p>بنیان‌گذار و مالک اصلی کلن LEON<br><br>امیرعلی با خلاقیت خارق‌العاده در مدیریت، برقراری ارتباط با اعضا و ایجاد فضایی دوستانه، نقش اصلی و کلیدی را در شکل‌گیری مسیر کلن ایفا کرد.<br><br>توانایی او در کنترل شرایط مختلف، ایجاد هماهنگی میان اعضا و ساخت یک محیط حرفه‌ای، باعث شد LEON از همان ابتدا مسیر پیشرفت خود را آغاز کند.</p>
+</div>
+<div class="member whitex">
+<div class="rank">🥈 رتبه دوم کلن</div>
+<img class="member-avatar" src="WhiteX.png" alt="WhiteX" width="135" height="135" loading="lazy">
+<h2>WhiteX</h2><span>عضو LEON</span><p>یکی از اعضای مهم و تأثیرگذار کلن LEON</p>
+</div>
+<div class="member arzda">
+<div class="purple-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="rank">🥉 طراح و سازنده سایت</div>
+<img class="member-avatar" src="Arzda.png" alt="Arzda" width="135" height="135" loading="lazy">
+<h2>👾 Arzda</h2><span>@Arzda_1</span>
+<p>ارزدا با توانایی بالای جذب ممبر، سبک مدیریت خاص و خلاقیت منحصر به فرد، از همان ابتدا نشان داد که ایده‌های متفاوتی برای رشد LEON دارد.<br><br>او با طراحی، ایده‌پردازی و ساخت بخش‌های مختلف، یکی از مهره‌های مهم پیشرفت کلن محسوب می‌شود.<br><br>ترکیب خلاقیت، مدیریت و نگاه متفاوت او، باعث شد پروژه‌های LEON شکل حرفه‌ای‌تری پیدا کنند.<br><br>Arzda نمادی از خلاقیت و انرژی تازه در خانواده LEON است.</p>
+</div>
+</div>
+</section>
+<section class="section" id="contact">
+<h1 class="title">ارتباط با LEON</h1>
+<div class="glass">
+<h2>👑 شبکه‌های رسمی کلن</h2><p>
+کــانــال:<br><a class="link" href="https://rubika.ir/LEONMINECRAFT" target="_blank" rel="noopener noreferrer">@LEONMINECRAFT</a><br><br>
+مالک کلن:<br><a class="link" href="https://rubika.ir/LN___AmIrAli" target="_blank" rel="noopener noreferrer">@LN___AmIrAli</a><br><br>
+سازنده سایت:<br><a class="link" href="https://rubika.ir/Arzda_1" target="_blank" rel="noopener noreferrer">@Arzda_1</a><br><br>
+آپارات:<br><a class="link" href="https://www.aparat.com/LEON_LN" target="_blank" rel="noopener noreferrer">LEON_LN</a><br><br>
+دونیت:<br><a class="link" href="https://daramet.com/Arzda" target="_blank" rel="noopener noreferrer">Arzda</a>
+</p>
+</div>
+</section>
+<section class="section">
+<h1 class="title">تاریخچه LEON</h1>
+<div class="glass history">کلن LEON در تیر ۱۴۰۵ توسط <b>AmirAli</b> تأسیس شد.<br><br>این مجموعه از همان ابتدا با هدف ساخت یک فضای دوستانه، صمیمی و حرفه‌ای شروع به فعالیت کرد.<br><br>با گذشت زمان، اعضای خلاق و پرتلاش به این خانواده اضافه شدند و LEON تبدیل به محیطی برای همکاری، ایده‌پردازی و پیشرفت شد.<br><br>در تاریخ ۵ مرداد ۱۴۰۵، نسخه رسمی سایت LEON برای معرفی این مجموعه رونمایی شد.</div>
+</section>
+<footer><div class="footer-logo">LEON</div><br>تمامی حقوق متعلق به کلن LEON است 👑<br><br>ساخته شده توسط: <span>@Arzda_1</span><br><br>© 2026 LEON</footer>
+<script>
+(function(){
+"use strict";
+const loader=document.getElementById("loader");
+function hideLoader(){if(loader)loader.classList.add("hide")}
+window.addEventListener("load",function(){setTimeout(hideLoader,350)},{once:true});
+const music=document.getElementById("bgMusic");
+if(music){
+ music.volume=.35;
+ let musicStarted=false;
+ function startMusic(){
+  if(musicStarted)return;
+  const attempt=music.play();
+  if(attempt&&typeof attempt.then==="function"){
+   attempt.then(function(){musicStarted=true;document.removeEventListener("click",startMusic);document.removeEventListener("touchstart",startMusic)}).catch(function(){});
+  }
+ }
+ document.addEventListener("click",startMusic,{passive:true});
+ document.addEventListener("touchstart",startMusic,{passive:true});
+}
+async function loadSettings(){
+ const url="https://leon-api.zxczghf1452hcz.workers.dev/settings";
+ const controller=new AbortController();
+ const timeout=setTimeout(function(){controller.abort()},5000);
+ try{
+  const response=await fetch(url,{method:"GET",headers:{"Accept":"application/json"},cache:"no-store",signal:controller.signal});
+  if(!response.ok)return;
+  const type=response.headers.get("content-type")||"";
+  if(!type.includes("application/json"))return;
+  const data=await response.json();
+  if(!data||typeof data!=="object"||typeof data.description!=="string"||!data.description.trim())return;
+  const about=document.querySelector(".about");
+  if(!about)return;
+  /* پاک‌سازی محتوا قبل از افزودن به صفحه */
+  const temp=document.createElement("template");
+  temp.innerHTML=data.description;
+  temp.content.querySelectorAll("script,iframe,object,embed,style,link,form,svg,math").forEach(function(el){el.remove()});
+  temp.content.querySelectorAll("*").forEach(function(el){
+   Array.from(el.attributes).forEach(function(attr){
+    const name=attr.name.toLowerCase(),value=attr.value.trim().toLowerCase();
+    if(name.startsWith("on")||name==="style"||((name==="href"||name==="src")&&value.startsWith("javascript:")))el.removeAttribute(attr.name);
+   });
+  });
+  about.replaceChildren(temp.content.cloneNode(true));
+ }catch(error){
+  if(error.name!=="AbortError")console.warn("LEON API unavailable:",error);
+ }finally{clearTimeout(timeout)}
+}
+loadSettings();
+})();
+</script>
+</body>
+</html>
