@@ -1057,6 +1057,25 @@ footer span{
    موبایل
 ========================= */
 
+
+
+/* King Ender */
+.kingender{border-color:rgba(0,255,255,.42)}
+.kingender .member-avatar{border-color:#8b5cf6;box-shadow:0 0 18px rgba(139,92,246,.55),0 0 38px rgba(0,255,255,.18)}
+.kingender h2{color:#c4b5fd;text-shadow:0 0 12px #7c3aed,0 0 28px rgba(0,255,255,.35)}
+.kingender .rank{background:linear-gradient(90deg,#312e81,#7c3aed,#00b8c4);color:#fff}
+.gallery-tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:0 auto 18px}
+.gallery-tab{border:1px solid rgba(0,255,255,.35);border-radius:24px;padding:11px 24px;color:#fff;background:rgba(0,40,45,.8);font:inherit;font-weight:700;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.gallery-tab:hover,.gallery-tab.active{background:linear-gradient(45deg,#008b96,#00cfd5);color:#001317;box-shadow:0 0 18px rgba(0,255,255,.3)}
+.gallery-note{text-align:center;color:#bbb;margin:0 auto 28px;padding:0 16px}
+.gallery-grid{width:min(1100px,100%);margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px}
+.gallery-card{min-width:0;overflow:hidden;border:1px solid rgba(0,255,255,.2);border-radius:18px;background:rgba(0,255,255,.035);box-shadow:0 0 16px rgba(0,255,255,.06);transition:transform .2s ease,border-color .2s ease}
+.gallery-card:hover{transform:translateY(-3px);border-color:rgba(0,255,255,.5)}
+.gallery-card img,.gallery-card video{display:block;width:100%;aspect-ratio:16/10;object-fit:contain;background:rgba(0,0,0,.25)}
+.gallery-card figcaption{padding:10px 12px;text-align:center;color:#d7ffff;font-size:14px}
+.gallery-status{grid-column:1/-1;text-align:center;color:#ccc;padding:24px 12px}
+@media(prefers-reduced-motion:reduce){.gallery-card,.gallery-tab{transition:none}}
+
 @media(max-width:600px){
 
     nav{
@@ -1162,6 +1181,108 @@ footer span{
 
 }
 
+
+
+/* ===== LEON NEON GALAXY UPGRADE ===== */
+:root{
+  --leon-cyan:#45f6ff;
+  --leon-blue:#398bff;
+  --leon-purple:#a855f7;
+  --leon-pink:#f05bff;
+  --leon-panel:rgba(7,19,43,.78);
+}
+body{
+  background:
+    radial-gradient(ellipse at 12% 18%,rgba(112,35,220,.23),transparent 34%),
+    radial-gradient(ellipse at 88% 34%,rgba(0,208,255,.19),transparent 32%),
+    radial-gradient(ellipse at 50% 80%,rgba(30,68,180,.17),transparent 38%),
+    linear-gradient(145deg,#050716 0%,#07152b 42%,#09071c 76%,#02040d 100%);
+}
+body::before{
+  background:linear-gradient(120deg,var(--leon-cyan),var(--leon-purple),var(--leon-pink));
+  opacity:.13;filter:blur(85px);
+}
+.space{opacity:.58;background-image:
+  radial-gradient(circle,rgba(255,255,255,.95) .8px,transparent 1.5px),
+  radial-gradient(circle,rgba(69,246,255,.95) 1px,transparent 1.8px),
+  radial-gradient(circle,rgba(192,132,252,.8) .8px,transparent 1.7px);
+  background-size:83px 83px,137px 137px,191px 191px;
+}
+nav{
+  background:linear-gradient(115deg,rgba(7,18,43,.88),rgba(26,13,54,.84))!important;
+  border:1px solid rgba(107,225,255,.27)!important;
+  box-shadow:0 10px 36px rgba(0,0,0,.28),0 0 26px rgba(65,150,255,.10),inset 0 1px rgba(255,255,255,.08);
+  backdrop-filter:blur(18px);
+}
+nav a{transition:color .22s ease,text-shadow .22s ease,transform .22s ease!important}
+nav a:hover{color:var(--leon-cyan)!important;text-shadow:0 0 13px rgba(69,246,255,.8);transform:translateY(-2px)}
+.logo{
+  background:linear-gradient(100deg,#fff 0%,#8bfaff 25%,#bba5ff 55%,#ff9af3 78%,#fff 100%)!important;
+  background-size:220% auto!important;-webkit-background-clip:text!important;background-clip:text!important;
+  color:transparent!important;filter:drop-shadow(0 0 18px rgba(69,246,255,.3));
+  animation:leonSpectrum 7s linear infinite;
+}
+@keyframes leonSpectrum{to{background-position:220% center}}
+.hero{
+  position:relative;isolation:isolate;
+}
+.hero::before{
+  content:"";position:absolute;z-index:-1;pointer-events:none;
+  width:min(76vw,610px);height:min(76vw,610px);border-radius:50%;
+  top:7%;left:50%;transform:translateX(-50%);
+  border:1px solid rgba(90,220,255,.13);
+  box-shadow:0 0 70px rgba(59,130,246,.09),inset 0 0 65px rgba(168,85,247,.06);
+}
+.clan-logo{
+  filter:drop-shadow(0 0 12px rgba(69,246,255,.45)) drop-shadow(0 0 34px rgba(168,85,247,.23));
+  transition:filter .35s ease,transform .35s ease;
+}
+.clan-logo:hover{filter:drop-shadow(0 0 18px rgba(69,246,255,.8)) drop-shadow(0 0 42px rgba(240,91,255,.4));transform:translateY(-5px) scale(1.035)}
+.hero h2,.title{
+  text-shadow:0 0 18px rgba(69,246,255,.18),0 0 38px rgba(168,85,247,.12);
+}
+.title{position:relative;width:fit-content;max-width:100%;margin-left:auto;margin-right:auto}
+.title::after{
+  content:"";display:block;width:62%;height:3px;margin:12px auto 0;border-radius:10px;
+  background:linear-gradient(90deg,transparent,var(--leon-cyan),var(--leon-purple),transparent);
+  box-shadow:0 0 14px rgba(69,246,255,.45);
+}
+.btn{
+  background:linear-gradient(115deg,rgba(0,195,220,.16),rgba(121,67,255,.20))!important;
+  border:1px solid rgba(100,225,255,.43)!important;
+  box-shadow:0 5px 22px rgba(0,0,0,.18),inset 0 1px rgba(255,255,255,.12);
+  backdrop-filter:blur(10px);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease!important;
+}
+.btn:hover{transform:translateY(-4px)!important;border-color:var(--leon-cyan)!important;box-shadow:0 9px 28px rgba(0,0,0,.28),0 0 24px rgba(69,246,255,.2),0 0 34px rgba(168,85,247,.12)!important}
+.glass,.member,.gallery-card{
+  background:linear-gradient(145deg,rgba(14,29,59,.83),rgba(14,10,37,.76))!important;
+  border-color:rgba(114,197,255,.22)!important;
+  box-shadow:0 18px 44px rgba(0,0,0,.22),inset 0 1px rgba(255,255,255,.07),0 0 24px rgba(53,119,255,.055)!important;
+  backdrop-filter:blur(13px);
+}
+.glass{position:relative;overflow:hidden}
+.glass::before{content:"";position:absolute;top:0;left:12%;right:12%;height:1px;background:linear-gradient(90deg,transparent,rgba(69,246,255,.6),rgba(192,132,252,.5),transparent)}
+.member{transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease!important}
+.member:hover{border-color:rgba(69,246,255,.58)!important;box-shadow:0 22px 48px rgba(0,0,0,.3),0 0 26px rgba(69,246,255,.12),inset 0 1px rgba(255,255,255,.1)!important}
+.member-avatar{box-shadow:0 0 0 5px rgba(75,110,210,.08),0 0 24px rgba(69,246,255,.16);transition:box-shadow .3s ease,transform .3s ease!important}
+.member:hover .member-avatar{box-shadow:0 0 0 5px rgba(168,85,247,.11),0 0 30px rgba(69,246,255,.27),0 0 45px rgba(168,85,247,.16)}
+.arzda{border-color:rgba(168,85,247,.62)!important;box-shadow:0 0 24px rgba(139,92,246,.13),0 18px 44px rgba(0,0,0,.24)!important}
+.arzda:hover{box-shadow:0 0 35px rgba(168,85,247,.25),0 0 55px rgba(69,246,255,.12)!important}
+.gallery-tab{background:linear-gradient(120deg,rgba(15,30,62,.9),rgba(35,16,64,.85))!important;border-color:rgba(119,190,255,.3)!important}
+.gallery-tab:hover,.gallery-tab.active{background:linear-gradient(110deg,#00c6dc,#4b9fff,#a855f7)!important;color:#fff!important;box-shadow:0 0 22px rgba(69,246,255,.22),0 0 30px rgba(168,85,247,.16)!important}
+.gallery-card:hover{transform:translateY(-6px) scale(1.012)!important;border-color:rgba(69,246,255,.6)!important;box-shadow:0 18px 35px rgba(0,0,0,.28),0 0 25px rgba(69,246,255,.11)!important}
+.gallery-card img,.gallery-card video{background:linear-gradient(135deg,rgba(3,8,24,.9),rgba(25,12,49,.8))!important}
+::selection{background:rgba(168,85,247,.48);color:#fff}
+:focus-visible{outline:2px solid var(--leon-cyan);outline-offset:4px}
+@media(max-width:600px){
+  .hero::before{width:88vw;height:88vw;top:10%}
+  .glass,.member,.gallery-card{backdrop-filter:blur(8px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .logo{animation:none}
+  .clan-logo,.btn,.member,.member-avatar,.gallery-card,nav a{transition:none!important}
+}
+
 </style>
 </head>
 
@@ -1217,6 +1338,10 @@ footer span{
         اعضا
     </a>
 
+    <a href="#gallery">
+        گالری
+    </a>
+
     <a href="#contact">
         ارتباط
     </a>
@@ -1246,7 +1371,7 @@ footer span{
     </h2>
 
     <p>
-        یک مجموعه خلاق، دوستانه و حرفه‌ای که در تیر ۱۴۰۵ توسط امیرعلی افتتاح شد.
+        بزرگ‌ترین کلن رویال لند؛ مجموعه‌ای خلاق، دوستانه و حرفه‌ای که در تیر ۱۴۰۵ توسط امیرعلی افتتاح شد.
     </p>
 
     <div class="buttons">
@@ -1275,7 +1400,7 @@ footer span{
 
     <div class="glass about">
 
-        کلن لئون در تیر ۱۴۰۵ توسط امیرعلی تأسیس شد.
+        بزرگ‌ترین کلن رویال لند 💜<br><br>کلن لئون در تیر ۱۴۰۵ توسط امیرعلی تأسیس شد.
 
         <br>
 
@@ -1437,8 +1562,32 @@ footer span{
 
         </div>
 
+        <!-- King Ender -->
+        <div class="member kingender">
+            <div class="rank">👑 عضو مهم LEON</div>
+            <img class="member-avatar" src="KING_ENDER.png" alt="King Ender" width="135" height="135" loading="lazy">
+            <h2>⚔️ King Ender</h2>
+            <span>عضو ویژه‌ی LEON</span>
+            <p>یکی از اعضای مهم کامیونیتی LEON و همراه این خانواده‌ی گیمینگ.</p>
+        </div>
+
     </div>
 
+</section>
+
+<!-- =========================
+     گالری رسانه‌ها
+========================= -->
+<section class="section" id="gallery">
+    <h1 class="title">گالری LEON</h1>
+    <div class="gallery-tabs" role="tablist" aria-label="نوع رسانه">
+        <button class="gallery-tab active" id="imagesTab" type="button" data-kind="image">🖼️ تصاویر</button>
+        <button class="gallery-tab" id="videosTab" type="button" data-kind="video">🎬 ویدئوها</button>
+    </div>
+    <p class="gallery-note">رسانه‌های موجود در ریشه‌ی مخزن به‌صورت خودکار نمایش داده می‌شوند.</p>
+    <div id="galleryGrid" class="gallery-grid" aria-live="polite">
+        <p class="gallery-status">در حال بارگذاری رسانه‌ها...</p>
+    </div>
 </section>
 
 <!-- =========================
@@ -1824,6 +1973,92 @@ footer span{
         }
 
     }
+
+
+
+    /* =========================
+       گالری خودکار از ریشه مخزن
+    ========================= */
+    const galleryGrid = document.getElementById("galleryGrid");
+    const imageTab = document.getElementById("imagesTab");
+    const videoTab = document.getElementById("videosTab");
+    let galleryKind = "image";
+    let galleryItems = { image: [], video: [] };
+
+    function renderGallery() {
+        if (!galleryGrid) return;
+        const items = galleryItems[galleryKind] || [];
+        galleryGrid.replaceChildren();
+        if (!items.length) {
+            const msg = document.createElement("p");
+            msg.className = "gallery-status";
+            msg.textContent = "هنوز رسانه‌ای با نام‌گذاری درست در ریشه‌ی مخزن پیدا نشد.";
+            galleryGrid.appendChild(msg);
+            return;
+        }
+        const fragment = document.createDocumentFragment();
+        items.forEach(item => {
+            const figure = document.createElement("figure");
+            figure.className = "gallery-card";
+            if (galleryKind === "image") {
+                const img = document.createElement("img");
+                img.src = item.download_url;
+                img.alt = item.name;
+                img.loading = "lazy";
+                img.decoding = "async";
+                figure.appendChild(img);
+            } else {
+                const video = document.createElement("video");
+                video.controls = true;
+                video.preload = "none";
+                video.playsInline = true;
+                const source = document.createElement("source");
+                source.src = item.download_url;
+                source.type = item.name.toLowerCase().endsWith(".webm") ? "video/webm" : "video/mp4";
+                video.appendChild(source);
+                figure.appendChild(video);
+            }
+            const caption = document.createElement("figcaption");
+            caption.textContent = item.name;
+            figure.appendChild(caption);
+            fragment.appendChild(figure);
+        });
+        galleryGrid.appendChild(fragment);
+    }
+
+    function setGalleryKind(kind) {
+        galleryKind = kind;
+        imageTab?.classList.toggle("active", kind === "image");
+        videoTab?.classList.toggle("active", kind === "video");
+        renderGallery();
+    }
+    imageTab?.addEventListener("click", () => setGalleryKind("image"));
+    videoTab?.addEventListener("click", () => setGalleryKind("video"));
+
+    async function loadGallery() {
+        if (!galleryGrid) return;
+        try {
+            const response = await fetch("https://api.github.com/repos/Arzda-mc/Leon/contents?ref=main", {
+                headers: { "Accept": "application/vnd.github+json" },
+                cache: "no-store"
+            });
+            if (!response.ok) throw new Error("GitHub API response " + response.status);
+            const files = await response.json();
+            if (!Array.isArray(files)) throw new Error("Invalid repository listing");
+            const imageExt = /\.(png|jpe?g|webp|gif|avif)$/i;
+            const videoExt = /\.(mp4|webm|mov|m4v|ogv)$/i;
+            galleryItems.image = files.filter(f => f.type === "file" && /^Image(?:[1-9]|1[0-9]|20)\./i.test(f.name) && imageExt.test(f.name)).sort((a,b) => parseInt(a.name.match(/\d+/)[0],10)-parseInt(b.name.match(/\d+/)[0],10));
+            galleryItems.video = files.filter(f => f.type === "file" && /^Video(?:[1-9]|1[0-9]|20)\./i.test(f.name) && videoExt.test(f.name)).sort((a,b) => parseInt(a.name.match(/\d+/)[0],10)-parseInt(b.name.match(/\d+/)[0],10));
+            renderGallery();
+        } catch (error) {
+            galleryGrid.replaceChildren();
+            const msg = document.createElement("p");
+            msg.className = "gallery-status";
+            msg.textContent = "بارگذاری گالری ممکن نشد؛ عمومی بودن مخزن و اتصال اینترنت را بررسی کن.";
+            galleryGrid.appendChild(msg);
+        }
+    }
+    loadGallery();
 
     loadSettings();
 
