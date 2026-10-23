@@ -9,7 +9,7 @@
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap');
+/* فونت سیستمی برای نمایش سریع‌تر؛ بدون انتظار برای سرور فونت خارجی */
 
 *{
     margin:0;
@@ -1283,6 +1283,33 @@ nav a:hover{color:var(--leon-cyan)!important;text-shadow:0 0 13px rgba(69,246,25
   .clan-logo,.btn,.member,.member-avatar,.gallery-card,nav a{transition:none!important}
 }
 
+
+
+/* ===== PERFORMANCE PATCH: سریع‌تر روی موبایل و کامپیوتر ===== */
+/* افکت‌های سنگین با حفظ ظاهر نئونی سبک‌تر شده‌اند. */
+body::before{filter:blur(34px)!important;}
+.glass,.member,.gallery-card,nav,.btn{
+  -webkit-backdrop-filter:blur(5px)!important;
+  backdrop-filter:blur(5px)!important;
+}
+.hero::before{box-shadow:0 0 28px rgba(59,130,246,.07),inset 0 0 28px rgba(168,85,247,.04)!important;}
+.clan-logo{filter:drop-shadow(0 0 7px rgba(69,246,255,.30)) drop-shadow(0 0 16px rgba(168,85,247,.16));}
+.member-avatar{box-shadow:0 0 0 3px rgba(75,110,210,.07),0 0 13px rgba(69,246,255,.12)!important;}
+.member:hover,.gallery-card:hover,.btn:hover{transform:translateY(-2px)!important;}
+@media(max-width:768px){
+  body::before{filter:blur(22px)!important;}
+  .space{opacity:.34!important;}
+  .glass,.member,.gallery-card,nav,.btn{
+    -webkit-backdrop-filter:none!important;
+    backdrop-filter:none!important;
+  }
+  .clan-logo{filter:drop-shadow(0 0 8px rgba(69,246,255,.28))!important;}
+  .member:hover,.gallery-card:hover,.btn:hover{transform:none!important;}
+  .logo{animation:none!important;}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important;}
+}
 </style>
 </head>
 
@@ -1292,7 +1319,7 @@ nav a:hover{color:var(--leon-cyan)!important;text-shadow:0 0 13px rgba(69,246,25
      موزیک
 ========================= -->
 
-<audio id="bgMusic" loop preload="auto">
+<audio id="bgMusic" loop preload="none">
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
@@ -1771,18 +1798,18 @@ nav a:hover{color:var(--leon-cyan)!important;text-shadow:0 0 13px rgba(69,246,25
 
     }
 
-    window.addEventListener(
-        "load",
-        function(){
+    /* نمایش سایت را به دانلود تصاویر/ویدئوها وابسته نکن */
+    const loaderFailsafe = setTimeout(hideLoader, 1100);
 
-            setTimeout(
-                hideLoader,
-                500
-            );
-
-        },
-        {once:true}
-    );
+    if (document.readyState === "complete") {
+        clearTimeout(loaderFailsafe);
+        hideLoader();
+    } else {
+        window.addEventListener("load", function(){
+            clearTimeout(loaderFailsafe);
+            hideLoader();
+        }, {once:true});
+    }
 
 
     /* =========================
@@ -1854,7 +1881,7 @@ nav a:hover{color:var(--leon-cyan)!important;text-shadow:0 0 13px rgba(69,246,25
                     function(){
                         controller.abort();
                     },
-                    5000
+                    2500
                 );
 
             const response =
