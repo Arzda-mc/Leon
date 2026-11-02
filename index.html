@@ -4,9 +4,9 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#090f25">
-<meta name="description" content="LEON Minecraft Clan with 3D Skin Studio and Profile Maker">
-<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#09051c">
+<meta name="description" content="LEON Clan | Minecraft Bedrock Community">
+<link rel="manifest" href="manifest.webmanifest">
 
 <title>LEON | کلن لئون</title>
 
@@ -1062,11 +1062,7 @@ footer span{
 
 
 
-/* King Ender */
-.kingender{border-color:rgba(0,255,255,.42)}
-.kingender .member-avatar{border-color:#8b5cf6;box-shadow:0 0 18px rgba(139,92,246,.55),0 0 38px rgba(0,255,255,.18)}
-.kingender h2{color:#c4b5fd;text-shadow:0 0 12px #7c3aed,0 0 28px rgba(0,255,255,.35)}
-.kingender .rank{background:linear-gradient(90deg,#312e81,#7c3aed,#00b8c4);color:#fff}
+
 .gallery-tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:0 auto 18px}
 .gallery-tab{border:1px solid rgba(0,255,255,.35);border-radius:24px;padding:11px 24px;color:#fff;background:rgba(0,40,45,.8);font:inherit;font-weight:700;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
 .gallery-tab:hover,.gallery-tab.active{background:linear-gradient(45deg,#008b96,#00cfd5);color:#001317;box-shadow:0 0 18px rgba(0,255,255,.3)}
@@ -1314,50 +1310,204 @@ body::before{filter:blur(34px)!important;}
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important;}
 }
 
-/* ===== LEON SKIN STUDIO ===== */
+
+/* ===== LEON SKIN STUDIO: SCREENSHOT-INSPIRED WORKSPACE ===== */
 .skin-intro{max-width:760px;margin:-22px auto 30px;text-align:center;color:#d9d7f5;line-height:2}
-.skin-studio{max-width:1120px!important;padding:clamp(16px,3vw,30px)!important}
-.skin-toolbar{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:22px}
-.skin-action,.skin-tool{font:inherit;font-weight:800;color:#f5f3ff;background:linear-gradient(120deg,rgba(15,30,62,.95),rgba(48,20,78,.92));border:1px solid rgba(168,85,247,.42);border-radius:13px;padding:11px 16px;cursor:pointer;transition:.2s}
-.skin-action:hover,.skin-tool:hover,.skin-tool.active{border-color:#b794ff;box-shadow:0 0 18px rgba(168,85,247,.22);transform:translateY(-1px)}
-.skin-action:disabled{opacity:.4;cursor:not-allowed;transform:none}
-.skin-download{background:linear-gradient(110deg,#6d28d9,#9333ea);border-color:#c4b5fd}
-.skin-workspace{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(260px,.9fr);gap:18px}
-.skin-panel{min-width:0;padding:18px;border:1px solid rgba(150,130,255,.22);border-radius:20px;background:rgba(4,9,28,.55)}
-.skin-panel h2{text-align:center;font-size:22px;color:#e9d5ff;margin-bottom:8px}
-.skin-help{text-align:center;color:#aaa8c5;font-size:13px;line-height:1.8;margin-bottom:16px}
-.skin-canvas-wrap{width:min(100%,512px);margin:auto;overflow:auto;border:1px solid rgba(192,132,252,.35);border-radius:12px;background-color:#17152a;background-image:linear-gradient(45deg,#242139 25%,transparent 25%),linear-gradient(-45deg,#242139 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#242139 75%),linear-gradient(-45deg,transparent 75%,#242139 75%);background-size:20px 20px;background-position:0 0,0 10px,10px -10px,-10px 0}
-#skinCanvas{display:block;width:min(100%,512px);height:auto;image-rendering:pixelated;cursor:crosshair;touch-action:none}
-.skin-tools{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:9px;margin-top:15px}
-.skin-tool{padding:9px 13px;font-size:14px}
-.skin-color-label{display:flex;align-items:center;gap:8px;color:#ddd;font-size:14px}
-#skinColor{width:42px;height:36px;border:0;background:none;cursor:pointer}
-.skin-size-row{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px;color:#ccc;font-size:13px}
-.skin-size-row select{font:inherit;color:#fff;background:#17152c;border:1px solid #6d4aa8;border-radius:8px;padding:7px}
-.skin-grid-toggle{display:flex;gap:6px;align-items:center}
-.skin-status{text-align:center;color:#c4b5fd;font-size:13px;margin-top:14px;min-height:22px}
-.skin-3d-wrap{position:relative;min-height:420px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:15px;background:radial-gradient(ellipse at 50% 40%,rgba(111,63,190,.22),rgba(5,8,25,.8) 70%);border:1px solid rgba(168,85,247,.18)}
-#skin3d{display:block;width:100%;height:420px;max-width:420px}
-.skin-3d-fallback{position:absolute;inset:auto 12px 12px;text-align:center;color:#aaa;font-size:12px;line-height:1.8;pointer-events:none}
-.skin-model-note{text-align:center;color:#aaa;font-size:12px;margin-top:12px}
-.skin-footnote{margin-top:18px;padding-top:15px;border-top:1px solid rgba(168,85,247,.18);text-align:center;color:#aaa;font-size:12px;line-height:1.9}
-@media(max-width:760px){.skin-workspace{grid-template-columns:1fr}.skin-preview-panel{order:2}.skin-action{font-size:13px;padding:10px 12px}.skin-3d-wrap{min-height:350px}#skin3d{height:350px}}
+.leon-editor{max-width:1240px;margin:auto;padding:18px;border-radius:24px;border:1px solid rgba(172,120,255,.38);background:radial-gradient(ellipse at 48% 0%,rgba(115,65,190,.18),transparent 48%),linear-gradient(145deg,#100d29,#090b20 62%,#160b2c);box-shadow:0 18px 60px rgba(0,0,0,.3),0 0 34px rgba(139,92,246,.12);color:#f4edff}
+.editor-head{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:4px 4px 16px;border-bottom:1px solid rgba(192,132,252,.18)}
+.editor-head h2{font-size:25px;letter-spacing:1px;color:#f0d9ff;margin:3px 0 0}
+.editor-kicker,.canvas-topline{font-size:10px;letter-spacing:2px;color:#a78bfa;font-weight:900}
+.editor-head-actions,.editor-bottom-actions{display:flex;gap:9px;flex-wrap:wrap}
+.editor-pill{font:700 13px inherit;color:#f7f1ff;background:linear-gradient(120deg,#24154c,#172b4d);border:1px solid rgba(167,139,250,.48);border-radius:10px;padding:10px 14px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;min-height:40px}
+.editor-pill:hover{border-color:#e9d5ff;box-shadow:0 0 18px rgba(168,85,247,.22)}
+.editor-pill.primary{background:linear-gradient(110deg,#6d28d9,#9333ea,#a855f7);border-color:#d8b4fe}
+.editor-layout{display:grid;grid-template-columns:76px minmax(0,1fr) 245px;gap:16px;padding-top:16px;align-items:stretch}
+.editor-tools{display:grid;grid-template-columns:1fr 1fr;align-content:start;gap:5px;padding:7px;border-radius:14px;border:1px solid rgba(167,139,250,.22);background:rgba(5,8,27,.72)}
+.editor-tool{position:relative;min-height:68px;border:1px solid rgba(148,117,205,.16);border-radius:9px;background:linear-gradient(145deg,#30264b,#1a2340);color:#f4eaff;font-size:25px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1px}
+.editor-tool small{font-size:10px;color:#c4b5fd}
+.editor-tool.active{background:linear-gradient(145deg,#7135a8,#3d2b72);border-color:#e9a8ff;box-shadow:0 0 16px rgba(192,132,252,.26)}
+.editor-tool.compact{min-height:54px;font-size:24px}
+.editor-tool-divider{grid-column:1/-1;height:1px;background:rgba(192,132,252,.2);margin:4px 0}
+.editor-canvas-area{min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:12px;border:1px solid rgba(167,139,250,.18);border-radius:16px;background:radial-gradient(ellipse at center,rgba(67,47,111,.16),rgba(5,8,24,.42) 70%)}
+.canvas-topline{width:100%;display:flex;justify-content:space-between;margin-bottom:10px}
+.uv-stage{width:min(100%,560px);min-height:460px;display:flex;align-items:center;justify-content:center;overflow:auto;border-radius:12px;background-color:#0b1025;background-image:radial-gradient(rgba(192,132,252,.09) 1px,transparent 1px);background-size:16px 16px;padding:18px}
+#skinCanvas{display:block;width:min(100%,512px);height:auto;aspect-ratio:1/1;image-rendering:pixelated;cursor:crosshair;touch-action:none;background:repeating-conic-gradient(#24203b 0% 25%,#17152a 0% 50%) 50%/16px 16px;border:1px solid rgba(221,190,255,.5);box-shadow:0 0 35px rgba(124,58,237,.16)}
+.editor-bottomline{width:100%;display:flex;justify-content:space-between;align-items:center;gap:10px;color:#c4b5fd;font-size:12px;padding:12px 2px}
+.editor-check{display:flex;align-items:center;gap:6px}
+.editor-bottom-actions{justify-content:center;width:100%;padding-top:10px;border-top:1px solid rgba(192,132,252,.16)}
+.editor-properties{display:flex;flex-direction:column;gap:12px}
+.property-card{padding:14px;border:1px solid rgba(167,139,250,.22);border-radius:14px;background:rgba(5,8,27,.66)}
+.property-card h3{font-size:14px;color:#e9d5ff;margin:0 0 12px;text-align:center}
+.color-picker-layout{display:flex;align-items:center;justify-content:center;gap:12px}
+#skinColor{width:76px;height:76px;border:0;border-radius:50%;background:transparent;cursor:pointer;padding:0}
+#skinColor::-webkit-color-swatch{border:4px solid #e9d5ff;border-radius:50%;box-shadow:0 0 18px rgba(168,85,247,.38)}
+#skinColor::-moz-color-swatch{border:4px solid #e9d5ff;border-radius:50%}
+.color-meta{display:flex;flex-direction:column;gap:5px;color:#fff;font-weight:900}
+.color-meta small{font-size:11px;color:#a8a1c4;font-weight:400}
+.palette-row{display:flex;justify-content:center;gap:8px;margin-top:13px;flex-wrap:wrap}
+.palette-row button{width:25px;height:25px;border-radius:50%;background:var(--swatch);border:2px solid rgba(255,255,255,.55);cursor:pointer;box-shadow:0 0 8px rgba(0,0,0,.3)}
+.layer-switch{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.layer-switch button{padding:9px 4px;border-radius:7px;border:1px solid rgba(167,139,250,.28);background:#15162f;color:#cfc3ed;font-size:12px;font-weight:800;cursor:pointer}
+.layer-switch button.active{background:linear-gradient(110deg,#7135a8,#43307b);border-color:#e9d5ff;color:#fff}
+.property-hint{font-size:11px;color:#aaa3c6;line-height:1.7;text-align:center;margin:9px 0 0}
+.body-map{width:150px;height:190px;margin:0 auto;display:grid;grid-template-columns:25px 44px 25px;grid-template-rows:45px 55px 55px;gap:8px;justify-content:center;align-content:center}
+.body-part{border:1px solid #d8b4fe;background:linear-gradient(145deg,rgba(124,58,237,.25),rgba(34,211,238,.08));border-radius:3px;cursor:pointer;min-width:0;min-height:0}
+.body-part:hover,.body-part.active{background:linear-gradient(145deg,#a855f7,#2563eb);box-shadow:0 0 14px rgba(168,85,247,.55)}
+.body-part.head{grid-column:2;grid-row:1}
+.body-part.arm-left{grid-column:1;grid-row:2}
+.body-part.torso{grid-column:2;grid-row:2}
+.body-part.arm-right{grid-column:3;grid-row:2}
+.body-part.leg-left{grid-column:1;grid-row:3;margin-left:7px}
+.body-part.leg-right{grid-column:2;grid-row:3;margin-left:7px;width:24px}
+.editor-select-label{display:flex;flex-direction:column;gap:7px;margin-top:12px;color:#bdb4d7;font-size:12px}
+.editor-select-label select{width:100%;padding:9px;border-radius:8px;background:#11142c;color:#fff;border:1px solid rgba(167,139,250,.4)}
+.range-label{display:flex;justify-content:space-between;color:#cfc3ed;font-size:12px;margin-bottom:8px}
+.editor-range{width:100%;accent-color:#a855f7}
+.editor-footnote{text-align:center;color:#938bb2;font-size:11px;line-height:1.8;margin:14px 0 0}
+@media(max-width:850px){
+ .editor-layout{grid-template-columns:62px minmax(0,1fr)}
+ .editor-properties{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .uv-stage{min-height:360px}
+}
+@media(max-width:600px){
+ .leon-editor{padding:10px;border-radius:18px}
+ .editor-head{align-items:flex-start;flex-direction:column}
+ .editor-head h2{font-size:21px}
+ .editor-head-actions{width:100%}
+ .editor-head-actions>*{flex:1}
+ .editor-layout{grid-template-columns:1fr;gap:10px}
+ .editor-tools{grid-row:2;display:flex;overflow-x:auto;justify-content:flex-start;gap:6px;padding:6px;scrollbar-width:none}
+ .editor-tools::-webkit-scrollbar{display:none}
+ .editor-tool{flex:0 0 58px;min-height:58px;font-size:22px}
+ .editor-tool.compact{flex-basis:48px;min-height:52px}
+ .editor-tool-divider{flex:0 0 1px;width:1px;height:42px;margin:auto 2px}
+ .editor-canvas-area{grid-row:1;padding:8px}
+ .uv-stage{min-height:0;padding:10px;overflow:hidden}
+ #skinCanvas{width:min(100%,440px)}
+ .editor-properties{grid-column:auto;grid-template-columns:1fr 1fr;gap:8px}
+ .property-card{padding:11px}
+ .property-card:last-child{grid-column:1/-1}
+ .body-map{transform:scale(.88);transform-origin:top center;margin-bottom:-18px}
+ .editor-bottom-actions .editor-pill{flex:1}
+}
+@media(max-width:380px){.editor-properties{grid-template-columns:1fr}.property-card:last-child{grid-column:auto}}
 
+/* DIRECT 3D SKIN PAINTING */
+.skin3d-toolbar{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;width:100%;margin:2px 0 12px}
+.skin3d-mode{border:1px solid rgba(167,139,250,.42);border-radius:10px;background:#17142f;color:#e9ddff;padding:10px 14px;min-height:42px;font-weight:800;cursor:pointer}
+.skin3d-mode.active{background:linear-gradient(110deg,#7135a8,#43307b);border-color:#e9d5ff;box-shadow:0 0 16px rgba(168,85,247,.28)}
+.skin3d-stage{position:relative;width:100%;height:560px;min-height:400px;overflow:hidden;border:1px solid rgba(192,132,252,.26);border-radius:16px;background:radial-gradient(ellipse at 50% 38%,rgba(112,73,171,.27),transparent 48%),linear-gradient(160deg,#11132e,#080b1d 70%,#160d2c)}
+#skin3dView{position:absolute;inset:0;touch-action:none}
+#skin3dView canvas{width:100%;height:100%;display:block;outline:none}
+.skin3d-hint{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);width:max-content;max-width:calc(100% - 24px);padding:8px 13px;border-radius:20px;background:rgba(8,7,26,.78);border:1px solid rgba(192,132,252,.25);color:#d9c9f5;font-size:11px;text-align:center;pointer-events:none}
+#skinCanvas[hidden]{display:none!important}
+@media(max-width:600px){.skin3d-stage{height:56vh;min-height:360px;max-height:620px}.skin3d-toolbar{display:grid;grid-template-columns:1fr 1fr}.skin3d-mode{padding:10px 6px;font-size:12px}.skin3d-mode:last-child{grid-column:1/-1}}
 
-/* ===== LEON Studio: full workspace ===== */
-:root{--leon-purple:#a855f7;--leon-cyan:#45f6ff;--leon-panel:#090f25;--leon-border:rgba(168,85,247,.28)}
-.skin-intro{max-width:820px;margin:-22px auto 30px;text-align:center;color:#d9d7f5;line-height:2}
-.leon-tool-shell{width:min(1480px,100%);max-width:1480px;padding:clamp(12px,2vw,26px);background:linear-gradient(145deg,rgba(8,20,43,.94),rgba(25,10,48,.91));border-color:rgba(69,246,255,.22)}
-.leon-toolbar,.leon-modebar,.leon-inline,.leon-stage-controls{display:flex;gap:9px;align-items:center;justify-content:center;flex-wrap:wrap}
-.leon-toolbar{margin-bottom:14px}.leon-toolbar.compact{margin:12px 0}
-.leon-btn,.leon-mode,.leon-tool{font:inherit;font-weight:800;color:#f5f3ff;background:linear-gradient(120deg,#101e3b,#301448);border:1px solid rgba(168,85,247,.42);border-radius:11px;padding:10px 14px;cursor:pointer;transition:.18s}
-.leon-btn:hover,.leon-mode:hover,.leon-tool:hover,.leon-tool.active,.leon-mode.active{border-color:var(--leon-cyan);box-shadow:0 0 16px rgba(69,246,255,.17)}
-.leon-btn.primary{background:linear-gradient(110deg,#6d28d9,#007f91);border-color:#a5f3fc}.leon-btn.small{font-size:12px;padding:8px 10px}.leon-btn.danger{border-color:rgba(248,113,113,.5);color:#fecaca}
-.leon-btn:disabled{opacity:.4;cursor:not-allowed}.leon-modebar{justify-content:flex-start;border-bottom:1px solid var(--leon-border);padding-bottom:13px;margin-bottom:15px}.leon-save-state{margin-inline-start:auto;color:#a7f3d0;font-size:12px}
-.leon-skin-layout,.leon-profile-layout{display:grid;grid-template-columns:minmax(250px,310px) minmax(0,1fr);gap:16px;direction:ltr}.leon-side-panel,.leon-skin-stage,.leon-profile-main{direction:rtl;min-width:0;background:rgba(3,9,25,.72);border:1px solid var(--leon-border);border-radius:16px;padding:15px}.leon-side-panel h3{font-size:16px;color:#e9d5ff;margin:4px 0 12px}.leon-tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.leon-tool{padding:9px 7px;font-size:12px}.leon-control{display:flex;flex-direction:column;gap:6px;margin:12px 0;color:#e6ddfa;font-size:13px}.leon-control input[type=range],.leon-control select,.leon-control input[type=text],.leon-control input[type=number]{width:100%}.leon-control input[type=color]{width:54px;height:34px;border:0;background:transparent}.leon-control select,.leon-control input[type=text],.leon-control input[type=number],.leon-project-controls select,.leon-project-controls input{background:#11152d;color:white;border:1px solid #60438d;border-radius:8px;padding:9px;min-width:0}.leon-control input[type=range],.leon-joint-controls input[type=range]{accent-color:#a855f7}.leon-layer-box,.leon-project-controls{border-top:1px solid rgba(168,85,247,.18);padding-top:12px;margin-top:14px;color:#ddd;font-size:13px}.leon-layer-box label{display:flex;gap:7px;align-items:center;margin:8px 0}.leon-project-controls input,.leon-project-controls select{width:100%;margin:6px 0}.leon-project-controls .leon-inline>*{flex:1}.leon-palette{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.leon-palette button{width:25px;height:25px;border:2px solid #fff5;border-radius:7px;cursor:pointer}.leon-stage-head{display:flex;justify-content:space-between;gap:8px;color:#e9d5ff;font-weight:800;font-size:13px;margin-bottom:10px}.leon-3d-frame{position:relative;min-height:510px;border-radius:14px;overflow:hidden;background:radial-gradient(ellipse at 50% 42%,rgba(117,65,190,.3),rgba(2,8,24,.97) 72%);border:1px solid rgba(69,246,255,.16)}#skin3d{width:100%;height:510px;display:block;touch-action:pan-y}.leon-stage-hint{position:absolute;bottom:8px;left:10px;right:10px;text-align:center;font-size:11px;color:#c4b5fd;pointer-events:none;text-shadow:0 1px 5px #000}.leon-stage-controls{margin-top:12px;color:#ddd;font-size:12px}.leon-stage-controls label{display:flex;gap:7px;align-items:center}.leon-stage-controls select{background:#11152d;color:#fff;border:1px solid #60438d;border-radius:7px;padding:7px}.leon-uv-wrap{margin-top:14px;text-align:center}.leon-uv-wrap canvas{width:min(100%,384px);height:auto;image-rendering:pixelated;border:1px solid #a78bfa;background:#211b34}.leon-status{text-align:center;color:#c4b5fd;min-height:24px;margin-top:12px;font-size:12px}.leon-footnote{text-align:center;color:#aaa;font-size:12px;line-height:1.9;margin-top:16px;border-top:1px solid rgba(168,85,247,.17);padding-top:13px}.advanced-only,.pro-only{display:none}.skin-mode-advanced .advanced-only,.skin-mode-pro .advanced-only,.skin-mode-pro .pro-only{display:block}.skin-mode-pro .leon-tool.advanced-only,.skin-mode-pro .leon-tool.pro-only{display:block}
-.leon-profile-layout{grid-template-columns:minmax(0,1fr) minmax(270px,330px)}.leon-composition{position:relative;min-height:400px;aspect-ratio:16/9;max-height:720px;margin:auto;overflow:hidden;border:1px solid rgba(69,246,255,.25);border-radius:14px;background:#17102f}#profileOutput{width:100%;height:100%;display:block;object-fit:contain}.leon-empty-scene{position:absolute;inset:0;display:grid;place-items:center;color:#d8b4fe;pointer-events:none}.leon-profile-character-list{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.leon-character-chip{padding:7px 10px;border-radius:9px;background:#17152e;color:#ddd;border:1px solid #60438d;cursor:pointer}.leon-character-chip.active{border-color:var(--leon-cyan);color:#fff}.leon-joint-controls label{display:flex;flex-direction:column;gap:5px;color:#ddd;font-size:12px;margin:9px 0}.leon-joint-controls input{width:100%}.profile-controls{max-height:1100px;overflow:auto}.leon-profile-main{min-height:0}.leon-profile-main .leon-project-controls{display:flex;gap:8px}.leon-profile-main .leon-project-controls>*{flex:1}.leon-composition canvas{image-rendering:auto}
-@media(max-width:900px){.leon-skin-layout,.leon-profile-layout{grid-template-columns:1fr;direction:rtl}.leon-side-panel{order:2}.leon-skin-stage{order:1}.leon-3d-frame{min-height:420px}#skin3d{height:420px}.profile-controls{max-height:none}}
-@media(max-width:600px){.leon-tool-shell{padding:10px}.leon-side-panel,.leon-skin-stage,.leon-profile-main{padding:10px}.leon-3d-frame{min-height:350px}#skin3d{height:350px}.leon-composition{min-height:230px}.leon-btn{padding:9px 10px;font-size:12px}.leon-toolbar{gap:6px}.leon-save-state{width:100%;margin:0;text-align:center}.leon-project-controls .leon-inline{display:flex}.leon-profile-layout{gap:9px}}
+/* ===== ARZDA: DEEP GALAXY PROFILE ===== */
+.arzda{
+  isolation:isolate!important;
+  overflow:hidden!important;
+  border:1px solid rgba(190,145,255,.78)!important;
+  background:
+    radial-gradient(ellipse at 50% 5%,rgba(216,70,239,.25),transparent 38%),
+    radial-gradient(ellipse at 10% 90%,rgba(56,80,220,.22),transparent 45%),
+    linear-gradient(150deg,rgba(18,12,54,.97),rgba(5,8,30,.97) 58%,rgba(30,8,54,.96))!important;
+  box-shadow:0 0 26px rgba(139,92,246,.28),0 0 70px rgba(88,54,190,.16),inset 0 0 45px rgba(139,92,246,.12)!important;
+}
+.arzda::after{
+  content:"";position:absolute;inset:12px;border:1px solid rgba(192,132,252,.17);
+  border-radius:26px;pointer-events:none;z-index:1;
+  background:
+    radial-gradient(circle at 12% 18%,#fff 0 1px,transparent 2px),
+    radial-gradient(circle at 84% 22%,#d8b4fe 0 1px,transparent 2px),
+    radial-gradient(circle at 17% 72%,#93c5fd 0 1px,transparent 2px),
+    radial-gradient(circle at 89% 78%,#fff 0 1px,transparent 2px);
+}
+.arzda .member-avatar{
+  width:150px!important;height:150px!important;
+  border:3px solid #d8b4fe!important;
+  box-shadow:0 0 0 7px rgba(168,85,247,.10),0 0 26px #9333ea,0 0 62px rgba(192,132,252,.42)!important;
+  position:relative;z-index:3;
+}
+.arzda h2{
+  background:linear-gradient(100deg,#fff,#e9d5ff 28%,#c4b5fd 55%,#f0abfc 80%,#fff);
+  -webkit-background-clip:text;background-clip:text;color:transparent!important;
+  filter:drop-shadow(0 0 12px rgba(168,85,247,.7));
+  letter-spacing:3px!important;
+}
+.arzda .rank{
+  background:linear-gradient(110deg,#3b0764,#6d28d9,#a855f7,#ec4899)!important;
+  border:1px solid rgba(233,213,255,.48);
+  box-shadow:0 0 24px rgba(168,85,247,.45)!important;
+}
+.arzda .purple-dots i:nth-child(5),.arzda .purple-dots i:nth-child(6),
+.arzda .purple-dots i:nth-child(7),.arzda .purple-dots i:nth-child(8){display:block}
+.arzda .purple-dots i:nth-child(5){top:42%;left:7%;animation-delay:.3s}
+.arzda .purple-dots i:nth-child(6){top:48%;right:7%;animation-delay:.9s}
+.arzda .purple-dots i:nth-child(7){top:88%;left:32%;animation-delay:1.4s}
+.arzda .purple-dots i:nth-child(8){top:12%;right:40%;animation-delay:1.8s}
+.arzda .member-avatar{animation:arzdaOrbitGlow 4s ease-in-out infinite alternate}
+@keyframes arzdaOrbitGlow{
+  from{filter:hue-rotate(-8deg);transform:scale(1)}
+  to{filter:hue-rotate(12deg);transform:scale(1.035)}
+}
+.victor{border-color:rgba(69,246,255,.42)!important}
+.victor .member-avatar{border-color:#55eaff!important;box-shadow:0 0 22px rgba(69,246,255,.36),0 0 42px rgba(56,189,248,.18)!important}
+.victor .rank{background:linear-gradient(110deg,#075985,#0891b2,#38bdf8)!important;color:#fff!important}
+
+/* ===== MOBILE REWORK ===== */
+nav{
+  max-width:calc(100% - 20px)!important;
+  overflow-x:auto!important;overflow-y:hidden!important;
+  justify-content:flex-start!important;gap:18px!important;
+  scrollbar-width:none!important;white-space:nowrap!important;
+}
+nav::-webkit-scrollbar{display:none}
+nav a{flex:0 0 auto;min-height:34px;display:flex;align-items:center}
+@media(max-width:760px){
+  body{padding-bottom:env(safe-area-inset-bottom)}
+  nav{
+    top:8px!important;width:calc(100% - 16px)!important;
+    padding:10px 14px!important;gap:17px!important;border-radius:18px!important;
+  }
+  nav a{font-size:13px!important}
+  .hero{min-height:88svh;padding:100px 16px 45px!important}
+  .logo{font-size:clamp(58px,18vw,100px)!important;letter-spacing:5px!important}
+  .hero h2{font-size:26px!important}
+  .hero p{font-size:15px!important;line-height:2}
+  .section{padding:65px 14px!important}
+  .title{font-size:clamp(27px,8vw,38px)!important;margin-bottom:28px!important}
+  .glass{padding:22px 16px!important;border-radius:22px!important}
+  .about,.history{font-size:16px!important;line-height:2.1!important}
+  .members{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:18px!important}
+  .member{width:100%!important;min-height:0!important;padding:24px 18px!important;border-radius:24px!important}
+  .member h2{font-size:32px!important}
+  .member p{font-size:15px!important;line-height:2!important}
+  .member-avatar{width:120px!important;height:120px!important}
+  .arzda .member-avatar{width:138px!important;height:138px!important}
+  .buttons{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:25px}
+  .btn{margin:0!important;padding:13px 10px!important;font-size:14px}
+  .skin-studio{padding:13px!important}
+  .skin-workspace{grid-template-columns:1fr!important}
+  .skin-preview-panel{order:-1!important}
+  .skin-3d-wrap{min-height:310px!important}
+  #skin3d{height:310px!important}
+  .skin-toolbar{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .skin-action{min-height:46px;padding:10px 8px!important;font-size:13px!important}
+  .skin-panel{padding:13px!important}
+  .skin-tools{gap:7px}
+  .skin-tool{min-height:42px;padding:9px 11px!important}
+  .skin-size-row{gap:9px}
+  .gallery-tabs{display:flex;gap:8px}
+  .gallery-tab{flex:1;min-height:44px}
+  .gallery-grid{grid-template-columns:1fr 1fr!important;gap:10px!important}
+}
+@media(max-width:390px){
+  nav{gap:13px!important}
+  nav a{font-size:12px!important}
+  .gallery-grid{grid-template-columns:1fr!important}
+  .buttons{grid-template-columns:1fr}
+}
 
 </style>
 </head>
@@ -1418,9 +1568,7 @@ body::before{filter:blur(34px)!important;}
         گالری
     </a>
 
-    <a href="#skin-studio">🎨 Skin Studio</a>
-
-    <a href="#profile-maker">👑 Profile Maker</a>
+    <a href="#skin-studio">اسکین‌ساز</a>
 
     <a href="#contact">
         ارتباط
@@ -1642,15 +1790,20 @@ body::before{filter:blur(34px)!important;}
 
         </div>
 
-        <!-- King Ender -->
-        <div class="member kingender">
-            <div class="rank">👑 عضو مهم LEON</div>
-            <img class="member-avatar" src="KING_ENDER.png" alt="King Ender" width="135" height="135" loading="lazy">
-            <h2>⚔️ King Ender</h2>
-            <span>عضو ویژه‌ی LEON</span>
-            <p>یکی از اعضای مهم کامیونیتی LEON و همراه این خانواده‌ی گیمینگ.</p>
+        <!-- Victor -->
+        <div class="member victor">
+            <div class="rank">🎬 مدیا و تولیدکننده محتوا</div>
+            <img class="member-avatar" src="victor.png" alt="Victor" width="135" height="135" loading="lazy">
+            <h2>🎥 Victor</h2>
+            <span>عضو قدیمی کلن LEON</span>
+            <p>
+                یکی از بهترین مدیاهای Apex Mine و از تولیدکنندگان برجسته محتوای Minecraft Bedrock.
+                <br><br>
+                ویکتور با تجربه بالا در ادیت و ساخت تامنیل، از مهره‌های اصلی پیشرفت کامیونیتی مدیای LEON است
+                و یکی از قدیمی‌ترین اعضای کلن LEON به شمار می‌رود.
+            </p>
         </div>
-
+    
     </div>
 
 </section>
@@ -1675,132 +1828,101 @@ body::before{filter:blur(34px)!important;}
 ========================= -->
 
 
-<section class="section" id="skin-studio">
-  <h1 class="title">🎨 LEON Skin Studio</h1>
-  <p class="skin-intro">اسکین ماینکرفت را روی مدل سه‌بعدی واقعی طراحی کن؛ هر ضربه روی سطح مدل، مستقیماً بافت استاندارد اسکین را تغییر می‌دهد.</p>
-  <div class="leon-tool-shell glass">
-    <div class="leon-toolbar">
-      <label class="leon-btn" for="skinFile">📂 آپلود اسکین PNG</label><input id="skinFile" type="file" accept="image/png" hidden>
-      <button class="leon-btn" id="skinBlank">✨ اسکین جدید</button>
-      <button class="leon-btn" id="skinUndo" disabled>↶ بازگشت</button>
-      <button class="leon-btn" id="skinRedo" disabled>↷ تکرار</button>
-      <button class="leon-btn primary" id="skinExport">⬇ خروجی Bedrock PNG</button>
-    </div>
-    <div class="leon-modebar" role="group" aria-label="سطح ابزارها">
-      <button class="leon-mode active" data-skin-mode="normal">🎨 عادی</button>
-      <button class="leon-mode" data-skin-mode="advanced">🛠️ پیشرفته</button>
-      <button class="leon-mode" data-skin-mode="pro">💎 فوق‌پیشرفته</button>
-      <span class="leon-save-state" id="skinSaveState">● آماده</span><span id="connectionStatus" class="leon-save-state">● آنلاین</span>
-    </div>
-    <div class="leon-skin-layout">
-      <aside class="leon-side-panel">
-        <h3>ابزار طراحی</h3>
-        <div class="leon-tool-grid" id="skinToolGrid">
-          <button class="leon-tool active" data-paint-tool="pen">✏️ قلم</button>
-          <button class="leon-tool" data-paint-tool="eraser">🧽 پاک‌کن</button>
-          <button class="leon-tool" data-paint-tool="bucket">🪣 سطل رنگ</button>
-          <button class="leon-tool" data-paint-tool="picker">💧 قطره‌چکان</button>
-          <button class="leon-tool advanced-only" data-paint-tool="select">▧ انتخاب ناحیه</button>
-          <button class="leon-tool advanced-only" id="clearSkinSelection">پاک‌کردن انتخاب</button>
-          <button class="leon-tool advanced-only" data-paint-tool="detail">✣ جزئیات</button>
-        </div>
-        <label class="leon-control">رنگ اصلی <input id="skinColor" type="color" value="#8b5cf6"></label>
-        <label class="leon-control">اندازه قلم <output id="skinBrushOut">1 px</output><input id="skinBrush" type="range" min="1" max="12" value="1"></label>
-        <label class="leon-control advanced-only">شفافیت <output id="skinAlphaOut">100%</output><input id="skinAlpha" type="range" min="5" max="100" value="100"></label>
-        <label class="leon-control advanced-only">تقارن <select id="skinSymmetry"><option value="off">خاموش</option><option value="x">افقی</option><option value="y">عمودی</option><option value="both">چهارجهته</option></select></label>
-        <label class="leon-control">قسمت مدل <select id="skinPart"><option value="all">تمام بدن</option><option value="head">سر</option><option value="body">بدن</option><option value="rightArm">دست راست</option><option value="leftArm">دست چپ</option><option value="rightLeg">پای راست</option><option value="leftLeg">پای چپ</option></select></label>
-        <div class="advanced-only leon-layer-box"><b>لایه‌های اسکین</b>
-          <label><input type="checkbox" data-skin-layer="inner" checked> لایه اصلی</label>
-          <label><input type="checkbox" data-skin-layer="outer" checked> لایه بیرونی</label>
-        </div>
-        <div class="pro-only leon-layer-box"><b>لایه‌های نقاشی</b><select id="skinLayerList"><option value="0">لایه پایه</option></select><input id="skinLayerName" type="text" placeholder="نام لایه"><label><input type="checkbox" id="skinLayerVisible" checked> نمایش لایه</label><div class="leon-inline"><button class="leon-btn small" id="addPaintLayer">＋ لایه</button><button class="leon-btn small danger" id="deletePaintLayer">حذف لایه</button></div><label class="leon-control">شفافیت لایه <input id="skinLayerOpacity" type="range" min="0" max="100" value="100"></label></div>
-        <div class="pro-only leon-layer-box"><b>پالت شخصی</b><div id="skinPalette" class="leon-palette"></div><button class="leon-btn small" id="addPalette">＋ افزودن رنگ فعلی</button></div>
-        <div class="pro-only leon-layer-box"><b>نمایش و نور</b>
-          <label class="leon-control">نور محیط <input id="skinLight" type="range" min="0" max="200" value="100"></label>
-          <label class="leon-control">نور دوربین <input id="skinCameraLight" type="range" min="0" max="200" value="100"></label>
-          <label><input type="checkbox" id="skinRotate"> چرخش خودکار</label>
-          <label><input type="checkbox" id="skinGrid3d"> نمایش خطوط راهنما</label>
-        </div>
-        <div class="leon-project-controls">
-          <h3>پروژه‌ها</h3>
-          <input id="skinProjectName" placeholder="نام پروژه اسکین">
-          <div class="leon-inline"><button class="leon-btn small" id="skinSaveProject">ذخیره</button><button class="leon-btn small" id="skinLoadProject">بارگذاری</button></div>
-          <div class="leon-inline"><button class="leon-btn small" id="skinCopyProject">کپی</button><button class="leon-btn small danger" id="skinDeleteProject">حذف</button></div>
-          <select id="skinProjectList" aria-label="پروژه‌های ذخیره‌شده"><option value="">پروژه‌های ذخیره‌شده</option></select>
-        </div>
-      </aside>
-      <main class="leon-skin-stage">
-        <div class="leon-stage-head"><span>پیش‌نمایش زنده سه‌بعدی</span><span id="skinModelInfo">64×64 • Classic</span></div>
-        <div class="leon-3d-frame"><canvas id="skin3d" width="600" height="680"></canvas><div class="leon-stage-hint" id="skin3dHint">برای نقاشی روی مدل، روی سطح آن کلیک کن و بکش<br>برای چرخش، بیرون از مدل درگ کن</div></div>
-        <div class="leon-stage-controls">
-          <label>مدل <select id="skinModel"><option value="default">Classic</option><option value="slim">Slim</option></select></label>
-          <label>زوم <input id="skinZoom" type="range" min="35" max="150" value="90"></label>
-          <button class="leon-btn small" id="skinResetCamera">بازنشانی دوربین</button>
-          <button class="leon-btn small" id="skinShowAtlas">نمایش نقشه UV</button>
-        </div>
-        <div class="leon-uv-wrap" id="skinAtlasWrap" hidden><div class="leon-stage-head"><span>نقشه بافت Minecraft (UV)</span><span>ویرایش مستقیم با کلیک روی مدل</span></div><canvas id="skinAtlas" width="64" height="64"></canvas></div>
-        <p class="leon-status" id="skinStatus" role="status">در حال آماده‌سازی موتور سه‌بعدی…</p>
-      </main>
-    </div>
-    <div class="leon-footnote">اسکین خروجی با قالب PNG استاندارد ۶۴×۶۴ (یا اندازه HD معتبر) ذخیره می‌شود. فایل را در بخش Dressing Room ماینکرفت Bedrock وارد کن.</div>
-  </div>
-</section>
 
-<section class="section" id="profile-maker">
-  <h1 class="title">👑 LEON Profile Maker</h1>
-  <p class="skin-intro">صحنه سه‌بعدی ماینکرفتی بساز، شخصیت‌ها را ژست بده، نور و پس‌زمینه بچین و Thumbnail باکیفیت خروجی بگیر.</p>
-  <div class="leon-tool-shell glass">
-    <div class="leon-toolbar">
-      <label class="leon-btn" for="profileSkinFile">📂 افزودن شخصیت</label><input id="profileSkinFile" type="file" accept="image/png" hidden>
-      <label class="leon-btn" for="profileBgFile">🌄 آپلود پس‌زمینه</label><input id="profileBgFile" type="file" accept="image/*" hidden>
-      <button class="leon-btn" id="profileAddDemo">＋ شخصیت نمونه</button>
-      <button class="leon-btn primary" id="profileExport">⬇ خروجی تصویر</button>
-    </div>
-    <div class="leon-profile-layout">
-      <main class="leon-profile-main">
-        <div class="leon-stage-head"><span>صحنه و ترکیب‌بندی</span><span id="profileSceneCount">۱ شخصیت</span></div>
-        <div class="leon-composition" id="profileComposition"><canvas id="profileOutput" width="1280" height="720"></canvas><div class="leon-empty-scene" id="profileEmpty">برای شروع، یک اسکین PNG اضافه کن.</div></div>
-        <div class="leon-profile-character-list" id="profileCharacterList"></div>
-        <div class="leon-toolbar compact"><button class="leon-btn small" id="profileSave">💾 ذخیره پروژه</button><button class="leon-btn small" id="profileLoad">بازکردن پروژه</button><button class="leon-btn small" id="profileDuplicate">کپی شخصیت</button><button class="leon-btn small" id="profileCopyProject">کپی پروژه</button><button class="leon-btn small danger" id="profileDeleteProject">حذف پروژه</button><button class="leon-btn small danger" id="profileRemove">حذف شخصیت</button></div>
-        <div class="leon-project-controls"><input id="profileProjectName" placeholder="نام پروژه Thumbnail"><select id="profileProjectList"><option value="">پروژه‌های ذخیره‌شده</option></select></div>
-        <p class="leon-status" id="profileStatus" role="status">آماده ساخت صحنه</p>
-      </main>
-      <aside class="leon-side-panel profile-controls">
-        <h3>شخصیت انتخاب‌شده</h3>
-        <label class="leon-control">نام نمایشی <input id="characterName" type="text" placeholder="Player"></label>
-        <label class="leon-control">موقعیت افقی <input id="characterX" type="range" min="0" max="100" value="50"></label>
-        <label class="leon-control">مقیاس <input id="characterScale" type="range" min="35" max="150" value="100"></label>
-        <label class="leon-control">چرخش <input id="characterRotation" type="range" min="-180" max="180" value="0"></label>
-        <h3>ژست و مفاصل</h3>
-        <label class="leon-control">ژست آماده <select id="posePreset"><option value="idle">ایستادن معمولی</option><option value="sit">نشستن</option><option value="walk">راه‌رفتن</option><option value="arms">دست‌به‌سینه</option><option value="fight">مبارزه</option><option value="hero">نمایشی</option><option value="custom">ژست اختصاصی</option></select></label>
-        <div class="leon-joint-controls">
-          <label>سر <input id="jointHead" type="range" min="-80" max="80" value="0"></label>
-          <label>دست راست <input id="jointRightArm" type="range" min="-180" max="180" value="0"></label>
-          <label>دست چپ <input id="jointLeftArm" type="range" min="-180" max="180" value="0"></label>
-          <label>پای راست <input id="jointRightLeg" type="range" min="-90" max="90" value="0"></label>
-          <label>پای چپ <input id="jointLeftLeg" type="range" min="-90" max="90" value="0"></label>
-        </div>
-        <div class="leon-inline"><button class="leon-btn small" id="savePose">ذخیره ژست</button><select id="savedPoses"><option value="">ژست‌های من</option></select></div>
-        <h3>دوربین و نور</h3>
-        <label class="leon-control">چرخش افقی مدل <input id="profileCameraAngle" type="range" min="-180" max="180" value="0"></label>
-        <label class="leon-control">چرخش عمودی مدل <input id="profileCameraPitch" type="range" min="-80" max="80" value="0"></label>
-        <label class="leon-control">فاصله دوربین <input id="profileCameraZoom" type="range" min="40" max="150" value="90"></label>
-        <label class="leon-control">نور محیط <input id="profileLight" type="range" min="0" max="200" value="110"></label>
-        <label class="leon-control">نور دوربین <input id="profileCameraLight" type="range" min="0" max="200" value="100"></label>
-        <h3>پس‌زمینه و متن</h3>
-        <label class="leon-control">پس‌زمینه آماده <select id="profileBgPreset"><option value="space">فضای عمیق</option><option value="purple">بنفش نئونی</option><option value="cyan">فیروزه‌ای</option><option value="sunset">غروب</option><option value="solid">رنگ ساده</option></select></label>
-        <label class="leon-control">رنگ پایه <input id="profileBgColor" type="color" value="#17102f"></label>
-        <label class="leon-control">عنوان <input id="profileTitle" type="text" placeholder="YOUR TITLE"></label>
-        <label class="leon-control">رنگ عنوان <input id="profileTextColor" type="color" value="#ffffff"></label>
-        <label class="leon-control">اندازه عنوان <input id="profileTextSize" type="range" min="20" max="120" value="64"></label>
-        <label class="leon-control">فونت عنوان <select id="profileFont"><option value="Tahoma">Tahoma</option><option value="Arial">Arial</option><option value="Georgia">Georgia</option><option value="monospace">Monospace</option><option value="serif">Serif</option></select></label>
-        <label class="leon-control">جایگاه عنوان <select id="profileTextPosition"><option value="top">بالا</option><option value="middle">وسط</option><option value="bottom">پایین</option></select></label>
-        <label class="leon-control">افکت <select id="profileEffect"><option value="none">بدون افکت</option><option value="glow">درخشش</option><option value="vignette">تیره‌کردن گوشه‌ها</option><option value="neon">هاله نئونی</option></select></label>
-        <label class="leon-control">ابعاد خروجی <select id="profileSize"><option value="1280x720">Thumbnail یوتیوب 1280×720</option><option value="1024x1024">مربعی 1024×1024</option><option value="512x512">پروفایل 512×512</option><option value="custom">سفارشی</option></select></label>
-        <div class="leon-inline" id="customDimensions" hidden><input id="profileWidth" type="number" min="128" max="4096" value="1600" aria-label="عرض"><input id="profileHeight" type="number" min="128" max="4096" value="900" aria-label="ارتفاع"></div>
-        <label class="leon-control">کیفیت PNG <select id="profileQuality"><option value="1">استاندارد</option><option value="2" selected>بالا ×2</option><option value="3">فوق‌العاده ×3</option></select></label>
+<section class="section" id="skin-studio">
+  <h1 class="title">LEON Skin Studio</h1>
+  <p class="skin-intro">اسکینت را آپلود کن، پیکسل‌به‌پیکسل ویرایش کن و نسخه نهایی را برای Minecraft Bedrock خروجی بگیر 💜</p>
+  <div class="leon-editor">
+    <header class="editor-head">
+      <div><span class="editor-kicker">LEON CREATIVE TOOLS</span><h2>Skin Workshop</h2></div>
+      <div class="editor-head-actions">
+        <label class="editor-pill" for="skinUpload">⬆ آپلود اسکین</label>
+        <input id="skinUpload" type="file" accept="image/png" hidden>
+        <button class="editor-pill" id="newSkin" type="button">＋ اسکین جدید</button>
+      </div>
+    </header>
+    <div class="editor-layout">
+      <aside class="editor-tools" aria-label="ابزارهای ویرایش">
+        <button class="editor-tool active" data-tool="pen" title="قلم" aria-label="قلم">✎<small>قلم</small></button>
+        <button class="editor-tool" data-tool="eraser" title="پاک‌کن" aria-label="پاک‌کن">▱<small>پاک‌کن</small></button>
+        <button class="editor-tool" data-tool="fill" title="سطل رنگ" aria-label="سطل رنگ">▨<small>سطل رنگ</small></button>
+        <button class="editor-tool" data-tool="eyedropper" title="قطره‌چکان" aria-label="قطره‌چکان">◉<small>نمونه‌رنگ</small></button>
+        <button class="editor-tool" data-tool="line" title="خط" aria-label="خط">／<small>خط</small></button>
+        <div class="editor-tool-divider"></div>
+        <button class="editor-tool compact" id="undoSkin" title="بازگشت" aria-label="بازگشت">↶</button>
+        <button class="editor-tool compact" id="redoSkin" title="تکرار" aria-label="تکرار">↷</button>
+        <button class="editor-tool compact" id="zoomInSkin" title="بزرگ‌نمایی" aria-label="بزرگ‌نمایی">⌕<small>+</small></button>
+        <button class="editor-tool compact" id="zoomOutSkin" title="کوچک‌نمایی" aria-label="کوچک‌نمایی">⌕<small>−</small></button>
+      </aside>
+      
+<main class="editor-canvas-area">
+  <div class="canvas-topline"><span>3D CHARACTER WORKSPACE</span><span id="skin3dStatus">مدل آماده است</span></div>
+  <div class="skin3d-toolbar">
+    <button type="button" class="skin3d-mode active" id="paintMode">✎ ویرایش روی مدل</button>
+    <button type="button" class="skin3d-mode" id="rotateMode">⟳ چرخاندن مدل</button>
+    <button type="button" class="skin3d-mode" id="resetCamera">◎ نمای اولیه</button>
+  </div>
+  <div class="skin3d-stage" id="skin3dStage">
+    <div id="skin3dView" aria-label="مدل سه‌بعدی ماینکرفت برای ویرایش مستقیم"></div>
+    <div class="skin3d-hint" id="skin3dHint">روی سطح کاراکتر بکش تا همان قسمت رنگ شود. برای چرخاندن، حالت چرخش را انتخاب کن.</div>
+  </div>
+  <div class="editor-bottomline">
+    <span id="skinStatus" role="status">برای شروع، روی مدل سه‌بعدی نقاشی کن.</span>
+    <label class="editor-check"><input id="skinGrid" type="checkbox" checked> شبکه راهنما</label>
+  </div>
+  <div class="editor-bottom-actions">
+    <button class="editor-pill" id="resetSkin" type="button">↺ پاک‌کردن تغییرات</button>
+    <button class="editor-pill primary" id="downloadSkin" type="button">⬇ خروجی PNG اسکین</button>
+  </div>
+  <canvas id="skinCanvas" width="64" height="64" hidden></canvas>
+</main>
+      <aside class="editor-properties">
+        <section class="property-card">
+          <h3>رنگ انتخابی</h3>
+          <div class="color-picker-layout">
+            <input id="skinColor" type="color" value="#8b5cf6" aria-label="انتخاب رنگ">
+            <div class="color-meta"><span id="skinColorHex">#8B5CF6</span><small>رنگ قلم</small></div>
+          </div>
+          <div class="palette-row" aria-label="رنگ‌های پیشنهادی">
+            <button type="button" data-color="#8b5cf6" style="--swatch:#8b5cf6" aria-label="بنفش"></button>
+            <button type="button" data-color="#17112f" style="--swatch:#17112f" aria-label="سرمه‌ای"></button>
+            <button type="button" data-color="#35d5e8" style="--swatch:#35d5e8" aria-label="فیروزه‌ای"></button>
+            <button type="button" data-color="#f0abfc" style="--swatch:#f0abfc" aria-label="صورتی"></button>
+            <button type="button" data-color="#ffffff" style="--swatch:#ffffff" aria-label="سفید"></button>
+            <button type="button" data-color="#111827" style="--swatch:#111827" aria-label="مشکی"></button>
+          </div>
+        </section>
+        <section class="property-card">
+          <h3>لایه اسکین</h3>
+          <div class="layer-switch">
+            <button type="button" class="active" data-layer="base">Body</button>
+            <button type="button" data-layer="outer">Outer Layer</button>
+          </div>
+          <p class="property-hint" id="layerHint">لایه اصلی اسکین انتخاب شده است.</p>
+        </section>
+        <section class="property-card">
+          <h3>انتخاب بخش بدن</h3>
+          <div class="body-map" aria-label="انتخاب بخش اسکین">
+            <button class="body-part head" data-part="head" type="button" aria-label="سر"></button>
+            <button class="body-part arm-left" data-part="leftArm" type="button" aria-label="دست چپ"></button>
+            <button class="body-part torso" data-part="torso" type="button" aria-label="بدن"></button>
+            <button class="body-part arm-right" data-part="rightArm" type="button" aria-label="دست راست"></button>
+            <button class="body-part leg-left" data-part="leftLeg" type="button" aria-label="پای چپ"></button>
+            <button class="body-part leg-right" data-part="rightLeg" type="button" aria-label="پای راست"></button>
+          </div>
+          <p class="property-hint" id="partHint">تمام بافت قابل ویرایش است.</p>
+          <label class="editor-select-label">مدل اسکین
+            <select id="skinModelType"><option value="classic">Classic (4px)</option><option value="slim">Slim (3px)</option></select>
+          </label>
+        </section>
+        <section class="property-card">
+          <h3>تنظیم قلم</h3>
+          <label class="range-label">اندازه قلم <strong id="brushValue">1 px</strong></label>
+          <input id="skinBrush" class="editor-range" type="range" min="1" max="8" value="1">
+        </section>
       </aside>
     </div>
+    <p class="editor-footnote">پشتیبانی از PNG استاندارد ۶۴×۶۴ • خروجی مناسب Minecraft Bedrock • ذخیره خودکار روی همین دستگاه</p>
   </div>
 </section>
 
@@ -2277,120 +2399,192 @@ body::before{filter:blur(34px)!important;}
 </script>
 
 
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script>
-(()=>{'use strict';
-const $=id=>document.getElementById(id), status=(id,msg)=>{const e=$(id);if(e)e.textContent=msg};
-const DB_NAME='LEON_STUDIO_V3',DB_STORE='projects';
-function openDB(){return new Promise((resolve,reject)=>{if(!('indexedDB'in window))return reject(Error('IndexedDB unavailable'));const q=indexedDB.open(DB_NAME,1);q.onupgradeneeded=()=>{if(!q.result.objectStoreNames.contains(DB_STORE))q.result.createObjectStore(DB_STORE)};q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error)})}
-async function dbPut(k,v){try{const db=await openDB();await new Promise((r,j)=>{const t=db.transaction(DB_STORE,'readwrite');t.objectStore(DB_STORE).put(v,k);t.oncomplete=r;t.onerror=()=>j(t.error)});db.close()}catch(e){localStorage.setItem('leon:'+k,JSON.stringify(v))}}
-async function dbGet(k){try{const db=await openDB();const v=await new Promise((r,j)=>{const q=db.transaction(DB_STORE).objectStore(DB_STORE).get(k);q.onsuccess=()=>r(q.result);q.onerror=()=>j(q.error)});db.close();if(v!==undefined)return v}catch(e){}try{return JSON.parse(localStorage.getItem('leon:'+k)||'null')}catch(e){return null}}
-async function dbDelete(k){try{const db=await openDB();await new Promise((r,j)=>{const t=db.transaction(DB_STORE,'readwrite');t.objectStore(DB_STORE).delete(k);t.oncomplete=r;t.onerror=()=>j(t.error)});db.close()}catch(e){localStorage.removeItem('leon:'+k)}}
-async function dbKeys(prefix){try{const db=await openDB();const keys=await new Promise((r,j)=>{const q=db.transaction(DB_STORE).objectStore(DB_STORE).getAllKeys();q.onsuccess=()=>r(q.result.map(String).filter(k=>k.startsWith(prefix)));q.onerror=()=>j(q.error)});db.close();return keys}catch(e){return Object.keys(localStorage).filter(k=>k.startsWith('leon:'+prefix)).map(k=>k.slice(5))}}
-function loadScript(url){return new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=url;s.onload=resolve;s.onerror=()=>reject(Error('بارگذاری کتابخانه ناموفق بود: '+url));document.head.appendChild(s)})}async function loadEngine(){if(!window.THREE)await loadScript('https://cdn.jsdelivr.net/npm/three@0.156.1/build/three.min.js');if(!window.skinview3d)await loadScript('https://cdn.jsdelivr.net/npm/skinview3d@3.4.2/bundles/skinview3d.bundle.min.js');if(!window.skinview3d)throw Error('skinview3d not exported');return window.skinview3d}
-function dataURL(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(file)})}
-function imageFrom(src){return new Promise((resolve,reject)=>{const i=new Image();i.onload=()=>resolve(i);i.onerror=reject;i.src=src})}
-function downloadBlob(blob,name){const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1500)}
-function dataBlob(url){return fetch(url).then(r=>r.blob())}
-let engine=null;
-loadEngine().then(v=>{engine=v;initSkin();initProfile()}).catch(e=>{status('skinStatus','موتور سه‌بعدی بارگذاری نشد. اینترنت را بررسی و صفحه را تازه‌سازی کن.');status('profileStatus','موتور سه‌بعدی بارگذاری نشد؛ بخش‌های ذخیره و تنظیمات پس از اتصال فعال می‌شوند.');console.error(e)});
-
-/* ---------------- SKIN STUDIO ---------------- */
-function initSkin(){
- const canvas=$('skin3d'),atlas=$('skinAtlas'),atlasCtx=atlas.getContext('2d',{willReadFrequently:true}),file=$('skinFile');if(!canvas)return;
- let viewer=null,tex=document.createElement('canvas'),tctx=null,layers=[],activeLayer=0,currentURL=null,tool='pen',painting=false,lastUV=null,history=[],future=[],selection=null,selectedRect=null,autoSaveTimer=null,projectName='آخرین اسکین',palette=['#8b5cf6','#45f6ff','#ffffff','#111827','#ec4899','#22c55e','#f59e0b'];
- tex.width=64;tex.height=64;function makeLayer(name,fill){const c=document.createElement('canvas');c.width=tex.width;c.height=tex.height;const x=c.getContext('2d',{willReadFrequently:true});if(fill){x.fillStyle=fill;x.fillRect(0,0,c.width,c.height)}return {name,canvas:c,ctx:x,visible:true,opacity:1}}layers=[makeLayer('لایه پایه','#8b5cf6')];tctx=layers[0].ctx;
- const setStatus=m=>status('skinStatus',m),setSave=m=>status('skinSaveState',m);
- const color=()=> $('skinColor').value, brush=()=>+$('skinBrush').value, alpha=()=>+$('skinAlpha').value/100;
- function compose(){const W=layers[0]?.canvas.width||64,H=layers[0]?.canvas.height||64;if(tex.width!==W||tex.height!==H){tex.width=W;tex.height=H}const c=tex.getContext('2d');c.clearRect(0,0,W,H);layers.forEach(l=>{if(!l.visible)return;c.globalAlpha=l.opacity;c.drawImage(l.canvas,0,0)});c.globalAlpha=1}
- function syncAtlas(){atlasCtx.clearRect(0,0,64,64);atlasCtx.drawImage(tex,0,0,64,64);}
- function snap(){return tctx.getImageData(0,0,64,64)}
- function pushHistory(){history.push(snap());if(history.length>80)history.shift();future=[];buttons()}
- function buttons(){$('skinUndo').disabled=history.length<2;$('skinRedo').disabled=!future.length}
- function commit(){compose();syncAtlas();if(viewer?.skinCanvas){const c=viewer.skinCanvas,cc=c.getContext('2d');cc.clearRect(0,0,c.width,c.height);cc.imageSmoothingEnabled=false;cc.drawImage(tex,0,0,c.width,c.height);if(viewer.playerObject?.skin?.map)viewer.playerObject.skin.map.needsUpdate=true;viewer.render?.()}scheduleSave()}
- function scheduleSave(){setSave('● ذخیره خودکار…');clearTimeout(autoSaveTimer);autoSaveTimer=setTimeout(async()=>{try{const data={name:projectName,skin:tex.toDataURL('image/png'),model:$('skinModel').value,zoom:$('skinZoom').value,part:$('skinPart').value,color:color(),brush:brush(),alpha:$('skinAlpha').value,symmetry:$('skinSymmetry').value,palette,layers:layers.map(l=>({name:l.name,visible:l.visible,opacity:l.opacity,data:l.canvas.toDataURL('image/png')})),activeLayer,updated:Date.now()};await dbPut('skin:last',data);setSave('● ذخیره شد')}catch(e){setSave('● خطای ذخیره‌سازی');console.warn(e)}},500)}
- function setupViewer(){try{viewer=new engine.SkinViewer({canvas,width:600,height:680,skin:tex,model:'default',fov:38,zoom:.9,enableControls:true,preserveDrawingBuffer:true,pixelRatio:'match-device'});viewer.controls.enableRotate=true;viewer.controls.enableZoom=true;viewer.controls.enablePan=false;viewer.globalLight.intensity=1;viewer.cameraLight.intensity=1;$('skin3dHint').style.display='block';viewer.playerObject.skin.setInnerLayerVisible(true);viewer.playerObject.skin.setOuterLayerVisible(true);viewer.render();setStatus('موتور سه‌بعدی آماده است. روی سطح مدل نقاشی کن.');return true}catch(e){console.error(e);setStatus('ساخت نمایشگر سه‌بعدی ناموفق بود.');return false}}
- function resize(){if(!viewer)return;const w=Math.max(260,canvas.clientWidth||600),h=Math.max(320,canvas.clientHeight||510);viewer.setSize(w,h)}
- compose();setupViewer();new ResizeObserver(resize).observe(canvas.parentElement);
- function meshes(){const arr=[];viewer?.playerObject?.skin?.traverse(o=>{if(o.isMesh&&o.visible)arr.push(o)});return arr}
- function hitUV(ev){if(!viewer||!window.THREE?.Raycaster)return null;const T=window.THREE,rect=canvas.getBoundingClientRect(),p=new T.Vector2((ev.clientX-rect.left)/rect.width*2-1,-((ev.clientY-rect.top)/rect.height)*2+1),ray=new T.Raycaster();ray.setFromCamera(p,viewer.camera);const hits=ray.intersectObjects(meshes(),true);if(!hits.length||!hits[0].uv)return null;const uv=hits[0].uv;return{x:Math.max(0,Math.min(tex.width-1,Math.floor(uv.x*tex.width))),y:Math.max(0,Math.min(tex.height-1,Math.floor((1-uv.y)*tex.height))),object:hits[0].object}}
- function colorAt(x,y){const d=tctx.getImageData(x,y,1,1).data;return '#'+[d[0],d[1],d[2]].map(n=>n.toString(16).padStart(2,'0')).join('')}
- function pixel(x,y,erase=false){const n=brush(),o=Math.floor(n/2),W=tex.width,H=tex.height,coords=[[x,y]],sym=$('skinSymmetry').value;if(sym==='x'||sym==='both')coords.push([W-1-x,y]);if(sym==='y'||sym==='both')coords.push([x,H-1-y]);if(sym==='both')coords.push([W-1-x,H-1-y]);coords.filter(([a,b])=>!selectedRect||(a>=selectedRect.x&&a<selectedRect.x+selectedRect.w&&b>=selectedRect.y&&b<selectedRect.y+selectedRect.h)).forEach(([a,b])=>{tctx.save();tctx.globalAlpha=erase?1:alpha();if(erase)tctx.clearRect(a-o,b-o,n,n);else{tctx.fillStyle=tool==='detail'?'#ffffff':color();tctx.fillRect(a-o,b-o,n,n)}tctx.restore()})}
- function flood(x,y){const im=snap(),d=im.data,W=tex.width,H=tex.height,start=(y*W+x)*4,target=[d[start],d[start+1],d[start+2],d[start+3]],hex=color(),rep=[parseInt(hex.slice(1,3),16),parseInt(hex.slice(3,5),16),parseInt(hex.slice(5,7),16),Math.round(alpha()*255)];if(target.every((v,i)=>v===rep[i]))return;const stack=[[x,y]],seen=new Uint8Array(W*H);while(stack.length){const [a,b]=stack.pop();if(a<0||a>=W||b<0||b>=H)continue;if(selectedRect&&(a<selectedRect.x||a>=selectedRect.x+selectedRect.w||b<selectedRect.y||b>=selectedRect.y+selectedRect.h))continue;const q=b*W+a;if(seen[q])continue;seen[q]=1;const z=q*4;if(d[z]!==target[0]||d[z+1]!==target[1]||d[z+2]!==target[2]||d[z+3]!==target[3])continue;d[z]=rep[0];d[z+1]=rep[1];d[z+2]=rep[2];d[z+3]=rep[3];stack.push([a+1,b],[a-1,b],[a,b+1],[a,b-1])}tctx.putImageData(im,0,0)}
- function drawLine(a,b){let x=a.x,y=a.y,dx=Math.abs(b.x-x),sx=x<b.x?1:-1,dy=-Math.abs(b.y-y),sy=y<b.y?1:-1,err=dx+dy;while(true){pixel(x,y,tool==='eraser');if(x===b.x&&y===b.y)break;const e=2*err;if(e>=dy){err+=dy;x+=sx}if(e<=dx){err+=dx;y+=sy}}}
- canvas.addEventListener('pointerdown',ev=>{const p=hitUV(ev);if(p&&tool!=='picker'&&tool!=='select')viewer.controls.enabled=false},true);canvas.addEventListener('pointerup',()=>{if(painting)viewer.controls.enabled=true},true);canvas.addEventListener('pointerdown',ev=>{const p=hitUV(ev);if(!p)return;ev.preventDefault();if(tool==='picker'){$('skinColor').value=colorAt(p.x,p.y);return}if(tool==='select'){if(!selection){selection={x:p.x,y:p.y};setStatus('نقطه شروع انتخاب ثبت شد؛ نقطه پایان را روی مدل انتخاب کن.')}else{selectedRect={x:Math.min(selection.x,p.x),y:Math.min(selection.y,p.y),w:Math.abs(selection.x-p.x)+1,h:Math.abs(selection.y-p.y)+1};selection=null;setStatus('ناحیه UV انتخاب شد؛ ابزار قلم فقط داخل این محدوده کار می‌کند.')}return}painting=true;viewer.controls.enabled=false;pushHistory();lastUV=p;if(tool==='bucket')flood(p.x,p.y);else pixel(p.x,p.y,tool==='eraser');commit();canvas.setPointerCapture?.(ev.pointerId)});
- canvas.addEventListener('pointermove',ev=>{if(!painting)return;const p=hitUV(ev);if(!p)return;if(lastUV)drawLine(lastUV,p);lastUV=p;commit()});
- const stop=()=>{if(painting){painting=false;viewer.controls.enabled=true;lastUV=null;commit();setStatus('تغییرات روی مدل اعمال شد.')} };canvas.addEventListener('pointerup',stop);canvas.addEventListener('pointercancel',stop);
- document.querySelectorAll('[data-paint-tool]').forEach(b=>b.addEventListener('click',()=>{tool=b.dataset.paintTool;document.querySelectorAll('[data-paint-tool]').forEach(x=>x.classList.toggle('active',x===b));setStatus('ابزار فعال: '+b.textContent)}));
- document.querySelectorAll('[data-skin-mode]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-skin-mode]').forEach(x=>x.classList.toggle('active',x===b));$('skin-studio').classList.remove('skin-mode-advanced','skin-mode-pro');if(b.dataset.skinMode!=='normal')$('skin-studio').classList.add('skin-mode-'+b.dataset.skinMode);setStatus('حالت '+b.textContent+' فعال شد.')}));
- $('skinBrush').addEventListener('input',e=>$('skinBrushOut').value=e.target.value+' px');$('skinAlpha').addEventListener('input',e=>$('skinAlphaOut').value=e.target.value+'%');
- $('skinUndo').onclick=()=>{if(history.length<2)return;future.push(history.pop());tctx.putImageData(history[history.length-1],0,0);buttons();commit();setStatus('یک مرحله بازگشت انجام شد.')};$('skinRedo').onclick=()=>{if(!future.length)return;const v=future.pop();history.push(v);tctx.putImageData(v,0,0);buttons();commit();setStatus('مرحله دوباره اعمال شد.')};
- $('skinBlank').onclick=()=>{if(!confirm('اسکین فعلی پاک شود؟'))return;layers=[makeLayer('لایه پایه')];activeLayer=0;tctx=layers[0].ctx;history=[];future=[];pushHistory();renderLayers();commit();setStatus('اسکین خالی ساخته شد.')};
- file.addEventListener('change',async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.type!=='image/png')throw Error('فقط PNG مجاز است');const im=await imageFrom(await dataURL(f));if(!([64,128,256,512].includes(im.width)&&im.width===im.height))throw Error('ابعاد اسکین باید 64، 128، 256 یا 512 مربع باشد');layers=[makeLayer('لایه پایه')];history=[];future=[];layers[0].canvas.width=im.width;layers[0].canvas.height=im.height;layers[0].ctx=layers[0].canvas.getContext('2d',{willReadFrequently:true});layers[0].ctx.drawImage(im,0,0);activeLayer=0;tctx=layers[0].ctx;compose();pushHistory();renderLayers();if(viewer){await viewer.loadSkin(tex,{model:$('skinModel').value});viewer.playerObject.skin.map.needsUpdate=true}syncAtlas();commit();setStatus('اسکین با موفقیت بارگذاری شد. '+im.width+'×'+im.height)}catch(err){setStatus(err.message)}finally{file.value=''}});
- $('skinModel').onchange=async()=>{if(viewer){await viewer.loadSkin(tex,{model:$('skinModel').value});viewer.playerObject.skin.map.needsUpdate=true;setStatus('مدل '+$('skinModel').selectedOptions[0].text+' فعال شد.')}};
- $('skinPart').onchange=()=>{const p=$('skinPart').value;viewer.playerObject.skin.traverse(o=>{if(o.isMesh){const n=o.parent?.name||o.name;const names={head:'head',body:'body',rightArm:'rightArm',leftArm:'leftArm',rightLeg:'rightLeg',leftLeg:'leftLeg'};o.visible=p==='all'||n.includes(names[p]||p)}});setStatus('ناحیه انتخابی: '+$('skinPart').selectedOptions[0].text)};
- document.querySelectorAll('[data-skin-layer]').forEach(c=>c.onchange=()=>{const method=c.dataset.skinLayer==='inner'?'setInnerLayerVisible':'setOuterLayerVisible';viewer.playerObject.skin[method](c.checked)});
- $('skinZoom').oninput=e=>{viewer.zoom=+e.target.value/100};$('skinResetCamera').onclick=()=>viewer.resetCameraPose();$('skinRotate').onchange=e=>viewer.autoRotate=e.target.checked;
- $('skinLight').oninput=e=>viewer.globalLight.intensity=+e.target.value/100;$('skinCameraLight').oninput=e=>viewer.cameraLight.intensity=+e.target.value/100;
- $('skinShowAtlas').onclick=()=>{$('skinAtlasWrap').hidden=!$('skinAtlasWrap').hidden;syncAtlas()};$('skinGrid3d').onchange=e=>{canvas.style.backgroundImage=e.target.checked?'linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px)':'none'};
- $('skinColor').onchange=()=>scheduleSave();$('clearSkinSelection').onclick=()=>{selection=null;selectedRect=null;setStatus('محدوده انتخاب پاک شد. تمام بافت قابل ویرایش است.');};
- function renderPalette(){const p=$('skinPalette');p.innerHTML='';palette.forEach(c=>{const b=document.createElement('button');b.style.background=c;b.title=c;b.onclick=()=>{$('skinColor').value=c};p.appendChild(b)})}renderPalette();function renderLayers(){const sel=$('skinLayerList');sel.innerHTML='';layers.forEach((l,i)=>{const o=document.createElement('option');o.value=i;o.textContent=(l.visible?'◉ ':'○ ')+l.name;sel.appendChild(o)});sel.value=activeLayer;$('skinLayerOpacity').value=Math.round((layers[activeLayer]?.opacity??1)*100);$('skinLayerName').value=layers[activeLayer]?.name||'';$('skinLayerVisible').checked=layers[activeLayer]?.visible!==false}function selectLayer(i){activeLayer=Math.max(0,Math.min(layers.length-1,i));tctx=layers[activeLayer].ctx;history=[tctx.getImageData(0,0,tex.width,tex.height)];future=[];buttons();renderLayers()}$('skinLayerList').onchange=e=>selectLayer(+e.target.value);$('skinLayerName').onchange=e=>{layers[activeLayer].name=e.target.value.trim()||('لایه '+(activeLayer+1));renderLayers();scheduleSave()};$('skinLayerVisible').onchange=e=>{layers[activeLayer].visible=e.target.checked;commit()};$('addPaintLayer').onclick=()=>{const l=makeLayer('لایه '+(layers.length+1));layers.push(l);selectLayer(layers.length-1);commit();scheduleSave();setStatus('لایه جدید اضافه شد.')};$('deletePaintLayer').onclick=()=>{if(layers.length<2)return setStatus('حداقل یک لایه باید باقی بماند.');if(!confirm('لایه انتخاب‌شده حذف شود؟'))return;layers.splice(activeLayer,1);selectLayer(Math.max(0,activeLayer-1));commit();scheduleSave()};$('skinLayerOpacity').oninput=e=>{layers[activeLayer].opacity=+e.target.value/100;commit()};renderLayers();$('addPalette').onclick=()=>{if(!palette.includes(color()))palette.push(color());renderPalette()};
- $('skinExport').onclick=()=>{tex.toBlob(b=>{if(b)downloadBlob(b,'LEON-Bedrock-Skin.png')},'image/png')};
- async function refreshProjects(){const list=$('skinProjectList'),keys=await dbKeys('skin:project:');list.innerHTML='<option value="">پروژه‌های ذخیره‌شده</option>';for(const k of keys){const d=await dbGet(k);const o=document.createElement('option');o.value=k;o.textContent=d?.name||k;list.appendChild(o)}}
- async function saveProject(copy=false){projectName=$('skinProjectName').value.trim()||'اسکین من';const d={name:projectName,skin:tex.toDataURL('image/png'),model:$('skinModel').value,zoom:$('skinZoom').value,part:$('skinPart').value,color:color(),brush:brush(),alpha:$('skinAlpha').value,symmetry:$('skinSymmetry').value,palette:[...palette],layers:layers.map(l=>({name:l.name,visible:l.visible,opacity:l.opacity,data:l.canvas.toDataURL('image/png')})),activeLayer,updated:Date.now()};const key='skin:project:'+projectName+(copy?' - کپی':'');await dbPut(key,d);await dbPut('skin:last',d);setSave('● پروژه ذخیره شد');setStatus('پروژه «'+d.name+'» ذخیره شد.');refreshProjects()}
- async function loadProject(key){const d=await dbGet(key||'skin:last');if(!d){setStatus('پروژه‌ای پیدا نشد.');return}const im=await imageFrom(d.skin);tex.width=im.width;tex.height=im.height;tctx=tex.getContext('2d',{willReadFrequently:true});tctx.drawImage(im,0,0);projectName=d.name||'اسکین من';$('skinProjectName').value=projectName;$('skinModel').value=d.model||'default';$('skinZoom').value=d.zoom||90;$('skinPart').value=d.part||'all';$('skinColor').value=d.color||'#8b5cf6';$('skinBrush').value=d.brush||1;$('skinAlpha').value=d.alpha||100;$('skinSymmetry').value=d.symmetry||'off';if(Array.isArray(d.palette)){palette=d.palette;renderPalette()}if(Array.isArray(d.layers)&&d.layers.length){layers=[];for(const item of d.layers){const c=document.createElement('canvas'),im=await imageFrom(item.data);c.width=im.width;c.height=im.height;const x=c.getContext('2d',{willReadFrequently:true});x.drawImage(im,0,0);layers.push({name:item.name||'لایه',canvas:c,ctx:x,visible:item.visible!==false,opacity:item.opacity??1})}activeLayer=Math.min(d.activeLayer||0,layers.length-1);tctx=layers[activeLayer].ctx;compose();renderLayers()}else{layers=[makeLayer('لایه پایه')];const im=await imageFrom(d.skin);layers[0].canvas.width=im.width;layers[0].canvas.height=im.height;layers[0].ctx=layers[0].canvas.getContext('2d',{willReadFrequently:true});layers[0].ctx.drawImage(im,0,0);tctx=layers[0].ctx;compose();renderLayers()}history=[];pushHistory();await viewer.loadSkin(tex,{model:$('skinModel').value});viewer.zoom=+$('skinZoom').value/100;commit();setStatus('پروژه بارگذاری شد.')}
- $('skinSaveProject').onclick=()=>saveProject();$('skinCopyProject').onclick=()=>saveProject(true);$('skinLoadProject').onclick=()=>loadProject($('skinProjectList').value);$('skinProjectList').onchange=e=>{if(e.target.value)$('skinProjectName').value=e.target.selectedOptions[0].text};$('skinDeleteProject').onclick=async()=>{const k=$('skinProjectList').value;if(!k)return setStatus('ابتدا پروژه‌ای را انتخاب کن.');if(confirm('این پروژه حذف شود؟')){await dbDelete(k);refreshProjects();setStatus('پروژه حذف شد.')}};
- $('skinUndo').disabled=true;pushHistory();syncAtlas();
- dbGet('skin:last').then(async d=>{if(d?.skin){await loadProject('skin:last');setSave('● آخرین اسکین بازیابی شد')}});refreshProjects();window.addEventListener('pagehide',()=>{try{dbPut('skin:last',{name:projectName,skin:tex.toDataURL('image/png'),model:$('skinModel').value,zoom:$('skinZoom').value,part:$('skinPart').value,color:color(),brush:brush(),alpha:$('skinAlpha').value,symmetry:$('skinSymmetry').value,palette,layers:layers.map(l=>({name:l.name,visible:l.visible,opacity:l.opacity,data:l.canvas.toDataURL('image/png')})),activeLayer,updated:Date.now()})}catch(e){}});
+(function(){
+"use strict";
+const host=document.getElementById("skin3dView"), texCanvas=document.getElementById("skinCanvas");
+if(!host||!texCanvas)return;
+const ctx=texCanvas.getContext("2d",{willReadFrequently:true});
+const status=document.getElementById("skinStatus"),status3d=document.getElementById("skin3dStatus");
+const color=document.getElementById("skinColor"),upload=document.getElementById("skinUpload");
+const THREE=window.THREE;
+if(!THREE){status.textContent="کتابخانه سه‌بعدی بارگذاری نشد. برای اجرای ویرایشگر به اینترنت نیاز است.";return}
+let scene,camera,renderer,controls,texture,raycaster,model=[],outerModel=[],mode="paint",tool="pen",brush=1,history=[],future=[],activeLayer="base";
+const partUV={
+ head:{w:8,h:8,d:8,front:[8,8,8,8],back:[24,8,8,8],right:[0,8,8,8],left:[16,8,8,8],top:[8,0,8,8],bottom:[16,0,8,8]},
+ torso:{w:8,h:12,d:4,front:[20,20,8,12],back:[32,20,8,12],right:[16,20,4,12],left:[28,20,4,12],top:[20,16,8,4],bottom:[28,16,8,4]},
+ rightArm:{w:4,h:12,d:4,front:[44,20,4,12],back:[52,20,4,12],right:[40,20,4,12],left:[48,20,4,12],top:[44,16,4,4],bottom:[48,16,4,4]},
+ leftArm:{w:4,h:12,d:4,front:[36,52,4,12],back:[44,52,4,12],right:[32,52,4,12],left:[40,52,4,12],top:[36,48,4,4],bottom:[40,48,4,4]},
+ rightLeg:{w:4,h:12,d:4,front:[4,20,4,12],back:[12,20,4,12],right:[0,20,4,12],left:[8,20,4,12],top:[4,16,4,4],bottom:[8,16,4,4]},
+ leftLeg:{w:4,h:12,d:4,front:[20,52,4,12],back:[28,52,4,12],right:[16,52,4,12],left:[24,52,4,12],top:[20,48,4,4],bottom:[24,48,4,4]}
+};
+function setStatus(t){status.textContent=t;status3d.textContent=t}
+function snapshot(){return ctx.getImageData(0,0,64,64)}
+function save(){history.push(snapshot());if(history.length>40)history.shift();future=[]}
+function autosave(){try{localStorage.setItem("leon-skin-autosave",texCanvas.toDataURL("image/png"))}catch(e){}}
+function refreshTexture(){texture.needsUpdate=true;autosave()}
+function uvRect(rect,x,y,z,axis,w,h,d){
+ const [rx,ry,rw,rh]=rect;let u,v;
+ if(axis==="x"){u=(z/d+.5);v=(y/h+.5)}
+ else if(axis==="y"){u=(x/w+.5);v=(z/d+.5)}
+ else {u=(x/w+.5);v=(y/h+.5)}
+ return [(rx+u*rw)/64,1-(ry+v*rh)/64];
 }
-
-/* ---------------- PROFILE MAKER ---------------- */
-function initProfile(){
- const output=$('profileOutput'),ctx=output.getContext('2d'),list=$('profileCharacterList');if(!output)return;
- let chars=[],selected=0,bgImage=null,bgData=null,renderQueued=false,profileAutoTimer=null,projectName='پروژه من',savedPoses={};const starterSkin=(()=>{const c=document.createElement('canvas');c.width=c.height=64;const x=c.getContext('2d');x.fillStyle='#8b5cf6';x.fillRect(0,0,64,64);x.fillStyle='#45f6ff';x.fillRect(8,8,8,8);x.fillRect(20,20,8,12);x.fillRect(44,20,4,12);x.fillRect(4,20,4,12);return c.toDataURL('image/png')})();
- const st=m=>status('profileStatus',m);const char=()=>chars[selected]||null;
- function makeViewer(canvas,skinData){const v=new engine.SkinViewer({canvas,width:340,height:440,skin:skinData||null,model:'auto-detect',fov:38,zoom:.9,enableControls:true,preserveDrawingBuffer:true,pixelRatio:'match-device'});v.controls.enableRotate=true;v.controls.enableZoom=true;v.controls.enablePan=false;v.globalLight.intensity=1.1;v.cameraLight.intensity=1;return v}
- function newChar(skin,name){const c=document.createElement('canvas');c.width=340;c.height=440;const v=makeViewer(c,skin||null);return {id:crypto.randomUUID?.()||String(Date.now()+Math.random()),canvas:c,viewer:v,skin,name:name||'Player',x:50,scale:100,rotation:0,pose:'idle',joints:{head:0,rightArm:0,leftArm:0,rightLeg:0,leftLeg:0}}}
- function applyJoints(ch){const p=ch.viewer.playerObject.skin,j=ch.joints;p.resetJoints();p.head.rotation.x=j.head*Math.PI/180;p.rightArm.rotation.z=j.rightArm*Math.PI/180;p.leftArm.rotation.z=j.leftArm*Math.PI/180;p.rightLeg.rotation.x=j.rightLeg*Math.PI/180;p.leftLeg.rotation.x=j.leftLeg*Math.PI/180;ch.viewer.render()}
- function preset(ch,type){const presets={idle:{head:0,rightArm:0,leftArm:0,rightLeg:0,leftLeg:0},sit:{head:-8,rightArm:-18,leftArm:18,rightLeg:-75,leftLeg:-75},walk:{head:0,rightArm:35,leftArm:-35,rightLeg:-28,leftLeg:28},arms:{head:0,rightArm:-82,leftArm:82,rightLeg:0,leftLeg:0},fight:{head:-10,rightArm:-125,leftArm:45,rightLeg:22,leftLeg:-18},hero:{head:-12,rightArm:-145,leftArm:35,rightLeg:8,leftLeg:-8},custom:ch.joints};ch.pose=type;ch.joints={...presets[type]};applyJoints(ch);if(ch===char())syncControls();queueRender()}
- function syncControls(){const c=char();if(!c)return;$('characterName').value=c.name;$('characterX').value=c.x;$('characterScale').value=c.scale;$('characterRotation').value=c.rotation;$('posePreset').value=c.pose;Object.entries(c.joints).forEach(([k,v])=>{const el=$('joint'+k[0].toUpperCase()+k.slice(1));if(el)el.value=v})}
- function renderList(){list.innerHTML='';chars.forEach((c,i)=>{const b=document.createElement('button');b.className='leon-character-chip'+(i===selected?' active':'');b.textContent='🧍 '+c.name;b.onclick=()=>{selected=i;syncControls();renderList()};list.appendChild(b)});$('profileSceneCount').textContent=chars.length+' شخصیت';$('profileEmpty').style.display=chars.length?'none':'grid'}
- function schedule(){if(!renderQueued){renderQueued=true;requestAnimationFrame(()=>{renderQueued=false;renderScene()})}clearTimeout(profileAutoTimer);profileAutoTimer=setTimeout(()=>{try{dbPut('profile:last',projectData());status('profileStatus','ذخیره خودکار پروژه انجام شد.')}catch(e){console.warn(e)}},1100)}
- function renderScene(){const w=output.width,h=output.height;ctx.clearRect(0,0,w,h);const bg=$('profileBgColor').value||'#17102f',preset=$('profileBgPreset').value;ctx.fillStyle=bg;ctx.fillRect(0,0,w,h);if(!bgImage&&preset!=='solid'){const colors={space:['#050816','#17102f','#090d24'],purple:['#16072b','#6d28d9','#09051b'],cyan:['#002b3a','#007f91','#071127'],sunset:['#35104f','#d94878','#ff9d5c']};const cs=colors[preset]||colors.space,g=ctx.createLinearGradient(0,0,w,h);g.addColorStop(0,cs[0]);g.addColorStop(.55,cs[1]);g.addColorStop(1,cs[2]);ctx.fillStyle=g;ctx.fillRect(0,0,w,h)}if(bgImage){const scale=Math.max(w/bgImage.width,h/bgImage.height),bw=bgImage.width*scale,bh=bgImage.height*scale;ctx.drawImage(bgImage,(w-bw)/2,(h-bh)/2,bw,bh)}
- if($('profileEffect').value==='glow'||$('profileEffect').value==='neon'){ctx.save();ctx.shadowBlur=$('profileEffect').value==='neon'?45:24;ctx.shadowColor=$('profileEffect').value==='neon'?'#45f6ff':'#a855f7';ctx.fillStyle='rgba(120,70,220,.13)';ctx.fillRect(0,0,w,h);ctx.restore()}
- chars.forEach((c,i)=>{const scale=c.scale/100,baseH=h*.78*scale,baseW=baseH*(c.canvas.width/c.canvas.height),cx=w*(c.x/100),cy=h*.94;ctx.save();ctx.translate(cx,cy);ctx.rotate(c.rotation*Math.PI/180);ctx.shadowColor='rgba(0,0,0,.55)';ctx.shadowBlur=18;ctx.shadowOffsetY=12;ctx.drawImage(c.canvas,-baseW/2,-baseH,baseW,baseH);ctx.restore()});
- const title=$('profileTitle').value;if(title){const fs=+$('profileTextSize').value;ctx.save();ctx.font=`900 ${fs}px ${$('profileFont').value||'Tahoma'}, sans-serif`; ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=$('profileTextColor').value;ctx.shadowColor=$('profileTextColor').value;ctx.shadowBlur=$('profileEffect').value==='none'?0:18;const y=$('profileTextPosition').value==='top'?h*.13:$('profileTextPosition').value==='middle'?h*.5:h*.87;ctx.fillText(title,w/2,y,w*.9);ctx.restore()}
- if($('profileEffect').value==='vignette'){const g=ctx.createRadialGradient(w/2,h/2,Math.min(w,h)*.2,w/2,h/2,Math.max(w,h)*.7);g.addColorStop(0,'transparent');g.addColorStop(1,'rgba(0,0,0,.58)');ctx.fillStyle=g;ctx.fillRect(0,0,w,h)}
+function makeBox(part,position,isOuter=false){
+ const def=partUV[part],scale=isOuter?1.08:1;
+ // Each cube face needs its own UV vertices. Indexed BoxGeometry shares
+ // corner vertices between faces; editing those UVs overwrites neighboring
+ // faces and makes imported skins look scrambled.
+ const geo=new THREE.BoxGeometry(def.w*scale,def.h*scale,def.d*scale).toNonIndexed();
+ const uv=geo.attributes.uv;
+ const faceRects=[def.right,def.left,def.top,def.bottom,def.front,def.back];
+ for(let face=0;face<6;face++){
+  const [rx,ry,rw,rh]=faceRects[face];
+  for(let j=0;j<6;j++){
+   const vertex=face*6+j;
+   const nativeU=uv.getX(vertex), nativeV=uv.getY(vertex);
+   const pixelX=rx+nativeU*rw;
+   const pixelY=ry+(1-nativeV)*rh;
+   uv.setXY(vertex,pixelX/64,1-pixelY/64);
+  }
  }
- function syncCharacter(){const c=char();if(!c)return;c.name=$('characterName').value||'Player';c.x=+$('characterX').value;c.scale=+$('characterScale').value;c.rotation=+$('characterRotation').value;renderList();schedule()}
- ['characterName','characterX','characterScale','characterRotation'].forEach(id=>$(id).addEventListener('input',syncCharacter));
- ['profileBgColor','profileBgPreset','profileTitle','profileTextColor','profileTextSize','profileFont','profileTextPosition','profileEffect'].forEach(id=>$(id).addEventListener('input',schedule));
- $('profileCameraAngle').oninput=e=>{const c=char();if(c){c.viewer.playerObject.rotation.y=+e.target.value*Math.PI/180;c.viewer.render();schedule()}};$('profileCameraPitch').oninput=e=>{const c=char();if(c){c.viewer.playerObject.rotation.x=+e.target.value*Math.PI/180;c.viewer.render();schedule()}};$('profileCameraZoom').oninput=e=>{const c=char();if(c)c.viewer.zoom=+e.target.value/100};$('profileLight').oninput=e=>chars.forEach(c=>c.viewer.globalLight.intensity=+e.target.value/100);$('profileCameraLight').oninput=e=>chars.forEach(c=>c.viewer.cameraLight.intensity=+e.target.value/100);
- $('posePreset').onchange=e=>{if(char())preset(char(),e.target.value)};
- ['Head','RightArm','LeftArm','RightLeg','LeftLeg'].forEach(n=>$('joint'+n).oninput=e=>{const c=char();if(!c)return;c.joints[n[0].toLowerCase()+n.slice(1)]=+e.target.value;c.pose='custom';$('posePreset').value='custom';applyJoints(c);schedule()});
- $('savePose').onclick=async()=>{const c=char();if(!c)return;const name=prompt('نام ژست را وارد کن:','ژست من');if(!name)return;savedPoses[name]={...c.joints};await dbPut('pose:'+name,savedPoses[name]);refreshPoses();st('ژست ذخیره شد.')};
- async function refreshPoses(){const sel=$('savedPoses'),keys=await dbKeys('pose:');sel.innerHTML='<option value="">ژست‌های من</option>';for(const k of keys){const o=document.createElement('option');o.value=k.slice(5);o.textContent=k.slice(5);sel.appendChild(o)}}
- $('savedPoses').onchange=async e=>{const c=char();if(!c||!e.target.value)return;const j=await dbGet('pose:'+e.target.value);if(j){c.joints=j;c.pose='custom';applyJoints(c);syncControls();schedule()}};
- async function addCharacter(skin,name){if(chars.length>=6){st('حداکثر ۶ شخصیت در یک صحنه پشتیبانی می‌شود.');return}const c=newChar(skin,name||'Player '+(chars.length+1));chars.push(c);selected=chars.length-1;renderList();syncControls();schedule();st('شخصیت اضافه شد.');return c}
- $('profileSkinFile').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{if(f.type!=='image/png')throw Error('فقط PNG اسکین پذیرفته می‌شود');const src=await dataURL(f),im=await imageFrom(src);if(![64,128,256,512].includes(im.width)||im.width!==im.height)throw Error('ابعاد PNG باید 64، 128، 256 یا 512 مربع باشد');await addCharacter(src,f.name.replace(/\.png$/i,''))}catch(err){st(err.message)}finally{e.target.value=''}};
- $('profileAddDemo').onclick=()=>addCharacter(null,'Player '+(chars.length+1));
- $('profileDuplicate').onclick=()=>{const c=char();if(c){const n=newChar(c.skin,c.name+' copy');n.x=Math.min(95,c.x+12);n.scale=c.scale;n.rotation=c.rotation;n.pose=c.pose;n.joints={...c.joints};applyJoints(n);chars.push(n);selected=chars.length-1;renderList();syncControls();schedule()}};
- $('profileRemove').onclick=()=>{const c=char();if(!c)return;c.viewer.dispose();chars.splice(selected,1);selected=Math.max(0,selected-1);renderList();syncControls();schedule()};
- $('profileBgFile').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{bgData=await dataURL(f);bgImage=await imageFrom(bgData);schedule();st('پس‌زمینه بارگذاری شد.')}catch(err){st('تصویر پس‌زمینه خوانده نشد.')}finally{e.target.value=''}};
- $('profileSize').onchange=e=>{$('customDimensions').hidden=e.target.value!=='custom'};
- function dimensions(){const v=$('profileSize').value;if(v==='1024x1024')return[1024,1024];if(v==='512x512')return[512,512];if(v==='custom')return[Math.max(128,Math.min(4096,+$('profileWidth').value||1280)),Math.max(128,Math.min(4096,+$('profileHeight').value||720))];return[1280,720]}
- $('profileExport').onclick=()=>{const [w,h]=dimensions(),scale=+$('profileQuality').value,old=[output.width,output.height],sizes=chars.map(c=>[c.viewer.width,c.viewer.height]);chars.forEach(c=>c.viewer.setSize(340*scale,440*scale));output.width=w*scale;output.height=h*scale;requestAnimationFrame(()=>{chars.forEach(c=>c.viewer.render());renderScene();output.toBlob(b=>{if(b)downloadBlob(b,'LEON-Thumbnail.png');chars.forEach((c,i)=>c.viewer.setSize(sizes[i][0]||340,sizes[i][1]||440));output.width=old[0];output.height=old[1];schedule()},'image/png')})};
- function projectData(){return {name:projectName,bgColor:$('profileBgColor').value,bgPreset:$('profileBgPreset').value,bgData,title:$('profileTitle').value,textColor:$('profileTextColor').value,textSize:$('profileTextSize').value,font:$('profileFont').value,textPosition:$('profileTextPosition').value,effect:$('profileEffect').value,size:$('profileSize').value,quality:$('profileQuality').value,chars:chars.map(c=>({skin:c.skin,name:c.name,x:c.x,scale:c.scale,rotation:c.rotation,pose:c.pose,joints:c.joints,rotationY:c.viewer.playerObject.rotation.y,rotationX:c.viewer.playerObject.rotation.x,zoom:c.viewer.zoom})),updated:Date.now()}}
- async function refreshProjects(){const sel=$('profileProjectList'),keys=await dbKeys('profile:project:');sel.innerHTML='<option value="">پروژه‌های ذخیره‌شده</option>';for(const k of keys){const d=await dbGet(k);const o=document.createElement('option');o.value=k;o.textContent=d?.name||k;sel.appendChild(o)}}
- $('profileSave').onclick=async()=>{projectName=$('profileProjectName').value.trim()||'پروژه من';const d=projectData();await dbPut('profile:project:'+projectName,d);await dbPut('profile:last',d);st('پروژه ذخیره شد.');refreshProjects()};$('profileCopyProject').onclick=async()=>{const base=$('profileProjectName').value.trim()||'پروژه من';projectName=base+' - کپی';$('profileProjectName').value=projectName;const d=projectData();await dbPut('profile:project:'+projectName,d);st('یک کپی مستقل از پروژه ساخته شد.');refreshProjects()};$('profileDeleteProject').onclick=async()=>{const key=$('profileProjectList').value;if(!key)return st('ابتدا پروژه‌ای را از فهرست انتخاب کن.');if(confirm('پروژه انتخاب‌شده حذف شود؟')){await dbDelete(key);refreshProjects();st('پروژه حذف شد.')}};
- async function loadProfile(key){const d=await dbGet(key||'profile:last');if(!d){st('پروژه‌ای پیدا نشد.');return}chars.forEach(c=>c.viewer.dispose());chars=[];selected=0;projectName=d.name||'پروژه من';$('profileProjectName').value=projectName;$('profileBgColor').value=d.bgColor||'#17102f';$('profileBgPreset').value=d.bgPreset||'space';$('profileFont').value=d.font||'Tahoma';$('profileTitle').value=d.title||'';$('profileTextColor').value=d.textColor||'#fff';$('profileTextSize').value=d.textSize||64;$('profileTextPosition').value=d.textPosition||'top';$('profileEffect').value=d.effect||'none';$('profileSize').value=d.size||'1280x720';$('profileQuality').value=d.quality||2;bgData=d.bgData||null;bgImage=bgData?await imageFrom(bgData):null;for(const x of d.chars||[]){const c=await addCharacter(x.skin,x.name);c.x=x.x??50;c.scale=x.scale??100;c.rotation=x.rotation??0;c.pose=x.pose||'idle';c.joints=x.joints||c.joints;c.viewer.playerObject.rotation.y=x.rotationY||0;c.viewer.playerObject.rotation.x=x.rotationX||0;c.viewer.zoom=x.zoom||.9;applyJoints(c)}syncControls();renderList();schedule();st('پروژه بارگذاری شد.')}
- $('profileLoad').onclick=()=>loadProfile($('profileProjectList').value||'profile:last');$('profileProjectList').onchange=e=>{if(e.target.value)$('profileProjectName').value=e.target.selectedOptions[0].text};
- dbGet('profile:last').then(d=>{if(d?.chars?.length)loadProfile('profile:last')});refreshProjects();refreshPoses();addCharacter(null,'Player 1');window.addEventListener('pagehide',()=>{try{dbPut('profile:last',projectData())}catch(e){}});
+ uv.needsUpdate=true;
+ const mat=new THREE.MeshStandardMaterial({map:texture,transparent:true,alphaTest:.02,roughness:.88,side:THREE.DoubleSide});
+ const mesh=new THREE.Mesh(geo,mat);mesh.position.set(...position);mesh.userData={part,isOuter};scene.add(mesh);return mesh;
 }
+function buildModel(){
+ [...model,...outerModel].forEach(m=>scene.remove(m));model=[];outerModel=[];
+ const parts=[
+  ["head",[0,28,0]],["torso",[0,18,0]],["rightArm",[-6,18,0]],["leftArm",[6,18,0]],["rightLeg",[-2,6,0]],["leftLeg",[2,6,0]]
+ ];
+ parts.forEach(([name,pos])=>{model.push(makeBox(name,pos,false));outerModel.push(makeBox(name,pos,true))});
+ outerModel.forEach(m=>m.visible=false);
+}
+function init(){
+ scene=new THREE.Scene();scene.background=new THREE.Color(0x0b0b20);
+ camera=new THREE.PerspectiveCamera(38,1,.1,1000);camera.position.set(42,31,58);
+ renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));renderer.outputEncoding=THREE.sRGBEncoding;host.appendChild(renderer.domElement);
+ controls=new THREE.OrbitControls(camera,renderer.domElement);controls.target.set(0,16,0);controls.enableDamping=true;controls.dampingFactor=.07;controls.enablePan=false;controls.minDistance=28;controls.maxDistance=110;
+ scene.add(new THREE.HemisphereLight(0xcdbbff,0x17152b,1.25));
+ const key=new THREE.DirectionalLight(0xffffff,1.5);key.position.set(25,45,35);scene.add(key);
+ const rim=new THREE.PointLight(0x9b5cff,1.6,120);rim.position.set(-25,20,-25);scene.add(rim);
+ const floor=new THREE.GridHelper(80,40,0x59417c,0x292342);floor.position.y=-.2;scene.add(floor);
+ texture=new THREE.CanvasTexture(texCanvas);texture.magFilter=THREE.NearestFilter;texture.minFilter=THREE.NearestFilter;texture.generateMipmaps=false;texture.flipY=true;texture.encoding=THREE.sRGBEncoding;
+ raycaster=new THREE.Raycaster();buildModel();resize();
+ window.addEventListener("resize",resize);
+ renderer.setAnimationLoop(()=>{controls.update();renderer.render(scene,camera)});
+ renderer.domElement.addEventListener("pointerdown",onPaintStart);
+ renderer.domElement.addEventListener("pointermove",onPaintMove);
+ window.addEventListener("pointerup",onPaintEnd);
+}
+function resize(){if(!renderer)return;const w=host.clientWidth||600,h=host.clientHeight||500;camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h,false)}
+function setMode(next){mode=next;controls.enabled=next==="rotate";document.getElementById("paintMode").classList.toggle("active",next==="paint");document.getElementById("rotateMode").classList.toggle("active",next==="rotate");document.getElementById("skin3dHint").textContent=next==="paint"?"روی سطح کاراکتر بکش تا همان قسمت رنگ شود.":"با کشیدن انگشت یا ماوس مدل را بچرخان؛ اسکرول یا پینچ برای زوم."}
+document.getElementById("paintMode").addEventListener("click",()=>setMode("paint"));
+document.getElementById("rotateMode").addEventListener("click",()=>setMode("rotate"));
+document.getElementById("resetCamera").addEventListener("click",()=>{camera.position.set(42,31,58);controls.target.set(0,16,0);controls.update()});
+function hitAt(e){const r=renderer.domElement.getBoundingClientRect();const p=new THREE.Vector2(((e.clientX-r.left)/r.width)*2-1,-((e.clientY-r.top)/r.height)*2+1);raycaster.setFromCamera(p,camera);const visible=activeLayer==="base"?model:outerModel;const hits=raycaster.intersectObjects(visible,false);return hits[0]||null}
+let painting=false,lastUV=null,selectedPart="all";
+function uvPixel(uv){return {x:Math.max(0,Math.min(63,Math.floor(uv.x*64))),y:Math.max(0,Math.min(63,Math.floor((1-uv.y)*64)))}}
+function dab(x,y){
+ const n=brush,o=Math.floor((n-1)/2);
+ if(tool==="eraser")ctx.clearRect(x-o,y-o,n,n);
+ else {ctx.fillStyle=color.value;ctx.fillRect(x-o,y-o,n,n)}
+}
+function floodFill(x,y){
+ const image=ctx.getImageData(0,0,64,64),d=image.data,start=(y*64+x)*4;
+ const target=[d[start],d[start+1],d[start+2],d[start+3]];
+ const hex=color.value,fill=[parseInt(hex.slice(1,3),16),parseInt(hex.slice(3,5),16),parseInt(hex.slice(5,7),16),255];
+ if(target.every((v,i)=>v===fill[i]))return;
+ const stack=[[x,y]],seen=new Uint8Array(4096);
+ while(stack.length){
+  const [px,py]=stack.pop();if(px<0||px>63||py<0||py>63)continue;
+  const k=py*64+px;if(seen[k])continue;seen[k]=1;const q=k*4;
+  if(d[q]!==target[0]||d[q+1]!==target[1]||d[q+2]!==target[2]||d[q+3]!==target[3])continue;
+  d[q]=fill[0];d[q+1]=fill[1];d[q+2]=fill[2];d[q+3]=255;
+  stack.push([px+1,py],[px-1,py],[px,py+1],[px,py-1]);
+ }
+ ctx.putImageData(image,0,0);
+}
+function drawUVLine(a,b){
+ let x=a.x,y=a.y,dx=Math.abs(b.x-x),sx=x<b.x?1:-1,dy=-Math.abs(b.y-y),sy=y<b.y?1:-1,err=dx+dy;
+ while(true){dab(x,y);if(x===b.x&&y===b.y)break;const e2=2*err;if(e2>=dy){err+=dy;x+=sx}if(e2<=dx){err+=dx;y+=sy}}
+}
+function paintHit(hit){
+ if(!hit||!hit.uv)return;
+ const pt=uvPixel(hit.uv),x=pt.x,y=pt.y;
+ if(tool==="eyedropper"){const d=ctx.getImageData(x,y,1,1).data;color.value="#"+[d[0],d[1],d[2]].map(v=>v.toString(16).padStart(2,"0")).join("");document.getElementById("skinColorHex").textContent=color.value.toUpperCase();return}
+ if(tool==="fill")floodFill(x,y);
+ else if(tool==="line"&&lastUV)drawUVLine(lastUV,pt);
+ else dab(x,y);
+ refreshTexture();lastUV=pt;setStatus("در حال ویرایش مستقیم: "+hit.object.userData.part);
+}
+function onPaintStart(e){if(mode!=="paint"||e.button!==0)return;const hit=hitAt(e);if(!hit)return;e.preventDefault();painting=true;save();lastUV=null;paintHit(hit)}
+function onPaintMove(e){if(!painting||mode!=="paint")return;const hit=hitAt(e);if(!hit)return;paintHit(hit)}
+function onPaintEnd(){if(painting){painting=false;lastUV=null;autosave();}}
+document.querySelectorAll(".editor-tool[data-tool]").forEach(b=>b.addEventListener("click",()=>{tool=b.dataset.tool;document.querySelectorAll(".editor-tool[data-tool]").forEach(x=>x.classList.toggle("active",x===b));setStatus("ابزار "+(b.querySelector("small")?.textContent||tool)+" فعال شد.")}));
+document.getElementById("skinBrush").addEventListener("input",e=>{brush=+e.target.value;document.getElementById("brushValue").textContent=brush+" px"});
+color.addEventListener("input",()=>document.getElementById("skinColorHex").textContent=color.value.toUpperCase());
+document.querySelectorAll(".palette-row button").forEach(b=>b.addEventListener("click",()=>{color.value=b.dataset.color;color.dispatchEvent(new Event("input"))}));
+document.querySelectorAll("[data-layer]").forEach(b=>b.addEventListener("click",()=>{activeLayer=b.dataset.layer;document.querySelectorAll("[data-layer]").forEach(x=>x.classList.toggle("active",x===b));model.forEach(m=>m.visible=activeLayer==="base");outerModel.forEach(m=>m.visible=activeLayer==="outer");setStatus(activeLayer==="base"?"لایه اصلی انتخاب شد.":"لایه بیرونی انتخاب شد.")}));
+document.querySelectorAll("[data-part]").forEach(b=>b.addEventListener("click",()=>{const part=b.dataset.part;selectedPart=selectedPart===part?"all":part;
+ model.concat(outerModel).forEach(m=>m.material.emissive.set(m.userData.part===selectedPart?0x332255:0x000000));document.querySelectorAll("[data-part]").forEach(x=>x.classList.toggle("active",selectedPart!=="all"&&x.dataset.part===selectedPart));document.getElementById("partHint").textContent=selectedPart==="all"?"تمام بخش‌های مدل قابل ویرایش‌اند.":"فقط بخش انتخاب‌شده قابل ویرایش است."}));
+document.getElementById("skinModelType").addEventListener("change",e=>{setStatus("مدل "+(e.target.value==="classic"?"Classic":"Slim")+" انتخاب شد. برای Slim عرض دست‌ها باریک‌تر می‌شود.");});
+document.getElementById("skinGrid").addEventListener("change",e=>{scene.children.filter(o=>o.type==="GridHelper").forEach(o=>o.visible=e.target.checked)});
+document.getElementById("undoSkin").addEventListener("click",()=>{if(!history.length)return;future.push(snapshot());ctx.putImageData(history.pop(),0,0);refreshTexture();setStatus("یک مرحله بازگشت.")});
+document.getElementById("redoSkin").addEventListener("click",()=>{if(!future.length)return;history.push(snapshot());ctx.putImageData(future.pop(),0,0);refreshTexture();setStatus("تغییر دوباره اعمال شد.")});
+upload.addEventListener("change",e=>{
+ const f=e.target.files?.[0];if(!f)return;
+ if(f.type!=="image/png"){setStatus("فقط فایل PNG قابل قبول است.");e.target.value="";return}
+ const u=URL.createObjectURL(f),im=new Image();
+ im.onload=()=>{
+  if(im.width!==64||im.height!==64){URL.revokeObjectURL(u);setStatus("ابعاد اسکین باید دقیقاً ۶۴×۶۴ پیکسل باشد.");e.target.value="";return}
+  save();
+  ctx.save();
+  ctx.imageSmoothingEnabled=false;
+  ctx.clearRect(0,0,64,64);
+  ctx.globalCompositeOperation="copy";
+  ctx.drawImage(im,0,0,64,64);
+  ctx.restore();
+  URL.revokeObjectURL(u);
+  refreshTexture();
+  setStatus("اسکین بدون تغییر پیکسل‌ها روی مدل بارگذاری شد.");
+ };
+ im.onerror=()=>{URL.revokeObjectURL(u);setStatus("خواندن فایل PNG ناموفق بود.");};
+ im.src=u;e.target.value="";
+});
+document.getElementById("downloadSkin").addEventListener("click",()=>texCanvas.toBlob(blob=>{const u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download="LEON-3D-Skin.png";a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)},"image/png"));
+document.getElementById("resetSkin").addEventListener("click",()=>{if(!confirm("تمام تغییرات بافت پاک شود؟"))return;save();ctx.clearRect(0,0,64,64);refreshTexture();setStatus("بافت پاک شد.")});
+document.getElementById("newSkin").addEventListener("click",()=>{if(!confirm("یک اسکین خالی ساخته شود؟"))return;save();ctx.clearRect(0,0,64,64);refreshTexture();setStatus("اسکین جدید ساخته شد.")});
+try{const saved=localStorage.getItem("leon-skin-autosave");if(saved){const im=new Image();im.onload=()=>{ctx.drawImage(im,0,0,64,64);refreshTexture();save()};im.src=saved}else save()}catch(e){save()}
+init();setMode("paint");
+})();
+</script>
 
-/* Keyboard shortcuts, online state, persistence, and PWA. */
-document.addEventListener('keydown',e=>{if(e.ctrlKey&&e.key.toLowerCase()==='s'){e.preventDefault();$('skinSaveProject')?.click();$('profileSave')?.click()}if(e.ctrlKey&&e.key.toLowerCase()==='z'&&!e.shiftKey){if(!$('skinUndo')?.disabled)$('skinUndo').click()}if(e.ctrlKey&&(e.key.toLowerCase()==='y'||(e.shiftKey&&e.key.toLowerCase()==='z'))){if(!$('skinRedo')?.disabled)$('skinRedo').click()}});
-const net=()=>{document.documentElement.dataset.connection=navigator.onLine?'online':'offline';const el=document.getElementById('connectionStatus');if(el)el.textContent=navigator.onLine?'● آنلاین':'● آفلاین';};window.addEventListener('online',net);window.addEventListener('offline',net);net();
-if('serviceWorker'in navigator&&/^https?:$/.test(location.protocol)){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(e=>console.warn('PWA registration:',e)))}
+
+<script>
+(() => {
+  const setOffline = () => {
+    let chip = document.getElementById('leonNetworkState');
+    if (!chip) {
+      chip = document.createElement('div');
+      chip.id = 'leonNetworkState';
+      chip.setAttribute('role','status');
+      chip.style.cssText = 'position:fixed;z-index:1200;bottom:12px;left:12px;padding:8px 12px;border-radius:22px;font:700 12px Tahoma;background:rgba(18,12,48,.92);border:1px solid rgba(192,132,252,.45);color:#eee;box-shadow:0 0 18px rgba(139,92,246,.2);';
+      document.body.appendChild(chip);
+    }
+    chip.textContent = navigator.onLine ? '✦ اتصال آنلاین' : '✦ حالت آفلاین';
+    chip.style.borderColor = navigator.onLine ? 'rgba(69,246,255,.4)' : 'rgba(192,132,252,.7)';
+  };
+  window.addEventListener('online',setOffline);
+  window.addEventListener('offline',setOffline);
+  setOffline();
+  if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol)) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch(err => console.warn('LEON offline setup:',err));
+    }, {once:true});
+  }
 })();
 </script>
 
