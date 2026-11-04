@@ -1509,6 +1509,16 @@ nav a{flex:0 0 auto;min-height:34px;display:flex;align-items:center}
   .buttons{grid-template-columns:1fr}
 }
 
+
+/* LEON final polish: Arzda cosmic profile */
+.arzda{position:relative;isolation:isolate;overflow:hidden;border:1px solid rgba(192,132,252,.8)!important;background:radial-gradient(ellipse at 50% 0%,rgba(126,34,206,.34),transparent 58%),linear-gradient(145deg,rgba(24,12,54,.98),rgba(7,12,34,.98) 58%,rgba(15,30,55,.98))!important;box-shadow:0 0 0 1px rgba(69,246,255,.12),0 0 28px rgba(139,92,246,.32),inset 0 0 34px rgba(124,58,237,.13)!important;}
+.arzda::before{content:"";position:absolute;inset:-45%;z-index:-1;pointer-events:none;background:conic-gradient(from 20deg,transparent 0 28%,rgba(168,85,247,.16) 35%,transparent 43% 65%,rgba(34,211,238,.12) 72%,transparent 80%);animation:leonArzdaOrbit 18s linear infinite;}
+.arzda::after{content:"✦  ✧  ·  ✦  ·  ✧";position:absolute;top:12px;right:14px;color:rgba(216,180,254,.7);font-size:13px;letter-spacing:9px;pointer-events:none;text-shadow:0 0 12px #a855f7;}
+.arzda .member-avatar{border:2px solid rgba(216,180,254,.95)!important;box-shadow:0 0 0 5px rgba(168,85,247,.12),0 0 28px rgba(168,85,247,.65),0 0 42px rgba(34,211,238,.18)!important;}
+.arzda h2{text-shadow:0 0 10px rgba(192,132,252,.9),0 0 24px rgba(139,92,246,.55)!important;}
+.arzda .rank{border:1px solid rgba(216,180,254,.48);box-shadow:0 0 16px rgba(168,85,247,.25);}
+@keyframes leonArzdaOrbit{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.arzda::before{animation:none}}
 </style>
 </head>
 
@@ -1895,10 +1905,11 @@ nav a{flex:0 0 auto;min-height:34px;display:flex;align-items:center}
         <section class="property-card">
           <h3>لایه اسکین</h3>
           <div class="layer-switch">
-            <button type="button" class="active" data-layer="base">Body</button>
-            <button type="button" data-layer="outer">Outer Layer</button>
+            <button type="button" class="active" data-layer="all">هر دو لایه</button>
+            <button type="button" data-layer="base">لایه داخلی</button>
+            <button type="button" data-layer="outer">لایه بیرونی</button>
           </div>
-          <p class="property-hint" id="layerHint">لایه اصلی اسکین انتخاب شده است.</p>
+          <p class="property-hint" id="layerHint">نمای کامل اسکین سه‌بعدی با هر دو لایه فعال است.</p>
         </section>
         <section class="property-card">
           <h3>انتخاب بخش بدن</h3>
@@ -2411,7 +2422,7 @@ const status=document.getElementById("skinStatus"),status3d=document.getElementB
 const color=document.getElementById("skinColor"),upload=document.getElementById("skinUpload");
 const THREE=window.THREE;
 if(!THREE){status.textContent="کتابخانه سه‌بعدی بارگذاری نشد. برای اجرای ویرایشگر به اینترنت نیاز است.";return}
-let scene,camera,renderer,controls,texture,raycaster,model=[],outerModel=[],mode="paint",tool="pen",brush=1,history=[],future=[],activeLayer="base";
+let scene,camera,renderer,controls,texture,raycaster,model=[],outerModel=[],mode="paint",tool="pen",brush=1,history=[],future=[],activeLayer="all";
 const partUV={
  head:{w:8,h:8,d:8,front:[8,8,8,8],back:[24,8,8,8],right:[0,8,8,8],left:[16,8,8,8],top:[8,0,8,8],bottom:[16,0,8,8]},
  torso:{w:8,h:12,d:4,front:[20,20,8,12],back:[32,20,8,12],right:[16,20,4,12],left:[28,20,4,12],top:[20,16,8,4],bottom:[28,16,8,4]},
@@ -2419,6 +2430,15 @@ const partUV={
  leftArm:{w:4,h:12,d:4,front:[36,52,4,12],back:[44,52,4,12],right:[32,52,4,12],left:[40,52,4,12],top:[36,48,4,4],bottom:[40,48,4,4]},
  rightLeg:{w:4,h:12,d:4,front:[4,20,4,12],back:[12,20,4,12],right:[0,20,4,12],left:[8,20,4,12],top:[4,16,4,4],bottom:[8,16,4,4]},
  leftLeg:{w:4,h:12,d:4,front:[20,52,4,12],back:[28,52,4,12],right:[16,52,4,12],left:[24,52,4,12],top:[20,48,4,4],bottom:[24,48,4,4]}
+};
+// UVهای مستقل لایه بیرونی استاندارد Bedrock (کلاه، کت، آستین و شلوار)
+const outerUV={
+ head:{w:8,h:8,d:8,front:[40,8,8,8],back:[56,8,8,8],right:[32,8,8,8],left:[48,8,8,8],top:[40,0,8,8],bottom:[48,0,8,8]},
+ torso:{w:8,h:12,d:4,front:[20,36,8,12],back:[32,36,8,12],right:[16,36,4,12],left:[28,36,4,12],top:[20,32,8,4],bottom:[28,32,8,4]},
+ rightArm:{w:4,h:12,d:4,front:[44,36,4,12],back:[52,36,4,12],right:[40,36,4,12],left:[48,36,4,12],top:[44,32,4,4],bottom:[48,32,4,4]},
+ leftArm:{w:4,h:12,d:4,front:[52,52,4,12],back:[60,52,4,12],right:[48,52,4,12],left:[56,52,4,12],top:[52,48,4,4],bottom:[56,48,4,4]},
+ rightLeg:{w:4,h:12,d:4,front:[4,36,4,12],back:[12,36,4,12],right:[0,36,4,12],left:[8,36,4,12],top:[4,32,4,4],bottom:[8,32,4,4]},
+ leftLeg:{w:4,h:12,d:4,front:[4,52,4,12],back:[12,52,4,12],right:[0,52,4,12],left:[8,52,4,12],top:[4,48,4,4],bottom:[8,48,4,4]}
 };
 function setStatus(t){status.textContent=t;status3d.textContent=t}
 function snapshot(){return ctx.getImageData(0,0,64,64)}
@@ -2433,7 +2453,7 @@ function uvRect(rect,x,y,z,axis,w,h,d){
  return [(rx+u*rw)/64,1-(ry+v*rh)/64];
 }
 function makeBox(part,position,isOuter=false){
- const def=partUV[part],scale=isOuter?1.08:1;
+ const def=(isOuter?outerUV:partUV)[part],scale=isOuter?1.08:1;
  // Each cube face needs its own UV vertices. Indexed BoxGeometry shares
  // corner vertices between faces; editing those UVs overwrites neighboring
  // faces and makes imported skins look scrambled.
@@ -2445,13 +2465,18 @@ function makeBox(part,position,isOuter=false){
   for(let j=0;j<6;j++){
    const vertex=face*6+j;
    const nativeU=uv.getX(vertex), nativeV=uv.getY(vertex);
+   // Map the complete face rectangle. Nearest filtering preserves exact
+   // pixel-art texels without compressing the 8x8 head UV regions.
    const pixelX=rx+nativeU*rw;
    const pixelY=ry+(1-nativeV)*rh;
    uv.setXY(vertex,pixelX/64,1-pixelY/64);
   }
  }
  uv.needsUpdate=true;
- const mat=new THREE.MeshStandardMaterial({map:texture,transparent:true,alphaTest:.02,roughness:.88,side:THREE.DoubleSide});
+ const mat=new THREE.MeshStandardMaterial({
+  map:texture,transparent:true,alphaTest:.015,depthWrite:true,
+  roughness:.92,metalness:0,side:THREE.DoubleSide
+ });
  const mesh=new THREE.Mesh(geo,mat);mesh.position.set(...position);mesh.userData={part,isOuter};scene.add(mesh);return mesh;
 }
 function buildModel(){
@@ -2460,18 +2485,29 @@ function buildModel(){
   ["head",[0,28,0]],["torso",[0,18,0]],["rightArm",[-6,18,0]],["leftArm",[6,18,0]],["rightLeg",[-2,6,0]],["leftLeg",[2,6,0]]
  ];
  parts.forEach(([name,pos])=>{model.push(makeBox(name,pos,false));outerModel.push(makeBox(name,pos,true))});
- outerModel.forEach(m=>m.visible=false);
+ // در حالت پیش‌فرض هر دو پوسته روی هم دیده می‌شوند تا ظاهر واقعی اسکین نمایش داده شود.
+ outerModel.forEach(m=>m.visible=true);
 }
 function init(){
  scene=new THREE.Scene();scene.background=new THREE.Color(0x0b0b20);
  camera=new THREE.PerspectiveCamera(38,1,.1,1000);camera.position.set(42,31,58);
- renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));renderer.outputEncoding=THREE.sRGBEncoding;host.appendChild(renderer.domElement);
+ renderer=new THREE.WebGLRenderer({antialias:true,alpha:false});renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));
+ renderer.outputEncoding=THREE.sRGBEncoding;
+ renderer.toneMapping=THREE.ACESFilmicToneMapping;
+ renderer.toneMappingExposure=1.12;
+ host.appendChild(renderer.domElement);
  controls=new THREE.OrbitControls(camera,renderer.domElement);controls.target.set(0,16,0);controls.enableDamping=true;controls.dampingFactor=.07;controls.enablePan=false;controls.minDistance=28;controls.maxDistance=110;
- scene.add(new THREE.HemisphereLight(0xcdbbff,0x17152b,1.25));
- const key=new THREE.DirectionalLight(0xffffff,1.5);key.position.set(25,45,35);scene.add(key);
- const rim=new THREE.PointLight(0x9b5cff,1.6,120);rim.position.set(-25,20,-25);scene.add(rim);
+ // Balanced studio lighting with soft fill and a restrained violet rim.
+ scene.add(new THREE.AmbientLight(0xffffff,.42));
+ scene.add(new THREE.HemisphereLight(0xded5ff,0x252039,.92));
+ const key=new THREE.DirectionalLight(0xfff4e8,1.35);
+ key.position.set(28,42,36);scene.add(key);
+ const fill=new THREE.DirectionalLight(0xb8c7ff,.48);
+ fill.position.set(-32,18,24);scene.add(fill);
+ const rim=new THREE.PointLight(0x9b5cff,.85,100);
+ rim.position.set(-24,24,-28);scene.add(rim);
  const floor=new THREE.GridHelper(80,40,0x59417c,0x292342);floor.position.y=-.2;scene.add(floor);
- texture=new THREE.CanvasTexture(texCanvas);texture.magFilter=THREE.NearestFilter;texture.minFilter=THREE.NearestFilter;texture.generateMipmaps=false;texture.flipY=true;texture.encoding=THREE.sRGBEncoding;
+ texture=new THREE.CanvasTexture(texCanvas);texture.magFilter=THREE.NearestFilter;texture.minFilter=THREE.NearestFilter;texture.generateMipmaps=false;texture.flipY=true;texture.premultiplyAlpha=false;texture.unpackAlignment=1;texture.encoding=THREE.sRGBEncoding;
  raycaster=new THREE.Raycaster();buildModel();resize();
  window.addEventListener("resize",resize);
  renderer.setAnimationLoop(()=>{controls.update();renderer.render(scene,camera)});
@@ -2484,7 +2520,24 @@ function setMode(next){mode=next;controls.enabled=next==="rotate";document.getEl
 document.getElementById("paintMode").addEventListener("click",()=>setMode("paint"));
 document.getElementById("rotateMode").addEventListener("click",()=>setMode("rotate"));
 document.getElementById("resetCamera").addEventListener("click",()=>{camera.position.set(42,31,58);controls.target.set(0,16,0);controls.update()});
-function hitAt(e){const r=renderer.domElement.getBoundingClientRect();const p=new THREE.Vector2(((e.clientX-r.left)/r.width)*2-1,-((e.clientY-r.top)/r.height)*2+1);raycaster.setFromCamera(p,camera);const visible=activeLayer==="base"?model:outerModel;const hits=raycaster.intersectObjects(visible,false);return hits[0]||null}
+function hitAt(e){
+ const r=renderer.domElement.getBoundingClientRect();
+ const p=new THREE.Vector2(((e.clientX-r.left)/r.width)*2-1,-((e.clientY-r.top)/r.height)*2+1);
+ raycaster.setFromCamera(p,camera);
+ const visible=activeLayer==="base"?model:(activeLayer==="outer"?outerModel:model.concat(outerModel));
+ const hits=raycaster.intersectObjects(visible,false);
+ if(activeLayer!=="all")return hits[0]||null;
+ // Ignore fully transparent texels on the outer shell and continue to the
+ // inner skin beneath them.
+ for(const hit of hits){
+  if(!hit.uv)continue;
+  const px=Math.max(0,Math.min(63,Math.floor(hit.uv.x*64)));
+  const py=Math.max(0,Math.min(63,Math.floor((1-hit.uv.y)*64)));
+  const alpha=ctx.getImageData(px,py,1,1).data[3];
+  if(alpha>8)return hit;
+ }
+ return hits[0]||null;
+}
 let painting=false,lastUV=null,selectedPart="all";
 function uvPixel(uv){return {x:Math.max(0,Math.min(63,Math.floor(uv.x*64))),y:Math.max(0,Math.min(63,Math.floor((1-uv.y)*64)))}}
 function dab(x,y){
@@ -2527,7 +2580,16 @@ document.querySelectorAll(".editor-tool[data-tool]").forEach(b=>b.addEventListen
 document.getElementById("skinBrush").addEventListener("input",e=>{brush=+e.target.value;document.getElementById("brushValue").textContent=brush+" px"});
 color.addEventListener("input",()=>document.getElementById("skinColorHex").textContent=color.value.toUpperCase());
 document.querySelectorAll(".palette-row button").forEach(b=>b.addEventListener("click",()=>{color.value=b.dataset.color;color.dispatchEvent(new Event("input"))}));
-document.querySelectorAll("[data-layer]").forEach(b=>b.addEventListener("click",()=>{activeLayer=b.dataset.layer;document.querySelectorAll("[data-layer]").forEach(x=>x.classList.toggle("active",x===b));model.forEach(m=>m.visible=activeLayer==="base");outerModel.forEach(m=>m.visible=activeLayer==="outer");setStatus(activeLayer==="base"?"لایه اصلی انتخاب شد.":"لایه بیرونی انتخاب شد.")}));
+document.querySelectorAll("[data-layer]").forEach(b=>b.addEventListener("click",()=>{
+ activeLayer=b.dataset.layer;
+ document.querySelectorAll("[data-layer]").forEach(x=>x.classList.toggle("active",x===b));
+ model.forEach(m=>m.visible=activeLayer!=="outer");
+ outerModel.forEach(m=>m.visible=activeLayer!=="base");
+ const hint=document.getElementById("layerHint");
+ const messages={all:"هر دو لایه فعال‌اند؛ ظاهر کامل اسکین سه‌بعدی را می‌بینی.",base:"فقط لایه داخلی نمایش داده می‌شود.",outer:"فقط لایه بیرونی نمایش داده می‌شود."};
+ if(hint)hint.textContent=messages[activeLayer];
+ setStatus(messages[activeLayer]);
+}));
 document.querySelectorAll("[data-part]").forEach(b=>b.addEventListener("click",()=>{const part=b.dataset.part;selectedPart=selectedPart===part?"all":part;
  model.concat(outerModel).forEach(m=>m.material.emissive.set(m.userData.part===selectedPart?0x332255:0x000000));document.querySelectorAll("[data-part]").forEach(x=>x.classList.toggle("active",selectedPart!=="all"&&x.dataset.part===selectedPart));document.getElementById("partHint").textContent=selectedPart==="all"?"تمام بخش‌های مدل قابل ویرایش‌اند.":"فقط بخش انتخاب‌شده قابل ویرایش است."}));
 document.getElementById("skinModelType").addEventListener("change",e=>{setStatus("مدل "+(e.target.value==="classic"?"Classic":"Slim")+" انتخاب شد. برای Slim عرض دست‌ها باریک‌تر می‌شود.");});
